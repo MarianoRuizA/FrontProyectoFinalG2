@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* HEADER */
+
+header {
+  width: 100vw;
+  background-color: #3D0000;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+
+.abrir-menu {
+  display: none;
+}
+
+/* LOGO */
+
+.logo-tango {
+  margin-left: 1rem;
+  padding: 0.25rem;
+  width: 5rem;
+  transition: 200ms;
+}
+
+.logo-tango:hover {
+  transform: scale(1.08);
+  transition: 200ms;
+}
+
+/* LINKS */
+
+li {
+  list-style-type: none;
+  padding: 0.5rem;
+}
+
+a {
+  text-decoration: none;
+  color: #a0a0a0;
+  transition: all 400ms;
+}
+
+a:hover {
+  color: #ffffff;
+  transition: all 500ms;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* EFECTO LINKS */
+
+.link-underline::after {
+  content: "";
+  height: 2px;
+  width: 0;
+  background-color: white;
+  display: block;
+  transition: all 400ms;
+}
+
+.link-underline:hover::after {
+  width: 100%;
+}
+
+/* ICONO LOGIN */
+
+.login-icon {
+  margin-right: 1rem;
+  margin-left: 1rem;
+  transition: all 200ms;
+}
+
+.login-icon:hover {
+  transform: scale(1.07);
+  transition: all 200ms;
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 600px) {
+  a {
+    font-size: 0.8rem;
+  }
+  .logo-tango {
+    width: 3rem;
+  }
+  .login-icon {
+    width: 30%;
+  }
+}
