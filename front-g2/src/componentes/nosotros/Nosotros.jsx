@@ -1,4 +1,5 @@
 import {Row, Col, Container, Image} from "react-bootstrap"; 
+
 const Nosotros = () => {
   return (
    <div className="nosotros">
@@ -8,7 +9,7 @@ const Nosotros = () => {
         </div>
       <Row className="px-4 my-5">
         <Col sm={7}>
-        <Image src="src/assets/img/img-logo1.jpg"
+        <Image className="img" src="src/assets/img/img-logo1.jpg"
         fluid
         rounded
         />
