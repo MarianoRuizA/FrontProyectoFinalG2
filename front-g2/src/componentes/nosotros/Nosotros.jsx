@@ -1,21 +1,24 @@
 import './nosotros.css';
 const Nosotros = () => {
   return (
-   <div className="titulo">
-    <h1>Nosotros</h1>
-    <div className="contenedor">
-    <section className="nosotros">
-      <div className="imgNosotros">
-        <img src="src/assets/img/img-1.png" alt="" />
+   <div className="section">
+    <div className="container">
+      <div className="content-section">
+        <div className="title">
+          <h1>Nosotros</h1>
+        </div>
+        <div className="content">
+          <h3>nuestra historia</h3>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error quam enim asperiores molestias adipisci! Iure,
+             ullam facere unde officia voluptatibus nobis est quaerat expedita eos voluptatum beatae iusto earum eligendi? 
+             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere placeat harum necessitatibus voluptatum accusantium 
+             dolore blanditiis exercitationem, voluptas,
+             earum nemo tempore molestias nulla eligendi natus iste fugiat, illum nesciunt optio?</p>
+        </div>
       </div>
-      <div className="subtitulo">
-        <h2>Nuestra Historia</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio asperiores unde cupiditate enim error? Magnam, excepturi. Debitis, accusantium velit sunt cupiditate quam consequatur. 
-        Nemo non quaerat iusto ab eum numquam.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quae officia ratione deleniti rem impedit eligendi perferendis, mollitia distinctio
-        reprehenderit aspernatur error id velit ipsum vitae culpa sequi inventore minima.</p>
-      </div>
-    </section>
+     <div className="excellence">
+      
+     </div>
     </div>
    </div>
   )
