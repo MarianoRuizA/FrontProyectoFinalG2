@@ -1,8 +1,9 @@
-
+import "./cardsGrupo.css";
 const CardsGrupo = () => {
   return (
     <>
-      
+    
+     
     </>
   )
 }
