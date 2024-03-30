@@ -24,8 +24,7 @@ const Nosotros = () => {
       <img src="src/assets/img/imagen.png" />
      </div>
     </div>
-   </div>
-  )
+  </div>
+)
 }
-
 export default Nosotros
