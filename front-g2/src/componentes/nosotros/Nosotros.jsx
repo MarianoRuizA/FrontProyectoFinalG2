@@ -1,13 +1,13 @@
 import './nosotros.css';
 const Nosotros = () => {
   return (
-   <div className="section">
-    <div className="container">
-      <div className="content-section">
-        <div className="title">
+   <div className="seccion">
+    <div className="contenedor">
+      <div className="contenido-seccion">
+        <div className="titulo">
           <h1>Nosotros</h1>
         </div>
-        <div className="content">
+        <div className="contenido-nosotros">
           <h3>nuestra historia</h3>
            <p>En una esquina bulliciosa del barrio de San Telmo en Buenos Aires, cinco jóvenes emprendedores decidieron abrir un restaurante con un nombre que evocaba la esencia de su país: "Tango". 
              Cada uno de ellos había crecido inmerso en la cultura argentina del tango y la pasión por la gastronomía local.</p>
@@ -20,7 +20,7 @@ const Nosotros = () => {
              Y mientras los cinco amigos continuaban compartiendo su pasión con el mundo, la leyenda del restaurante Tango seguía creciendo, una noche de tango a la vez.</p>
         </div>
       </div>
-     <div className="img-section">
+     <div className="img-nosotros">
       <img src="src/assets/img/imagen.png" />
      </div>
     </div>
