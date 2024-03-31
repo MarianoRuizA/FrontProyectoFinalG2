@@ -1,5 +1,4 @@
-import CardsGrupo from "../../components/cards/CardsGrupo"
-
+import CardsGrupo from "../../components/cards/CardsGrupo";
 
 const Home = () => {
   return (
