@@ -1,4 +1,5 @@
 import './nosotros.css';
+import imagen from "../../assets/img/imagen.png"
 
 const Nosotros = () => {
   return (
@@ -22,7 +23,7 @@ const Nosotros = () => {
         </div>
       </div>
      <div className="img-nosotros">
-      <img src="src/assets/img/imagen.png" />
+      <img src={imagen} alt='ilustracion del restaurante' />
      </div>
     </div>
   </div>
