@@ -87,6 +87,7 @@ ul {
 
 .burger-icon {
   width: 2.5rem;
+  cursor: pointer;
 }
 
 /* RESPONSIVE */
@@ -105,6 +106,7 @@ ul {
 
   .ul-list {
     display: none;
+    animation: show 1.5s forwards;
   }
 
   .ul-list.active {
@@ -119,5 +121,19 @@ ul {
 
   .contenedor-burger {
     display: block;
+  }
+}
+
+@keyframes show {
+  0% {
+    height: 0;
+    opacity: 0;
+  }
+  50% {
+    height: 170px;
+  }
+  100% {
+    height: 170px;
+    opacity: 1;
   }
 }

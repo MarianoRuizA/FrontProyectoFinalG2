@@ -8,6 +8,7 @@ function App() {
   return (
     <>
       <Navbar/>
+      <h1>TANGO EL MEJOR RESTAURANTE</h1>
     </>
   );
 }
