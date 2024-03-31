@@ -1,13 +1,13 @@
 import { Routes, Route } from "react-router-dom";
-import Nosotros from "../../views/nosotros/Nosotros";
 import Home from "../../views/nosotros/home/Home";
+import About from "../about/About";
 
 function Rutas() {
   return (
     <>
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/nosotros" element={<Nosotros/>}></Route>
+      <Route path="/nosotros" element={<About/>}></Route>
     </Routes>
     </>
   )
