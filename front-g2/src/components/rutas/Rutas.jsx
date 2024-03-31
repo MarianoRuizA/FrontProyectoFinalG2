@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Nosotros from "../../views/nosotros/Nosotros";
+import Home from "../../views/nosotros/home/Home";
 
 function Rutas() {
   return (
