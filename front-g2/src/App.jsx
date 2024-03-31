@@ -1,11 +1,11 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Routes from './components/rutas/Rutas';
+import Rutas from './components/rutas/Rutas';
 
 function App() {
 
   return (
     <>
-    <Rutas/>
+    <Rutas />
     </>
   )
 }
