@@ -1,4 +1,5 @@
 import './nosotros.css';
+
 const Nosotros = () => {
   return (
    <div className="seccion">
