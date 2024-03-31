@@ -1,11 +1,11 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Nosotros from './views/nosotros/Nosotros';
+import Routes from './components/routes/Routes';
 
 function App() {
 
   return (
     <>
-    <Nosotros />
+    <Routes />
     </>
   )
 }
