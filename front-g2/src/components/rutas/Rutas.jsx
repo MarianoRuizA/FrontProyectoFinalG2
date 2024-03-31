@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Nosotros from "../../views/nosotros/Nosotros";
 
-function Routes() {
+function Rutas() {
   return (
     <>
     <Routes>
@@ -11,4 +11,4 @@ function Routes() {
   )
 }
 
-export default Routes
+export default Rutas
