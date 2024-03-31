@@ -8,24 +8,23 @@
 /* HEADER */
 
 header {
-  width: 100vw;
+  width: 100%;
+  padding: 0.25rem;
   background-color: #3D0000;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.abrir-menu {
+.contenedor-burger {
   display: none;
 }
 
 /* LOGO */
 
 .logo-tango {
-  margin-left: 1rem;
   padding: 0.25rem;
   width: 5rem;
   transition: 200ms;
@@ -40,7 +39,6 @@ header {
 
 li {
   list-style-type: none;
-  padding: 0.5rem;
 }
 
 a {
@@ -56,8 +54,9 @@ a:hover {
 
 ul {
   display: flex;
-  flex-direction: row;
   align-items: center;
+  gap: 1rem;
+  padding: 1rem;
 }
 
 /* EFECTO LINKS */
@@ -75,29 +74,50 @@ ul {
   width: 100%;
 }
 
-/* ICONO LOGIN */
+/* ICONOS*/
 
 .login-icon {
-  margin-right: 1rem;
-  margin-left: 1rem;
-  transition: all 200ms;
+  transition: all 0.2s;
 }
 
 .login-icon:hover {
-  transform: scale(1.07);
-  transition: all 200ms;
+  transform: scale(1.1);
+  transition: 0.2s;
+}
+
+.burger-icon {
+  width: 2.5rem;
 }
 
 /* RESPONSIVE */
 
 @media screen and (max-width: 600px) {
-  a {
-    font-size: 0.8rem;
+
+  header {
+    display: block;
   }
-  .logo-tango {
-    width: 3rem;
+
+  .section-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
-  .login-icon {
-    width: 30%;
+
+  .ul-list {
+    display: none;
+  }
+
+  .ul-list.active {
+    display: block;
+    text-align: center;
+    padding: 0;
+  }
+
+  li {
+    padding: 0.25rem;
+  }
+
+  .contenedor-burger {
+    display: block;
   }
 }
