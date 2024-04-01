@@ -91,9 +91,24 @@ nav {
   width: 100%;
 }
 
+.link-login {
+	font-weight: 500;
+	background-color: none;
+	color: var(--secondaryColor);
+	padding: .5rem;
+	border-radius: 3rem;
+	border: solid 1px var(--secondaryColor);
+	cursor: pointer;
+}
+
+.link-login:hover {
+	background-color: var(--secondaryColor);
+	color: var(--mainColor);
+}
+
 /* RESPONSIVE */
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 850px) {
 	header .nav-btn {
 		visibility: visible;
 		opacity: 1;

@@ -9,7 +9,7 @@ const ModalLogin = ({ show, handleClose }) => {
         <Modal.Title>Iniciar sesión</Modal.Title>
       </Modal.Header>
       <Modal.Body className="modal-body">
-        <Login />
+        <Login handleClose={handleClose} />
       </Modal.Body>
       <Modal.Footer>
         <Button variant="secondary" onClick={handleClose}>
