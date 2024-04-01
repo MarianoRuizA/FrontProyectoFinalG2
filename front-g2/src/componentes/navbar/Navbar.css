@@ -1,28 +1,58 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-* {
-  margin: 0;
-  padding: 0;
+:root {
+  --mainColor: #3D0000;;
+  --secondaryColor: #ffffff;
+  --textColor: #a0a0a0;
 }
 
-/* HEADER */
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "Montserrat", sans-serif;
+}
 
 header {
-  width: 100%;
-  padding: 0.25rem;
-  background-color: #3D0000;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 .5rem;
+  font-weight: 500;
+	background-color: var(--mainColor);
+	color: var(--textColor);
 }
 
-.contenedor-burger {
-  display: none;
+nav a {
+  margin: 0 1rem;
+	color: var(--textColor);
+	text-decoration: none;
+  transition: all 500ms;
 }
 
-/* LOGO */
+nav a:hover {
+  color: var(--secondaryColor);
+  transition: all 500ms;
+}
+
+header .nav-btn {
+  padding: 5px;
+	cursor: pointer;
+	background: transparent;
+	border: none;
+	outline: none;
+	color: var(--secondaryColor);
+	visibility: hidden;
+	opacity: 0;
+	font-size: 1.8rem;
+}
+
+nav {
+  display: flex;
+	align-items: center;
+}
+
+/* LOGOS E ICONOS */
 
 .logo-tango {
   padding: 0.25rem;
@@ -35,31 +65,16 @@ header {
   transition: 200ms;
 }
 
-/* LINKS */
-
-li {
-  list-style-type: none;
+.login-icon {
+  transition: all 0.2s;
 }
 
-a {
-  text-decoration: none;
-  color: #a0a0a0;
-  transition: all 400ms;
+.login-icon:hover {
+  transform: scale(1.1);
+  transition: 0.2s;
 }
 
-a:hover {
-  color: #ffffff;
-  transition: all 500ms;
-}
-
-ul {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1rem;
-}
-
-/* EFECTO LINKS */
+/* EFECTO ENLACES */
 
 .link-underline::after {
   content: "";
@@ -74,66 +89,40 @@ ul {
   width: 100%;
 }
 
-/* ICONOS*/
-
-.login-icon {
-  transition: all 0.2s;
-}
-
-.login-icon:hover {
-  transform: scale(1.1);
-  transition: 0.2s;
-}
-
-.burger-icon {
-  width: 2.5rem;
-  cursor: pointer;
-}
-
 /* RESPONSIVE */
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 750px) {
+	header .nav-btn {
+		visibility: visible;
+		opacity: 1;
+	}
 
-  header {
-    display: block;
-  }
+	header nav {
+		position: fixed;
+		top: -100vh;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 1.5rem;
+		background-color: var(--mainColor);
+		transition: 1s;
+	}
 
-  .section-navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+	header .responsive_nav {
+		transform: translateY(100vh);
+	}
 
-  .ul-list {
-    display: none;
-  }
+	nav .nav-close-btn {
+		position: absolute;
+		top: 2rem;
+		right: 2rem;
+	}
 
-  .ul-list.active {
-    display: block;
-    text-align: center;
-    padding: 0;
-    animation: show 1.5s forwards;
-  }
-
-  li {
-    padding: 0.25rem;
-  }
-
-  .contenedor-burger {
-    display: block;
-  }
-}
-
-@keyframes show {
-  0% {
-    height: 0;
-    opacity: 0;
-  }
-  50% {
-    height: 170px;
-  }
-  100% {
-    height: 170px;
-    opacity: 1;
-  }
+	nav a {
+		font-size: 1.5rem;
+	}
 }
