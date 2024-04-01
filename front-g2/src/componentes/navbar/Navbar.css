@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-  --mainColor: #3D0000;;
+  --mainColor: #3D0000;
   --secondaryColor: #ffffff;
   --textColor: #a0a0a0;
 }
@@ -55,6 +55,7 @@ nav {
 /* LOGOS E ICONOS */
 
 .logo-tango {
+	margin-left: 1rem;
   padding: 0.25rem;
   width: 5rem;
   transition: 200ms;
@@ -67,6 +68,7 @@ nav {
 
 .login-icon {
   transition: all 0.2s;
+	cursor: pointer;
 }
 
 .login-icon:hover {

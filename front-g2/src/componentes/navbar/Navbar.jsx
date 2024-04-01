@@ -1,5 +1,6 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import ModalLogin from "../ModalLogin/ModalLogin";
 import "./Navbar.css";
 
 function Navbar() {
@@ -11,35 +12,43 @@ function Navbar() {
 		);
 	};
 
+	const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
 	return (
-		<header>
-			 <figure>
-          <img
-            src="src/img/logo_tango.png"
-            alt="Logo de Tango Restaurante"
-            className="logo-tango"
-          />
-        </figure>
-			<button
-				className="nav-btn"
-				onClick={showNavbar}>
-				<FaBars />
-			</button>
-			<nav ref={navRef}>
-				<a href="" className="link-underline">GALERÍA</a>
-				<a href="" className="link-underline">CONTACTO</a>
-				<a href="" className="link-underline">CARTA</a>
-				<a href="" className="link-underline">RESERVAS</a>
-        <a href="">
-              <img className="login-icon" src="src/img/login_icon.png" alt="Icono del login" />
-            </a>
+		<>
+			<header>
+				<figure>
+					<img
+						src="src/img/logo_tango.png"
+						alt="Logo de Tango Restaurante"
+						className="logo-tango"
+					/>
+				</figure>
 				<button
-					className="nav-btn nav-close-btn"
+					className="nav-btn"
 					onClick={showNavbar}>
-					<FaTimes />
+					<FaBars />
 				</button>
-			</nav>
-		</header>
+				<nav ref={navRef}>
+					<a href="" className="link-underline">GALERÍA</a>
+					<a href="" className="link-underline">CONTACTO</a>
+					<a href="" className="link-underline">CARTA</a>
+					<a href="" className="link-underline">RESERVAS</a>
+					<a onClick={handleShow}>
+						<img className="login-icon" src="src/img/login_icon.png" alt="Icono del login" />
+					</a>
+					<button
+						className="nav-btn nav-close-btn"
+						onClick={showNavbar}>
+						<FaTimes />
+					</button>
+				</nav>
+			</header>
+			<ModalLogin show={show} handleClose={handleClose} />
+		</>
 	);
 }
 

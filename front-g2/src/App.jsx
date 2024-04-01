@@ -1,6 +1,6 @@
 import { useState } from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from "./componentes/Navbar/Navbar";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <h1>TANGO EL MEJOR RESTAURANTE</h1>
+      <h4>TANGO EL MEJOR RESTAURANTE</h4>
     </>
   );
 }
