@@ -9,48 +9,105 @@ const CardsGrupo = () => {
   return (
 <>
     <div className="card">
-        <h2 className="title">Equipo</h2>
-
-        <div className="box-container">
-            <div className="box">
-                <img src={imagen3} alt="perfil del integrante"/>
-                <h3>Mariano Agustin Ruiz</h3>
-                <p>Chef Principal</p>
+        <div className="head">
+            <div className="circle">
+                <div className="img-integrante">
+                    <img src={imagen1} alt="perfil del integrante"/>
+                </div>
             </div>
         </div>
-
-        <div className="box-container">
-            <div className="box">
-                <img src={imagen2} alt="perfil del integrante"/>
-                <h3>Mariano Agustin Ruiz</h3>
-                <p>Chef Principal</p>
-            </div>
+        <div className="description">
+            <h3>Gaston</h3>
+            <h4>Chef Principal</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Possimus esse quod eveniet ab adipisci.</p>
         </div>
-
-        <div className="box-container">
-            <div className="box">
-                <img src={imagen5} alt="perfil del integrante"/>
-                <h3>martina</h3>
-                <p>Chef Principal</p>
-            </div>
-        </div>
-
-        <div className="box-container">
-            <div className="box">
-                <img src={imagen4} alt="perfil del integrante"/>
-                <h3>Lourdes Reyna</h3>
-                <p>Chef Principal</p>
-            </div>
-        </div>
-
-        <div className="box-container">
-            <div className="box">
-                <img src={imagen1} alt="perfil del integrante"/>
-                <h3>Lourdes Reyna</h3>
-                <p>Chef Principal</p>
-            </div>
+        <hr />
+        <div className="contact">
+            <a href="#">Contacto</a>
         </div>
     </div>
+
+    <div className="card">
+        <div className="head">
+            <div className="circle">
+                <div className="img-integrante">
+                    <img src={imagen2} alt="perfil del integrante"/>
+                </div>
+            </div>
+        </div>
+        <div className="description">
+            <h3>Gaston</h3>
+            <h4>Chef Principal</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Possimus esse quod eveniet ab adipisci.</p>
+        </div>
+        <hr />
+        <div className="contact">
+            <a href="#">Contacto</a>
+        </div>
+    </div>
+
+    <div className="card">
+        <div className="head">
+            <div className="circle">
+                <div className="img-integrante">
+                    <img src={imagen3} alt="perfil del integrante"/>
+                </div>
+            </div>
+        </div>
+        <div className="description">
+            <h3>Gaston</h3>
+            <h4>Chef Principal</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Possimus esse quod eveniet ab adipisci.</p>
+        </div>
+        <hr />
+        <div className="contact">
+            <a href="#">Contacto</a>
+        </div>
+    </div>
+
+    <div className="card">
+        <div className="head">
+            <div className="circle">
+                <div className="img-integrante">
+                    <img src={imagen4} alt="perfil del integrante"/>
+                </div>
+            </div>
+        </div>
+        <div className="description">
+            <h3>Gaston</h3>
+            <h4>Chef Principal</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Possimus esse quod eveniet ab adipisci.</p>
+        </div>
+        <hr />
+        <div className="contact">
+            <a href="#">Contacto</a>
+        </div>
+    </div>
+
+    <div className="card">
+        <div className="head">
+            <div className="circle">
+                <div className="img-integrante">
+                    <img src={imagen5} alt="perfil del integrante"/>
+                </div>
+            </div>
+        </div>
+        <div className="description">
+            <h3>Gaston</h3>
+            <h4>Chef Principal</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Possimus esse quod eveniet ab adipisci.</p>
+        </div>
+        <hr />
+        <div className="contact">
+            <a href="#">Contacto</a>
+        </div>
+    </div>
+
 </>
 )
 }
