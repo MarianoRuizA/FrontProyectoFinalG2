@@ -1,7 +1,36 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: blue;
+    background-color: #fad9d8;
 }
+
+h3{
+    color: #950101;
+}
+
+.divGaleria {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+figure {
+    max-height: 500px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+img {
+    object-fit: cover;
+    max-width: 100%;
+}
+
+
+/* @media (min-width: 500px) and (max-width: 575px){
+    img{
+        
+    }
+} */
+
 
