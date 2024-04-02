@@ -50,7 +50,7 @@
     height: 150px;
     width: 150px;
     border-radius: 50%;
-    border: 6px solid #950101;
+    border: 6px solid #ff0000;
     object-fit: cover;
 }
 .content{
@@ -58,22 +58,24 @@
     text-align: center;
 }
 .content h3{
-    font-size: 27px;
+    font-size: 30px;
     margin-top: 10px;
+    font-weight: bolder;
     letter-spacing: 1.5px;
-    color: black;
+    color:#950101;
 }
 .content h4{
-    font-size: 17px;
+    font-size: 16px;
     margin-top: 10px;
     letter-spacing: 1.5px;
-    color: black;
+    font-weight: bold;
+    color: #6a6a6a;
 }
 .content p{
     font-size: 15px;
     margin: 16px 0px;
     line-height: 1.5;
-    color: black;
+    color: #6c6c6c;
 }
 .social{
     margin-top: 10px;
