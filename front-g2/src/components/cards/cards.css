@@ -5,68 +5,75 @@
     box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
 }
-body{
+.team-section{
+    width: 100%;
+}
+.container{
+    width: 80%;
+    margin: auto;
+}
+.row{
+    width: 60%;
+    margin: auto;
+}
+.title{
+    text-align: center;
+    margin-top: 50px;
+}
+.title h2{
+    font-size: 35px;
+    letter-spacing: 1.5px;
+    color: black;
+}
+.team-card{
+   width: 100%;
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 40px;
+   margin-top: 50px;
+}
+.team-card .card{
+    width: 100%;
+    background-color: #ffff;
     display: flex;
-    align-items: center;
     justify-content: center;
-    min-height: 100vh;
-    background-color:  #fad9d8;
-    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    cursor: pointer;
 }
-.card{
-    position: relative;
-    width: 300px;
-    height: 400px;
-    background: #fff;
-    border-radius: 5px;
-    overflow: hidden;
-    margin: 15px 20px;
+.team-card .card:hover{
+    background-color: #f3f3f3;
+    transition: 0.3s;
 }
-.head{
-    height: 125px;
-    width: 100%;
-    position: relative;
-}
-.circle{
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    background: #950101;
-    bottom: 5px;
-}
-.img-integrante{
-    width: 150px;
+.img-section img{
     height: 150px;
-    position: absolute;
-    background: #fff;
-    padding: 5px;
+    width: 150px;
     border-radius: 50%;
-    left: 50%;
-    bottom: -55px;
-    transform: translate(-50%);
-}
-.img-integrante img{
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
+    border: 6px solid #950101;
     object-fit: cover;
 }
-.card .description{
-    height: 200px;
-    padding: 40px 10px 10px 10px;
+.content{
+    width: 100%;
     text-align: center;
 }
-.card .description h3{
-    font-size: 30px;
-    font-weight: bold;
-}
-.card .description h4{
-    font-size: 20px;
-}
-.card .description p{
+.content h3{
+    font-size: 27px;
     margin-top: 10px;
+    letter-spacing: 1.5px;
+    color: black;
+}
+.content h4{
+    font-size: 17px;
+    margin-top: 10px;
+    letter-spacing: 1.5px;
+    color: black;
+}
+.content p{
     font-size: 15px;
+    margin: 16px 0px;
+    line-height: 1.5;
+    color: black;
 }
 .contact{
     width: 100%;
@@ -87,6 +94,13 @@ body{
 .contact a:hover{
     background: #ff0000;
 }
-
-
-
+@media screen and (max-width: 900px){
+    .team-card{
+    grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (max-width: 768px){
+    .team-card{
+    grid-template-columns: 1fr;
+    }
+}
