@@ -1,4 +1,6 @@
 import './cards.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
 const CardsGrupo = () => {
   return (
@@ -23,7 +25,7 @@ const CardsGrupo = () => {
                         Doloribus voluptates ducimus laudantium nam nemo accusantium ipsa!</p>
                     </div>
                     <div className="contact">
-                        <a href="#">Contacto</a>
+                    <FontAwesomeIcon icon={faEnvelope} />
                     </div>
                 </div>
 
