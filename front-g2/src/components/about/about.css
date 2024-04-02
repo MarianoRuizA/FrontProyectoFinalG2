@@ -6,7 +6,7 @@
     font-family: "Montserrat", sans-serif;
 }
 body{
-    background-color: #fad9d8;
+   background-color: #fad9d8;
 }
 .seccion{
     width: 100%;
@@ -39,13 +39,15 @@ body{
 }
 .contenido-nosotros h3{
     margin-top: 20px;
-    color: #5d5d5d;
+    color: #6c6c6c;
+    font-weight: bold;
     font-size: 20px;
 }
 .contenido-nosotros p{
     margin-top: 10px;
     font-size: 18px;
     line-height: 1.5;
+    color:  #6c6c6c;
 }
 @media screen and (max-width: 768px) {
     .contenedor{

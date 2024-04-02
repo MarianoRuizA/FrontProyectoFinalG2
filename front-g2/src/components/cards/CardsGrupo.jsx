@@ -37,8 +37,8 @@ const CardsGrupo = () => {
                     </div>
                     <div className="content">
                         <h3>Luciano</h3>
-                        <h4>Administrador</h4>
-                        <p>"Experiencias gastronómicas excepcionales, servicio impecable."</p>
+                        <h4>Recursos Humanos</h4>
+                        <p>"Nuestro talento, nuestro activo; cultivando un equipo, forjando éxito."</p>
                     </div>
                     <div className="social">
                     <a href="#"><FontAwesomeIcon icon={faInstagram}/></a>
@@ -54,8 +54,8 @@ const CardsGrupo = () => {
                     </div>
                     <div className="content">
                         <h3>Mariano</h3>
-                        <h4>Dj</h4>
-                        <p>"La música es mi lenguaje, las pistas son mi historia."</p>
+                        <h4>Marketing</h4>
+                        <p>"Ideas que inspiran, estrategias que triunfan."</p>
                     </div>
                     <div className="social">
                     <a href="#"><FontAwesomeIcon icon={faInstagram}/></a>
