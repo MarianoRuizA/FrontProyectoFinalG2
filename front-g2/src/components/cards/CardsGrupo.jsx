@@ -22,12 +22,11 @@ const CardsGrupo = () => {
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                         Doloribus voluptates ducimus laudantium nam nemo accusantium ipsa!</p>
                     </div>
-                    <hr />
                     <div className="contact">
                         <a href="#">Contacto</a>
                     </div>
                 </div>
-                
+
                 <div className="card">
                     <div className="img-section">
                         <img src="src/assets/img/integrante2.png" alt="perfil"/>
@@ -38,7 +37,6 @@ const CardsGrupo = () => {
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                         Doloribus voluptates ducimus laudantium nam nemo accusantium ipsa!</p>
                     </div>
-                    <hr />
                     <div className="contact">
                         <a href="#">Contacto</a>
                     </div>
@@ -54,7 +52,6 @@ const CardsGrupo = () => {
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                         Doloribus voluptates ducimus laudantium nam nemo accusantium ipsa!</p>
                     </div>
-                    <hr />
                     <div className="contact">
                         <a href="#">Contacto</a>
                     </div>
@@ -70,7 +67,6 @@ const CardsGrupo = () => {
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                         Doloribus voluptates ducimus laudantium nam nemo accusantium ipsa!</p>
                     </div>
-                    <hr />
                     <div className="contact">
                         <a href="#">Contacto</a>
                     </div>
@@ -86,13 +82,11 @@ const CardsGrupo = () => {
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                         Doloribus voluptates ducimus laudantium nam nemo accusantium ipsa!</p>
                     </div>
-                    <hr />
                     <div className="contact">
                         <a href="#">Contacto</a>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </>
