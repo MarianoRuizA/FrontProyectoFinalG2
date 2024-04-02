@@ -9,7 +9,7 @@ const CardsGrupo = () => {
         <div className="container">
             <div className="row">
                 <div className="title">
-                    <h2>Equipo</h2>
+                    <h2> Nuestro Equipo</h2>
                 </div>
             </div>
 
@@ -24,11 +24,11 @@ const CardsGrupo = () => {
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                         Doloribus voluptates ducimus laudantium nam nemo accusantium ipsa!</p>
                     </div>
-                    <div className="contact">
-                    <FontAwesomeIcon icon={faInstagram} />
-                    <FontAwesomeIcon icon={faLinkedin} />
-                    <FontAwesomeIcon icon={faTwitter} />
-                    <FontAwesomeIcon icon={faFacebook} />
+                    <div className="social">
+                    <a href="#"><FontAwesomeIcon icon={faInstagram}/></a>
+                    <a href="#"><FontAwesomeIcon icon={faFacebook}/></a> 
+                    <a href="#"><FontAwesomeIcon icon={faLinkedin}/></a> 
+                    <a href="#"><FontAwesomeIcon icon={faTwitter}/></a> 
                     </div>
                 </div>
 
@@ -42,11 +42,11 @@ const CardsGrupo = () => {
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                         Doloribus voluptates ducimus laudantium nam nemo accusantium ipsa!</p>
                     </div>
-                    <div className="contact">
-                    <FontAwesomeIcon icon={faInstagram} />
-                    <FontAwesomeIcon icon={faLinkedin} />
-                    <FontAwesomeIcon icon={faTwitter} />
-                    <FontAwesomeIcon icon={faFacebook} />
+                    <div className="social">
+                    <a href="#"><FontAwesomeIcon icon={faInstagram}/></a>
+                    <a href="#"><FontAwesomeIcon icon={faFacebook}/></a> 
+                    <a href="#"><FontAwesomeIcon icon={faLinkedin}/></a> 
+                    <a href="#"><FontAwesomeIcon icon={faTwitter}/></a> 
                     </div>
                 </div>
 
@@ -60,11 +60,11 @@ const CardsGrupo = () => {
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                         Doloribus voluptates ducimus laudantium nam nemo accusantium ipsa!</p>
                     </div>
-                    <div className="contact">
-                    <FontAwesomeIcon icon={faInstagram} />
-                    <FontAwesomeIcon icon={faLinkedin} />
-                    <FontAwesomeIcon icon={faTwitter} />
-                    <FontAwesomeIcon icon={faFacebook} />
+                    <div className="social">
+                    <a href="#"><FontAwesomeIcon icon={faInstagram}/></a>
+                    <a href="#"><FontAwesomeIcon icon={faFacebook}/></a> 
+                    <a href="#"><FontAwesomeIcon icon={faLinkedin}/></a> 
+                    <a href="#"><FontAwesomeIcon icon={faTwitter}/></a> 
                     </div>
                 </div>
 
@@ -78,11 +78,11 @@ const CardsGrupo = () => {
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                         Doloribus voluptates ducimus laudantium nam nemo accusantium ipsa!</p>
                     </div>
-                    <div className="contact">
-                    <FontAwesomeIcon icon={faInstagram} />
-                    <FontAwesomeIcon icon={faLinkedin} />
-                    <FontAwesomeIcon icon={faTwitter} />
-                    <FontAwesomeIcon icon={faFacebook} />
+                    <div className="social">
+                    <a href="#"><FontAwesomeIcon icon={faInstagram}/></a>
+                    <a href="#"><FontAwesomeIcon icon={faFacebook}/></a> 
+                    <a href="#"><FontAwesomeIcon icon={faLinkedin}/></a> 
+                    <a href="#"><FontAwesomeIcon icon={faTwitter}/></a> 
                     </div>
                 </div>
 
@@ -96,11 +96,11 @@ const CardsGrupo = () => {
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                         Doloribus voluptates ducimus laudantium nam nemo accusantium ipsa!</p>
                     </div>
-                    <div className="contact">
-                    <FontAwesomeIcon icon={faInstagram} />
-                    <FontAwesomeIcon icon={faLinkedin} />
-                    <FontAwesomeIcon icon={faTwitter} />
-                    <FontAwesomeIcon icon={faFacebook} />
+                    <div className="social">
+                    <a href="#"><FontAwesomeIcon icon={faInstagram}/></a>
+                    <a href="#"><FontAwesomeIcon icon={faFacebook}/></a> 
+                    <a href="#"><FontAwesomeIcon icon={faLinkedin}/></a> 
+                    <a href="#"><FontAwesomeIcon icon={faTwitter}/></a> 
                     </div>
                 </div>
             </div>
