@@ -28,8 +28,9 @@ body{
 }
 .img-nosotros img{
     width: 100%;
-    height: auto;
-    margin-top: 25%;
+    height: 500px;
+    margin-top: 15%;
+    object-fit: cover;
 }
 .contenido-seccion .titulo{
     text-transform: uppercase;
@@ -48,6 +49,14 @@ body{
     font-size: 18px;
     line-height: 1.5;
     color:  #6c6c6c;
+}
+@media screen and (max-width: 1024px){
+    .img-nosotros img{
+        display: none;
+    }
+    .contenido-seccion{
+        width: 100%;
+    }
 }
 @media screen and (max-width: 768px) {
     .contenedor{
