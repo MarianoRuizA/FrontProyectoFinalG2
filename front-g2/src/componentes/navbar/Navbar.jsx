@@ -42,9 +42,7 @@ function Navbar() {
 					<a href="" className="link-underline">CONTACTO</a>
 					<a href="" className="link-underline">CARTA</a>
 					<a href="" className="link-underline">RESERVAS</a>
-					{/* <a onClick={handleShow}>
-						<img className="login-icon" src="src/img/login_icon.png" alt="Icono del login" />
-					</a> */}
+
 					{user ? (
 						<a className="link-login" onClick={() => logout()}>
 							CERRAR SESIÓN

@@ -1,6 +1,6 @@
-import { Button, Modal } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
 import Login from "../Login/Login";
-import './ModalLogin.css'
+import '../Login/Login.css'
 
 const ModalLogin = ({ show, handleClose }) => {
   return (
@@ -12,13 +12,11 @@ const ModalLogin = ({ show, handleClose }) => {
         <Login handleClose={handleClose} />
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={handleClose}>
-          Cerrar
-        </Button>
-        <Button variant="primary">Understood</Button>
+        <p>Si aún no te registraste, seguí los pasos <a href="/" className="link-registro">aquí</a>.</p>
       </Modal.Footer>
     </Modal>
   );
 };
 
 export default ModalLogin;
+ 

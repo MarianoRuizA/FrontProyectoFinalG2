@@ -2,8 +2,9 @@ import { useState, useContext } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { UsuariosProvider } from '../../context/UsuariosContext';
 import Swal from "sweetalert2";
+import './Login.css'
 
-const Login = ({handleClose}) => {
+const Login = ({ handleClose }) => {
 
   const [email, setEmail] = useState("")
   const [contraseña, setContraseña] = useState("")
@@ -22,7 +23,13 @@ const Login = ({handleClose}) => {
           text: "Inicio de sesión exitoso",
           icon: "success",
           confirmButtonText: "Aceptar",
-          timer: 1500,
+          timer: 2000,
+          customClass: {
+            confirmButton: 'confirm-button-class',
+            title: 'title-class',
+            icon: 'icon-class',
+            htmlContainer: 'custom-container'
+          }
         });
         localStorage.setItem("user", JSON.stringify(user));
         // navigate("/"); 
@@ -34,6 +41,12 @@ const Login = ({handleClose}) => {
           icon: "error",
           confirmButtonText: "Aceptar",
           timer: 2000,
+          customClass: {
+            confirmButton: 'confirm-button-class',
+            title: 'title-class',
+            icon: 'icon-class',
+            htmlContainer: 'custom-container'
+          }
         });
       }
     } catch (error) {
@@ -42,10 +55,11 @@ const Login = ({handleClose}) => {
   }
 
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit} className='form'>
       <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Email</Form.Label>
-        <Form.Control type="email"
+        <Form.Label><p className='text-email'>Email</p></Form.Label>
+        <Form.Control className='input-form'
+          type="email"
           name="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -53,19 +67,16 @@ const Login = ({handleClose}) => {
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Contraseña</Form.Label>
-        <Form.Control type="password"
-            value={contraseña}
-            onChange={(e) => setContraseña(e.target.value)}
-            name="contraseña"
-            placeholder="Contraseña" />
+        <Form.Label><p className='text-contraseña'>Contraseña</p></Form.Label>
+        <Form.Control className='input-form'
+          type="password"
+          value={contraseña}
+          onChange={(e) => setContraseña(e.target.value)}
+          name="contraseña"
+          placeholder="Contraseña" />
       </Form.Group>
 
-      <Form.Group className="mb-3" controlId="formBasicCheckbox">
-        <Form.Check type="checkbox" label="Recordarme" />
-      </Form.Group>
-
-      <Button variant="primary" type="submit">
+      <Button variant="primary" type="submit" className='btn-ingresar'>
         Ingresar
       </Button>
     </Form>
