@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    background-color: whitesmoke;
+}
+
+.contenedor-logo {
+    height: 35vh;
+    background-color: #3D0000;
+}
+
+.contenedor-logo {
+    width: 100%;
+    padding: 0 15px;
+    /* Ajusta el relleno según sea necesario */
+}
+
+figure {
+    height: 100%;
+    overflow: hidden;
+}
+
+.contenedor-logo img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+h3{
+    color: whitesmoke;
+}
