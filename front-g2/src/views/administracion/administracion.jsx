@@ -1,33 +1,29 @@
-import Swal from "sweetalert2"
+import { Button } from "react-bootstrap";
+import "./administracion.css"
+import { useState } from "react"
+import TablaUsuarios from "./tablas/tablaUsuarios"
+import TablaReservas from "./tablas/tablaReservas"
 
-const Administracion = () =>
-{
-   const eliminarFuncion = () =>
-   {
-    Swal.fire({
-        title: "¿Estás seguro de eliminar a NOMBRE?",
-        text: "¡No podrás revertir esta acción!",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "Sí, eliminar"
-      }).then((result) => {
-        if (result.isConfirmed) {
-          Swal.fire({
-            title: "Usuario eliminado",
-            text: "Usuario correctamente eliminado de la base de datos.",
-            icon: "success"
-          });
-        }
-      });
-   }
-    return(
-        <>
+
+const Administracion = () => {
+  const [opcion, setOpcion] = useState(1)
+  return (
+    <>
+      <main>
+        <section>
         <h1>Esto es admin</h1>
+          <div className="mb-5 ms-3">
+            <Button className="me-3 btnAdmin" onClick={()=>{setOpcion(1)}}>Usuarios</Button>
+            <Button className="btnAdmin" onClick={()=>{setOpcion(0)}}>Reservas</Button>
+          </div>
+        {opcion? (<TablaUsuarios/>):(<TablaReservas/>)
+        }
         
-        </>
-    )
+          
+        </section>
+      </main>
+    </>
+  )
 }
 
 export default Administracion

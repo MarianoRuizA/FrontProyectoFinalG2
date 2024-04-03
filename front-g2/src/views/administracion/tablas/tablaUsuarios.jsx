@@ -1,11 +1,13 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faPencilSquare, faTrash } from "@fortawesome/free-solid-svg-icons" 
+import { faCircleMinus, faPencilSquare, faTrash } from "@fortawesome/free-solid-svg-icons" 
 import { Table } from "react-bootstrap"
 
 
 const TablaUsuarios = () =>
 {
-    <Table hovered striped bordered>
+    return(
+
+        <Table hovered striped bordered className="tablaInfo">
             <thead>
                 
                 <th>ID</th>
@@ -18,14 +20,24 @@ const TablaUsuarios = () =>
                     <td>23</td>
                     <td>pepe</td>
                     <td>pepeelloro@gmail.com</td>
-                    <td className="d-flex justify-content-around">
-                        <FontAwesomeIcon icon={faPencilSquare}/>
+                    <td className="d-flex justify-content-around p-3">
+                        <a href="">
+                            <FontAwesomeIcon icon={faPencilSquare} className="iconEditar"/>
+                            </a> 
 
-                        <FontAwesomeIcon icon={faTrash}/>
+                            <a href="">
+
+                        <FontAwesomeIcon icon={faCircleMinus} className="iconSuspender"/>
+                            </a>
+                            <a href="">
+
+                        <FontAwesomeIcon icon={faTrash} className="iconEliminar"/>
+                            </a>
                     </td>
                 </tr>
             </tbody>
         </Table>
+        )
 }
 
-export default tablaUsuarios 
+export default TablaUsuarios 
