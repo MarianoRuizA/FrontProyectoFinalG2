@@ -1,7 +1,7 @@
 import { Container, Col } from "react-bootstrap"
 import './titulo.css'
 
-const Titulo = ({link, texto}) =>
+const Titulo = ({link, texto, nombre}) =>
 {
     return(
         <>
@@ -9,7 +9,7 @@ const Titulo = ({link, texto}) =>
         
 
             <Col className="d-flex justify-content-center align-items-center" id="tituloIzq"> 
-            <h1>RESERVAS
+            <h1>{nombre}
             </h1>
             </Col>
             <Col className="bg-success d-flex justify-content-center align-items-center">
