@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 const TarjetaIzq = () => {
     return (
         <>
-            <section class="section-container-izq row align-items-center pt-4 pb-2">
+            <section class="section-container-izq row align-items-center ">
                 <div class="col-md-6 order-md-1 p-0">
                     <figure class="image-container">
                         <img src="https://media.istockphoto.com/id/1159732074/es/foto/empanadas-argentinas-tradicionales-al-horno-con-boller%C3%ADa-salada-con-relleno-de-carne-de-res.jpg?s=612x612&w=0&k=20&c=Vg0HMT09V4gDqXDRQRLKpFSP2xmJ7PmO9WMlap4XdU4=" alt="" class="img-fluid w-100" />

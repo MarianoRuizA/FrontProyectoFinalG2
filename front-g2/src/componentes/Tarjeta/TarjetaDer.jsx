@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 const TarjetaDer = () => {
     return (
         <>
-            <section class="section-container-der row align-items-center pt-4 pb-2">
+            <section class="section-container-der row align-items-center ">
                 <div class="col-md-6 order-md-1">
                     <div class="section-content p-4">
                         <h3 class="pb-2">¡Te invitamos a disfrutar!</h3>
