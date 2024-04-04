@@ -7,7 +7,7 @@
 
 .footer{
  
-    background-image: url('https://cdn.tourcms.com/a/11676/4901/3/large.jpg')  ;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.678), rgba(24, 24, 24, 0.4)), url('https://cdn.tourcms.com/a/11676/4901/3/large.jpg')  ;
      background-size: 100% 100%;
      color: white;
   position: fixed;
@@ -89,7 +89,9 @@
     .footer{
         height: 100%;
         width: 100%;
-        background-size: 150%  100%   ;
+        background-size: cover  ;
+        
+        background-position: center;
         position:   initial;
     }
   }
