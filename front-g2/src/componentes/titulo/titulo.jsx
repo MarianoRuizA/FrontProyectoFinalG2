@@ -1,7 +1,7 @@
 import { Container, Col } from "react-bootstrap"
 import './titulo.css'
 
-const Titulo = () =>
+const Titulo = ({link, texto}) =>
 {
     return(
         <>
@@ -13,13 +13,9 @@ const Titulo = () =>
             </h1>
             </Col>
             <Col className="bg-success d-flex justify-content-center align-items-center">
-                <img src="https://doroitalianbar.com/wp-content/uploads/2021/08/179-1.jpg" alt="" />
+                <img src={link} alt={texto} />
             </Col>
            
-        </div>
-
-        <div>
-            esto es otro
         </div>
         </>
     )
