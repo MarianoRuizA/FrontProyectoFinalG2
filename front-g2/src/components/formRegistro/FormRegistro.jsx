@@ -4,7 +4,7 @@ import "./formRegistro.css"
 const FormRegistro = () => {
   return (
     <>
-    <Form>
+      <Form>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
         <Form.Control type="email" placeholder="Enter email" />
@@ -23,8 +23,9 @@ const FormRegistro = () => {
       <Button variant="primary" type="submit">
         Submit
       </Button>
-    </Form>
+      </Form>
     </>
   )
 }
+
 export default FormRegistro
