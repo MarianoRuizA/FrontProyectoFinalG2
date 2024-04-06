@@ -1,4 +1,4 @@
-import Rutas from './components/rutas/Rutas.JSX';
+import Rutas from './components/rutas/Rutas.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
