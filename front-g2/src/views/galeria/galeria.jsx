@@ -57,10 +57,10 @@ const Galeria = () => {
         }
     ]
     
-    const [indice, setIndice] = useState(0)
-    const handleSeleccion = (id) => {
-        setIndice(id)
-    }
+    // const [indice, setIndice] = useState(0)
+    // const handleSeleccion = (id) => {
+    //     setIndice(id)
+    // }
 
     return (
         <>
