@@ -1,6 +1,6 @@
 
 import './galeria.css'
-const Imagen = ({ link, nombre }) => {
+const Imagen = ({ indice, link, nombre }) => {
     return (
 
         <>
