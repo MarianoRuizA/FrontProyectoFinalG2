@@ -1,9 +1,8 @@
-import './App.css'
-import FormRegistro from './components/formRegistro/FormRegistro'
+import Rutas from './components/rutas/Rutas.JSX'
 
 function App() {
   <>
-   <FormRegistro />
+   <Rutas />
   </>
 }
 
