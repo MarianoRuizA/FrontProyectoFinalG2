@@ -1,5 +1,6 @@
 import { Card, Button, Form } from 'react-bootstrap';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from ""
 const FormRegistro = () => {
   return (
     <>
@@ -8,6 +9,7 @@ const FormRegistro = () => {
           <h2>Crea una cuenta</h2>
           <Form.Group>
             <Form.Label>Nombre</Form.Label>
+            <FontAwesomeIcon icon={faUser} />
             <Form.Control type='text'/>
           </Form.Group>
 
