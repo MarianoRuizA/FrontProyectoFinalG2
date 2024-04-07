@@ -7,7 +7,7 @@ const FormRegistro = () => {
   return (
     <>
       <Card className='m-5 p-5'>
-        <Form>
+        <Form className='conatiner'>
           <div className="title-header">
             <div className="title">Crea una cuenta</div>
             <div className="linea"></div>

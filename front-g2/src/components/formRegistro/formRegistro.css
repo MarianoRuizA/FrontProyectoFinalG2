@@ -10,10 +10,13 @@ body{
     height: 100vh;
     background-color: blanchedalmond;
 }
+.container{
+    width: 90%; 
+    max-width: 600px;
+    margin: 0 auto;
+}
 .title-header{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    text-align: center;
 }
 .title{
     font-size: 35px;
@@ -25,12 +28,10 @@ body{
     height: 4px;
     background: red;
     border-radius: 9px;
+    margin: auto;
 } 
 .inputs{
     margin-top: 55px;
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
 }
 .input{
     border-radius: 6px;
@@ -44,8 +45,7 @@ body{
    margin: 0px 20px;
 }
 .input .space{
-    height: 40px;
-    width: 94%;
+    flex: 1;
     background: transparent;
     border: none;
     outline: none;
@@ -55,13 +55,11 @@ body{
 .submit-container{
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
     margin: 40px auto;
 }
-.submit{
-    display: flex;
-    gap: 30px;
+.submit button{
+    margin-right: 15px;
+    margin-top: 40px;
     width: 200px;
     height: 50px;
     border-radius: 50px;
