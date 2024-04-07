@@ -1,9 +1,9 @@
-import Rutas from './components/rutas/Rutas.jsx';
-import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Registro from "../src/views/registro/Registro";
 
 function App() {
   <>
-   <Rutas />
+   <Registro />
   </>
 }
 

@@ -1,5 +1,4 @@
 import { Button, Form } from 'react-bootstrap';
-import "./formRegistro.css"
 
 const FormRegistro = () => {
   return (
