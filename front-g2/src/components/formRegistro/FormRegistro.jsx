@@ -1,29 +1,44 @@
 import { Card, Button, Form } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from ""
+import { faUser, faEnvelope, faLock} from '@fortawesome/free-solid-svg-icons';
+import "./formRegistro.css"
+
 const FormRegistro = () => {
   return (
     <>
       <Card className='m-5 p-5'>
         <Form>
-          <h2>Crea una cuenta</h2>
-          <Form.Group>
-            <Form.Label>Nombre</Form.Label>
-            <FontAwesomeIcon icon={faUser} />
-            <Form.Control type='text'/>
+          <div className="title-header">
+            <div className="title">Crea una cuenta</div>
+            <div className="linea"></div>
+          </div>
+          <Form.Group className='inputs'>
+            <div className="input">
+            <FontAwesomeIcon className='icons' icon={faUser} />
+            <Form.Control className='space' type='text' placeholder='Nombre'/>
+            </div>
           </Form.Group>
 
-          <Form.Group>
-            <Form.Label>Email</Form.Label>
-            <Form.Control type='email'/>
+          <Form.Group className='inputs'>
+            <div className="input">
+            <FontAwesomeIcon className='icons' icon={faEnvelope} />
+            <Form.Control className='space' type='email' placeholder='Email'/>
+            </div>
           </Form.Group>
 
-          <Form.Group>
-            <Form.Label>Contraseña</Form.Label>
-            <Form.Control type='password'/>
+          <Form.Group className='inputs'>
+            <div className="input">
+            <FontAwesomeIcon className='icons' icon={faLock} />
+            <Form.Control className='space' type='password' placeholder='Contraseña'/>
+            </div>
           </Form.Group>
 
-          <Button type='submit'>registrar</Button>
+          <div className="submit-container">
+           <div className="submit">
+             <Button type='submit'>registrar</Button>
+             <Button type='submit'>Login</Button>
+           </div>
+          </div>
 
         </Form>
       </Card>

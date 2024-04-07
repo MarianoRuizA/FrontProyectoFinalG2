@@ -5,3 +5,69 @@
     box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
 }
+body{
+    margin: 0;
+    height: 100vh;
+    background-color: blanchedalmond;
+}
+.title-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.title{
+    font-size: 35px;
+    font-weight: 700;
+    color: black;
+}
+.linea{
+    width: 23%;
+    height: 4px;
+    background: red;
+    border-radius: 9px;
+} 
+.inputs{
+    margin-top: 55px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.input{
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    background: #eaeaea;
+    height: 60px;
+
+}
+.input .icons{
+   margin: 0px 20px;
+}
+.input .space{
+    height: 40px;
+    width: 94%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #797979;
+    font-size: 18px;
+}
+.submit-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 40px auto;
+}
+.submit{
+    display: flex;
+    gap: 30px;
+    width: 200px;
+    height: 50px;
+    border-radius: 50px;
+    background-color: bisque;
+    color: black;
+    font-size: 19px;
+    font-weight: 700;
+    cursor: pointer;
+}
