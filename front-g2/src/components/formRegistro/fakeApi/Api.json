@@ -1,0 +1,18 @@
+{
+    "usuarios": [
+      {
+        "id": "42e87d82-f0bf-4427-b29f-dc77fff851dd",
+        "nombre": "Bautista ",
+        "apellido": "bloweed",
+        "email": "bauti@gmail.com",
+        "admin": false
+      },
+      {
+        "id": "d98ad86b-d773-4642-85f2-0d166c58b87d",
+        "nombre": "Lourdes Rocio",
+        "apellido": "Reyna Mena",
+        "email": "reynalourdes91@gmail.com",
+        "admin": false
+      }
+    ]
+}

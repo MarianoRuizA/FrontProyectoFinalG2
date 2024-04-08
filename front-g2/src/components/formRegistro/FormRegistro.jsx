@@ -3,6 +3,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLock, faUser, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 const FormRegistro = () => {
+
+
+
+
+
   return (
     <div className="form-content">
       <form>
