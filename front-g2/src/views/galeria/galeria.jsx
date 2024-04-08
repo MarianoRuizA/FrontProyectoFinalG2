@@ -121,11 +121,10 @@ const Galeria = () => {
                     </button>
                 </div>
             }
-            <h1>Esto es galeria</h1>
             <main>
 
                 <section>
-                    <article className="m-3 p-3">
+                    <article className="m-5 p-3">
                         <h3>UN LUGAR QUE HABLA POR SI MISMO…</h3>
                         <h5>Te invitammos a conocer el diseño de una Gatronomia y un ambiente diferente.
                             Su historia, la calidad y la diferenciacion, lo convierten en una de las citas obligadas de la gastronomia de Tucumán.
