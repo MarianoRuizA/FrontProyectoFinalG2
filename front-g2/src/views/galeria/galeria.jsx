@@ -1,5 +1,7 @@
 
-import Imagen from "./imgGalerias"
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCircleLeft, faCircleRight, faCircleXmark } from '@fortawesome/free-solid-svg-icons'
 import "./galeria.css"
 import { useEffect, useState } from "react"
 
@@ -106,16 +108,16 @@ const Galeria = () => {
                     <img src={imagen.link} alt={imagen.nombre}/>
 
                     <button id="btnCerrar" onClick={() => handleOpciones("cerrar", imagen.i)}>
-                        X
+                    <FontAwesomeIcon icon={faCircleXmark} className='iconos'/>
                     </button>
 
                     <button id="btnAnterior" onClick={() => handleOpciones("ant", imagen.i)}
                     >
-                        anterior
+                        <FontAwesomeIcon icon={faCircleLeft} className='iconos'/>
                     </button>
 
                     <button id="btnSiguiente" onClick={() => handleOpciones("sig", imagen.i)}>
-                        siguiente
+                    <FontAwesomeIcon icon={faCircleRight} className='iconos'/>
                     </button>
                 </div>
             }

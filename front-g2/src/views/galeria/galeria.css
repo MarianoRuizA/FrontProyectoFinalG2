@@ -65,10 +65,14 @@ figure img:hover{
     max-width: 90%;
     max-height: 90%;
 }
-/* @media (min-width: 500px) and (max-width: 575px){
-    img{
-        
-    }
-} */
 
+button{
+    background: none;
+    font-size: xx-large;
+    border: 0cap;
+}
 
+.iconos{
+    color: white;
+    background-color: black;
+}
