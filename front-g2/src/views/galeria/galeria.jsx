@@ -1,22 +1,22 @@
 
 import Imagen from "./imgGalerias"
 import "./galeria.css"
-import CarouselGaleria from "./carousel/carousel"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 
 const Galeria = () => {
 
     const imagenes = [
-        { link: "https://doroitalianbar.com/wp-content/uploads/2021/08/MAE0944-1030x1030.jpg",
-          nombre: "Primer plato"
+        {
+            link: "https://doroitalianbar.com/wp-content/uploads/2021/08/MAE0944-1030x1030.jpg",
+            nombre: "Primer plato"
         },
         {
             link: "https://doroitalianbar.com/wp-content/uploads/2021/08/MAE5686-1-1030x1030.jpg",
             nombre: "Barra de servicios"
         },
         {
-            link: "https://doroitalianbar.com/wp-content/uploads/2021/08/MAE5032-1030x1030.jpg", 
+            link: "https://doroitalianbar.com/wp-content/uploads/2021/08/MAE5032-1030x1030.jpg",
             nombre: "Segundo plato"
         },
         {
@@ -28,7 +28,7 @@ const Galeria = () => {
             nombre: "Cuarto plato"
         },
         {
-            link: "https://doroitalianbar.com/wp-content/uploads/2021/08/MAE5057-1030x1030.jpg", 
+            link: "https://doroitalianbar.com/wp-content/uploads/2021/08/MAE5057-1030x1030.jpg",
             nombre: "Quinto plato"
         },
         {
@@ -56,14 +56,69 @@ const Galeria = () => {
             nombre: "Décimo plato"
         }
     ]
-    
-    // const [indice, setIndice] = useState(0)
-    // const handleSeleccion = (id) => {
-    //     setIndice(id)
-    // }
+
+    const [imagen, setImagen] = useState({ link: '', nombre: '', i: -1 })
+
+    const handleClick = (link, nombre, i) => {
+        setImagen({ link, nombre, i })
+    }
+
+    const handleOpciones = (opcion, i) => {
+        let estructura
+        let ultInd = (imagenes.length) - 1
+        if (opcion === "ant" && i === 0) {
+            estructura = { link: imagenes[ultInd].link, nombre: imagenes[ultInd].nombre, i: ultInd }
+        } else {
+            if (opcion === "ant") {
+                estructura = { link: imagenes[i - 1].link, nombre: imagenes[i - 1].nombre, i: i - 1 }
+            } else {
+                if (opcion === "sig" && i === (ultInd)) {
+                    estructura = { link: imagenes[0].link, nombre: imagenes[0].nombre, i: 0 }
+                } else {
+                    if (opcion === "sig") {
+                        estructura = { link: imagenes[i + 1].link, nombre: imagenes[i + 1].nombre, i: i + 1 }
+                    } else {
+                        estructura = { link: '', nombre: '', i: -1 }
+                    }
+                }
+            }
+
+        }
+        setImagen(estructura)
+    }
+    useEffect(() => {
+        const fondo = document.getElementById("divGaleria")
+        if (imagen.i === -1) {
+            fondo.style.display = "flex"
+        } else {
+            fondo.style.display = "none"
+        }
+        if (imagen.i === 0) {
+
+        }
+    }, [imagen])
 
     return (
         <>
+            {
+                imagen.link &&
+                <div id="divImagenCarousel">
+                    <img src={imagen.link} alt={imagen.nombre}/>
+
+                    <button id="btnCerrar" onClick={() => handleOpciones("cerrar", imagen.i)}>
+                        X
+                    </button>
+
+                    <button id="btnAnterior" onClick={() => handleOpciones("ant", imagen.i)}
+                    >
+                        anterior
+                    </button>
+
+                    <button id="btnSiguiente" onClick={() => handleOpciones("sig", imagen.i)}>
+                        siguiente
+                    </button>
+                </div>
+            }
             <h1>Esto es galeria</h1>
             <main>
 
@@ -77,16 +132,17 @@ const Galeria = () => {
                     </article>
                     <article>
 
-                        <div className="divGaleria" >
+                        <div id="divGaleria" >
 
-                            {imagenes.map ((foto, index) =>
+                            {imagenes.map((foto, index) =>
                             (
-                                <Imagen 
-                                key = {index}
-                                indice = {index}
-                                link = {foto.link}
-                                nombre = {foto.nombre}
-                                />
+                                <figure className="col-12 col-sm-6 col-lg-3">
+
+                                    <img src={foto.link}
+                                        alt={foto.nombre}
+                                        key={index}
+                                        onClick={() => handleClick(foto.link, foto.nombre, index)} />
+                                </figure>
                             ))}
 
                         </div>
@@ -95,8 +151,8 @@ const Galeria = () => {
 
                     </article>
                 </section>
-                
-                
+
+
             </main>
         </>
 
