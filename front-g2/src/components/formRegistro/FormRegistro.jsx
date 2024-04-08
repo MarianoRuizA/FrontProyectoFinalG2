@@ -10,17 +10,17 @@ const FormRegistro = () => {
         <div>
           <div className="input-container">
             <FontAwesomeIcon className="icono" icon={faUser} />
-            <input type="text" placeholder="Nombre" />
+            <input type="text" placeholder="Nombre" maxLength="70" />
           </div>
 
           <div className="input-container">
             <FontAwesomeIcon className="icono" icon={faEnvelope} />
-            <input type="email" placeholder="Email" />
+            <input type="email" placeholder="Email" maxLength="50" />
           </div>
 
           <div className="input-container">
             <FontAwesomeIcon className="icono" icon={faLock} />
-            <input type="password" placeholder="Contraseña" />
+            <input type="password" placeholder="Contraseña" maxLength="50" />
           </div>
 
           <a href="#">Termínos y Condiciones</a>
