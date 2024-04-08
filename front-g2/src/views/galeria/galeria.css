@@ -76,6 +76,7 @@ button{
 }
 
 .iconos{
+    font-size: larger;
     color: white;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0);
 }

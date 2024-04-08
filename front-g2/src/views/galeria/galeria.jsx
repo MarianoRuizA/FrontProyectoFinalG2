@@ -30,24 +30,24 @@ const Galeria = () => {
             nombre: "Cuarto plato"
         },
         {
-            link: "https://doroitalianbar.com/wp-content/uploads/2021/08/MAE5057-1030x1030.jpg",
+            link: "src/views/galeria/img/mas-mesas-de-bar.jpg",
             nombre: "Quinto plato"
         },
         {
             link: "https://doroitalianbar.com/wp-content/uploads/2021/08/MAE5113-1030x1030.jpg",
-            nombre: "Sexto plato"
+            nombre: "Quinto plato"
         },
         {
             link: "https://doroitalianbar.com/wp-content/uploads/2021/08/MAE5128-1030x1030.jpg",
-            nombre: "Séptimo plato"
+            nombre: "Sexto plato"
         },
         {
-            link: "https://doroitalianbar.com/wp-content/uploads/2021/08/IMG-8146-1030x1024.jpg",
-            nombre: "Octavo plato"
+            link: "src/views/galeria/img/bar-por-fuera.jpg",
+            nombre: "Arquitectura del restaurant"
         },
         {
             link: "src/views/galeria/img/noveno-plato.jpg",
-            nombre: "Noveno plato"
+            nombre: "Séptimo plato"
         },
         {
             link: "src/views/galeria/img/mesas-bar.jpg",
@@ -55,7 +55,23 @@ const Galeria = () => {
         },
         {
             link: "src/views/galeria/img/ultimo-plato.jpg",
+            nombre: "Octavo plato"
+        },
+        {
+            link: "https://doroitalianbar.com/wp-content/uploads/2021/08/IMG-8146-1030x1024.jpg",
+            nombre: "Noveno plato"
+        },
+        {
+            link: "https://doroitalianbar.com/wp-content/uploads/2021/08/MAE5057-1030x1030.jpg",
             nombre: "Décimo plato"
+        },
+        {
+            link: "src/views/galeria/img/picada.jpg",
+            nombre: "Picada de fiambre"
+        },
+        {
+            link: "src/views/galeria/img/plato-de-fideos.jpg",
+            nombre: "Onceavo plato"
         }
     ]
 
@@ -124,7 +140,7 @@ const Galeria = () => {
             <main>
 
                 <section>
-                    <article className="m-5 p-3">
+                    <article className="p-3">
                         <h3>UN LUGAR QUE HABLA POR SI MISMO…</h3>
                         <h5>Te invitammos a conocer el diseño de una Gatronomia y un ambiente diferente.
                             Su historia, la calidad y la diferenciacion, lo convierten en una de las citas obligadas de la gastronomia de Tucumán.
@@ -133,7 +149,7 @@ const Galeria = () => {
                     </article>
                     <article>
 
-                        <div id="divGaleria" >
+                        <div id="divGaleria">
 
                             {imagenes.map((foto, index) =>
                             (
