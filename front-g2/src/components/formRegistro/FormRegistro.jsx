@@ -11,7 +11,8 @@ const FormRegistro = () => {
           <input className="input" type="password" placeholder="Contraseña" />
           <button className="btn">registrate</button>
         </form>
-      </div>  
+      </div>
+      <img className="img-container" src="src/assets/img/img-ilustrativo.png" alt="img" />  
     </div>
   )
 }
