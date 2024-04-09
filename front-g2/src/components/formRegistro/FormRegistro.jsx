@@ -2,10 +2,12 @@ import "./formRegistro.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLock, faUser, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid"
 
 const FormRegistro = () => {
 
   const [registroUsers, setRegistroUsers] = useState ({
+    id: uuidv4(),
     nombre: "",
     email: "",
     contraseña: "",
@@ -14,7 +16,15 @@ const FormRegistro = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log("datos del usuario creado:", registroUsers)
     console.log("se hizo click en el boton")
+  }
+
+  const handleChange = (e) =>{
+    setRegistroUsers({
+      ...registroUsers,
+      [e.target.name]: e.target.value
+    })
   }
 
   return (
@@ -27,6 +37,7 @@ const FormRegistro = () => {
             <input type="text"
             value={registroUsers.nombre}
             name="nombre"
+            onChange={handleChange}
             placeholder="Nombre" maxLength="70" />
           </div>
 
@@ -35,6 +46,7 @@ const FormRegistro = () => {
             <input type="email" 
             value={registroUsers.email}
             name="email"
+            onChange={handleChange}
             placeholder="Email" maxLength="50" />
           </div>
 
@@ -43,6 +55,7 @@ const FormRegistro = () => {
             <input type="password" 
             value={registroUsers.contraseña}
             name="contraseña"
+            onChange={handleChange}
             placeholder="Contraseña" maxLength="50" />
           </div>
 
