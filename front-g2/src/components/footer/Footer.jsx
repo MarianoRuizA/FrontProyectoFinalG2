@@ -10,7 +10,7 @@ const Footer = () => {
   return (
 
    
-    <footer className='footer  '>
+    <footer className='footer montserrat-font '>
   
     <div className='footer_container' >
  
