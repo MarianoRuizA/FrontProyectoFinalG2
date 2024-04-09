@@ -101,6 +101,7 @@ form a{
     }
     .form-content{
         width: 100%;
+        overflow-x: hidden;
     }
     form{
         width: 100%;
