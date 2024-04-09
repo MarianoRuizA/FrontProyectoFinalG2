@@ -4,18 +4,23 @@ import { faLock, faUser, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 const FormRegistro = () => {
 
-
-
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("se hizo click en el boton")
+  }
 
 
   return (
     <div className="form-content">
-      <form>
+      <form onSubmit={handleSubmit}>
         <h2>Registro</h2>
         <div>
           <div className="input-container">
             <FontAwesomeIcon className="icono" icon={faUser} />
-            <input type="text" placeholder="Nombre" maxLength="70" />
+            <input type="text"
+            value={nombre}
+            name="nombre"
+            placeholder="Nombre" maxLength="70" />
           </div>
 
           <div className="input-container">
