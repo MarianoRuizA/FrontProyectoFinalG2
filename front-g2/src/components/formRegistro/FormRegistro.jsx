@@ -1,14 +1,21 @@
 import "./formRegistro.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLock, faUser, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { useState } from "react";
 
 const FormRegistro = () => {
+
+  const [registroUsers, setRegistroUsers] = useState ({
+    nombre: "",
+    email: "",
+    contraseña: "",
+    admin: false
+  })
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("se hizo click en el boton")
   }
-
 
   return (
     <div className="form-content">
@@ -18,19 +25,25 @@ const FormRegistro = () => {
           <div className="input-container">
             <FontAwesomeIcon className="icono" icon={faUser} />
             <input type="text"
-            value={nombre}
+            value={registroUsers.nombre}
             name="nombre"
             placeholder="Nombre" maxLength="70" />
           </div>
 
           <div className="input-container">
             <FontAwesomeIcon className="icono" icon={faEnvelope} />
-            <input type="email" placeholder="Email" maxLength="50" />
+            <input type="email" 
+            value={registroUsers.email}
+            name="email"
+            placeholder="Email" maxLength="50" />
           </div>
 
           <div className="input-container">
             <FontAwesomeIcon className="icono" icon={faLock} />
-            <input type="password" placeholder="Contraseña" maxLength="50" />
+            <input type="password" 
+            value={registroUsers.contraseña}
+            name="contraseña"
+            placeholder="Contraseña" maxLength="50" />
           </div>
 
           <a href="#">Termínos y Condiciones</a>
