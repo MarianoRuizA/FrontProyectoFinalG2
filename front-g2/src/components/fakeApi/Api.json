@@ -1,32 +1,6 @@
 {
   "usuarios": [
-    {
-      "id": "35b9a2c3-01d4-4b11-b80d-abae0570099b",
-      "nombre": "lara",
-      "email": "lara12@gmail.com",
-      "contraseña": "1234",
-      "admin": false
-    },
-    {
-      "id": "df229725-ef30-4b34-b81b-c9a59a94963d",
-      "nombre": "Bautista ",
-      "email": "bauti12@gmail.com",
-      "contraseña": "1234",
-      "admin": false
-    },
-    {
-      "id": "7499adc4-2f28-46f5-a557-a6c197f88a50",
-      "nombre": "Amanda",
-      "email": "amanda13@gmail.com",
-      "admin": false,
-      "contraseña": "1245"
-    },
-    {
-      "id": "db9130e9-7949-44b8-b675-5b9ac7457c57",
-      "nombre": "maria",
-      "email": "maria@gamil.com",
-      "admin": false,
-      "contraseña": "1267"
-    }
+    
+     
   ]
 }
