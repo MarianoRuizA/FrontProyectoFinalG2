@@ -1,7 +1,7 @@
 import "./formRegistro.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLock, faUser, faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { v4 as uuidv4 } from "uuid"
 import { UsuariosContext } from "../../context/ContextUsuarios";
 
@@ -20,6 +20,7 @@ const FormRegistro = () => {
 
   const handleSubmit = (e) => { //enviar datos actualizados.
     e.preventDefault();
+    createUsuario(registroUsers); //llamamos a la funcion (creada en el context) y le pasamos el estado creado en la linea 12.
   }
 
   const handleChange = (e) =>{ //recuperar datos del estado y capturar datos actualizados.
