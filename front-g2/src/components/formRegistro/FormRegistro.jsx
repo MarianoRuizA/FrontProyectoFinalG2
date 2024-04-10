@@ -2,7 +2,7 @@ import "./formRegistro.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLock, faUser, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { useState, useContext } from "react";
-import { v4 as uuidv4 } from "uuid"
+import { v4 as uuidv4 } from "uuid";
 import { UsuariosContext } from "../../context/ContextUsuarios";
 import Swal from 'sweetalert2'
 
@@ -17,7 +17,6 @@ const FormRegistro = () => {
     contraseña: "",
     admin: false
   })
-  console.log(registroUsers, "datos en cero desde el form")
 
   const handleSubmit = (e) => { //enviar datos actualizados.
     e.preventDefault();
