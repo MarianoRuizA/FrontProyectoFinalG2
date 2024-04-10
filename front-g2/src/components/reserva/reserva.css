@@ -16,6 +16,8 @@
     height: 400px;
     margin: auto;
     background-color: black;
+    border-color: brown;
+    
     color: white;
     border-radius: 30px;
     justify-content: center;
@@ -23,11 +25,45 @@
   }
   .conteiner_div{
     width: 100%;
-    height: 100%;
+    height: 250px;
     display: flex;
        flex-direction: column;
        justify-content: center;
     align-items: center;
     
+  }
+  .div_comensales{
+    display: flex;
+    border-radius: 100px;
+     align-items: center;
+    justify-content:   space-around;
+    color:rgb(0, 0, 0);
+   
+    width: 300px;
+    height: 80px;
+    
+  }
+  .comensales_cantidad{
+    background-color: white;
+    border-style:  solid;
+    border-color: #950101;
+    border-width: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    width: 150px;
+    height: 50px;
+  }
+  .comensales_button{
+    background-color: #950101;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 20px;
+    border: #950101;
   
+  }
+  .comensales_button:hover{
+    background-color:  #ff0000c9;
   }
