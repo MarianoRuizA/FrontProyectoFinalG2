@@ -6,21 +6,20 @@ import { v4 as uuidv4 } from "uuid"
 
 const FormRegistro = () => {
 
-  const [registroUsers, setRegistroUsers] = useState ({
+  const [registroUsers, setRegistroUsers] = useState ({ //guardar datos.
     id: uuidv4(),
     nombre: "",
     email: "",
     contraseña: "",
     admin: false
   })
+  console.log(registroUsers, "datos en cero desde el form")
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e) => { //enviar datos actualizados.
     e.preventDefault();
-    console.log("datos del usuario creado:", registroUsers)
-    console.log("se hizo click en el boton")
   }
 
-  const handleChange = (e) =>{
+  const handleChange = (e) =>{ //recuperar datos del estado y capturar datos actualizados.
     setRegistroUsers({
       ...registroUsers,
       [e.target.name]: e.target.value
