@@ -29,9 +29,9 @@ const FormRegistro = () => {
     })
     setRegistroUsers ({
       id: uuidv4(), 
-      nombre:"",
-      apellido:"",
-      email:"",
+      nombre: "",
+      email: "",
+      contraseña: "",
       admin: false
     })
   }
