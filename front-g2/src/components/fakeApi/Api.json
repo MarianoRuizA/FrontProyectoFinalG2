@@ -1,5 +1,11 @@
 {
-    "usuarios": [
-      
-    ]
+  "usuarios": [
+    {
+      "id": "35b9a2c3-01d4-4b11-b80d-abae0570099b",
+      "nombre": "lara",
+      "email": "lara12@gmail.com",
+      "contraseña": "1234",
+      "admin": false
+    }
+  ]
 }

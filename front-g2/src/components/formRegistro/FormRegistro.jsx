@@ -4,6 +4,7 @@ import { faLock, faUser, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { useState, useContext } from "react";
 import { v4 as uuidv4 } from "uuid"
 import { UsuariosContext } from "../../context/ContextUsuarios";
+import Swal from 'sweetalert2'
 
 const FormRegistro = () => {
 
@@ -21,6 +22,19 @@ const FormRegistro = () => {
   const handleSubmit = (e) => { //enviar datos actualizados.
     e.preventDefault();
     createUsuario(registroUsers); //llamamos a la funcion (creada en el context) y le pasamos el estado creado en la linea 12.
+    Swal.fire({ //validación, agregar siempre.
+      title: "Registración Exitosa",
+      text: "Usuario registrado con exito",
+      icon: "success",
+      confirmButtonText: "Aceptar"
+    })
+    setRegistroUsers ({
+      id: uuidv4(), 
+      nombre:"",
+      apellido:"",
+      email:"",
+      admin: false
+    })
   }
 
   const handleChange = (e) =>{ //recuperar datos del estado y capturar datos actualizados.
