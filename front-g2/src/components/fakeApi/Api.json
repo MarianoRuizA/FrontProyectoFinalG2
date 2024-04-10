@@ -1,6 +1,11 @@
 {
   "usuarios": [
-    
-     
+    {
+      "id": "338613ca-6098-48de-9b13-a21c42e45ba7",
+      "nombre": "benjamin",
+      "email": "benja@gmail.com",
+      "contraseña": "2345",
+      "admin": false
+    }
   ]
 }
