@@ -23,3 +23,18 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# macOS
+.DS_Store
+
+# Visual Studio Code
+.vscode/
+.vscode/*
+
+# Node.js / npm
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# React build
+/build/
