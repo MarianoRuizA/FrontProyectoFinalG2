@@ -1,14 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 * {
     margin: 0;
     padding: 0;
+    font-family: "Montserrat", sans-serif;
 }
 
 main {
-    background-color: whitesmoke;
+    background-color: white;
 }
 
 .contenedor-logo {
-    height: 35vh;
+    height: 20vh;
     background-color: #3D0000;
 }
 
@@ -28,6 +30,18 @@ figure {
     max-height: 100%;
 }
 
-h3{
-    color: whitesmoke;
+.contenedor-logo p{
+    color: white;
+}
+
+.separator {
+    height: 10px; /* Altura del separador */
+    background-color: whitesmoke; /* Color del separador */
+    margin: 20px 0; /* Espaciado entre el separador y los elementos adyacentes */
+}
+
+.separator {
+    border-top: 2px dashed black; /* Línea de puntos */
+    margin: 20px auto; /* Espaciado entre el separador y los elementos adyacentes */
+    width: 80%; /* Ancho del separador */
 }

@@ -1,5 +1,20 @@
-.section-container-der{
-    /* padding: 10rem 0; */
+/* En tu archivo TarjetaDer.css */
+.section-container-der {
+    margin: 3.5rem 1.5rem;
     background-color: #3D0000;
     color: white;
+    border: 1px solid rgba(128, 128, 128, 0.3); /* Borde gris oscuro suave */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave para el efecto de foco */
 }
+
+.section-container-der:hover {
+    transform: scale(1.01); /* Escala ligeramente la tarjeta */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada en el foco */
+}
+
+.image-container {
+    border-radius: 8px; /* Bordes redondeados para la imagen */
+}
+
