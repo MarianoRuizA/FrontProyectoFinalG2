@@ -7,7 +7,7 @@ const TablaUsuarios = () =>
 {
     return(
 
-        <Table hovered striped bordered className="tablaInfo">
+        <Table hovered striped bordered responsive className="tablaInfo">
             <thead>
                 
                 <th>ID</th>

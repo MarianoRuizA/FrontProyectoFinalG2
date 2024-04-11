@@ -7,7 +7,7 @@ const TablaReservas = () =>
     return(
         <>
 
-        <Table hovered striped bordered className="tablaInfo">
+        <Table striped bordered responsive className="tablaInfo">
             <thead>
                 
                 <th>ID</th>
