@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.modal {
+  color: black;
+}
+
+.modal-header {
+  background-color: white;
+  color: black;
+}
+
+.modal-body {
+  background-color: white;
+  color: black;
+}
