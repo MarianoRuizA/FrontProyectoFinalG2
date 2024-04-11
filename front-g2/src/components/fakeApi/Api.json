@@ -6,6 +6,13 @@
       "email": "benja@gmail.com",
       "contraseña": "2345",
       "admin": false
+    },
+    {
+      "id": "af0a82c5-7de6-4077-b8d1-c9687ea67d4b",
+      "nombre": "martin",
+      "email": "mar12@gmail.com",
+      "contraseña": "2345",
+      "admin": false
     }
   ]
 }
