@@ -23,29 +23,25 @@ const TablaUsuarios = () => {
             email: "",
             contraseña: "",
             isAdmin: false,
-            isSuspended: false 
+            isSuspended: false
         }
     )
 
-    const handleOpen = (item) =>
-    {
+    const handleOpen = (item) => {
         setUsuario(item)
         setShow(true)
     }
 
-    const handleClose = () =>
-    {
+    const handleClose = () => {
         setShow(false)
     }
 
-    const handleEliminar = (item) =>
-    {
+    const handleEliminar = (item) => {
         setUsuario(item)
         setSwal(true)
     }
-    
-    const handleSuspension = (item) =>
-    {
+
+    const handleSuspension = (item) => {
         setSuspension(!item.isSuspended)
         setUsuario(item)
         setSwal2(true)
@@ -54,17 +50,17 @@ const TablaUsuarios = () => {
 
     return (
         <>
-        {swal && <SwalDependiente usuarioEliminar={usuario} />}
-        {swal2 && <SwalDependiente usuarioSuspender={usuario} pedido={suspension}/>}
+            {swal && <SwalDependiente usuarioEliminar={usuario} setSwal={setSwal} setSwal2={setSwal2}/>}
+            {swal2 && <SwalDependiente usuarioSuspender={usuario} pedido={suspension} setSwal={setSwal} setSwal2={setSwal2}/>}
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>Modificar Usuario</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <FormRegistro  usuarioModificar={usuario} handleClose={handleClose} />
+                    <FormRegistro usuarioModificar={usuario} handleClose={handleClose} />
                 </Modal.Body>
-                
+
             </Modal>
 
             <Table hover striped bordered responsive className="tablaInfo">
@@ -73,34 +69,39 @@ const TablaUsuarios = () => {
                     <th>ID</th>
                     <th>NOMBRE</th>
                     <th>EMAIL</th>
+                    <th>ESTADO</th>
                     <th>OPCIONES</th>
                 </thead>
                 <tbody>
                     {usuarios.map((item) =>
                     (
                         <>
-                            <tr id="trUsuarios">
+                            <tr id="trUsuarios" className={item.isSuspended ? "filaSuspendida" : ""}>
                                 <td>{item.id}</td>
                                 <td>{item.nombre}</td>
                                 <td>{item.email}</td>
-                                <td className="d-flex justify-content-evenly p-3">
-                                    <a onClick={()=>{handleOpen(item)}}>
-                                        <FontAwesomeIcon icon={faPencilSquare} className="iconEditar" />
-                                    </a>
+                                <td>{item.isSuspended ? "Suspendido" : "Activo"}</td>
+                                <td id="tdIconos">
+                                    <div>
 
-                                    <a onClick={()=>{handleSuspension(item)}}>
+                                        <a onClick={() => { handleOpen(item) }}>
+                                            <FontAwesomeIcon icon={faPencilSquare} className="iconEditar" />
+                                        </a>
 
-                                        <FontAwesomeIcon icon={faCircleMinus} className="iconSuspender" />
-                                    </a>
-                                    <a onClick={()=>{handleEliminar(item)}}>
+                                        <a onClick={() => { handleSuspension(item) }}>
 
-                                        <FontAwesomeIcon icon={faTrash} className="iconEliminar" />
-                                    </a>
+                                            <FontAwesomeIcon icon={faCircleMinus} className="iconSuspender" />
+                                        </a>
+                                        <a onClick={() => { handleEliminar(item) }}>
+
+                                            <FontAwesomeIcon icon={faTrash} className="iconEliminar" />
+                                        </a>
+                                    </div>
                                 </td>
                             </tr>
                         </>
                     ))}
-                    
+
                 </tbody>
             </Table>
         </>

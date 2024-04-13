@@ -8,10 +8,17 @@ h1{
     margin: 1rem;
 }
 
-
 .btnAdmin{
     background-color: #950101;
     border-color: #950101;
+}
+
+
+#tdIconos div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .iconEliminar{
@@ -36,7 +43,7 @@ h1{
 }
 
 .tablaInfo td{
-    background-color: #fad9d8 !important;
+    background-color: #fad9d8;
 }
 
 .tablaInfo th{
@@ -44,4 +51,9 @@ h1{
     color:white;
     border: white solid 0.1rem;
     padding: 0.5rem;
+}
+
+.filaSuspendida td
+{
+    background-color: rgba(231, 195, 34, 0.63);
 }

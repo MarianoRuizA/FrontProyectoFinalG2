@@ -6,7 +6,7 @@
       "email": "martugutierrez166@gmail.com",
       "contraseña": "wuegfhiuf",
       "isAdmin": true,
-      "isSuspended": false
+      "isSuspended": true
     },
     {
       "id": "0239",
@@ -14,7 +14,7 @@
       "email": "Luchiii@hotmal.com",
       "contraseña": "wuegfhiuf",
       "isAdmin": false,
-      "isSuspended": true
+      "isSuspended": false
     }
   ],
   "reservas": [

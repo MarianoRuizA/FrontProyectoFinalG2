@@ -2,7 +2,7 @@ import { useContext, useEffect } from "react";
 import Swal from "sweetalert2";
 import { UsuarioProvider } from "../../context/usuariosContext";
 
-const SwalDependiente = ({ usuarioEliminar, usuarioSuspender, pedido }) => {
+const SwalDependiente = ({ usuarioEliminar, usuarioSuspender, pedido, setSwal, setSwal2 }) => {
 
     const { eliminarUsuario, modificarUsuario } = useContext(UsuarioProvider)
 
@@ -12,7 +12,8 @@ const SwalDependiente = ({ usuarioEliminar, usuarioSuspender, pedido }) => {
             Swal.fire({
                 title: pedido?"Suspensión exitosa":"Reanudación exitosa",
                 text: pedido?`Se suspendió al usuario ${usuarioSuspender.nombre}`:`Se reanudó al usuario ${usuarioSuspender.nombre}`,
-                icon: "success"
+                icon: "success",
+                didClose: setSwal2(false)
             });
         }
     }, [usuarioSuspender])
@@ -35,7 +36,8 @@ const SwalDependiente = ({ usuarioEliminar, usuarioSuspender, pedido }) => {
                     Swal.fire({
                         title: "Usuario eliminado",
                         text: "Usuario correctamente eliminado de la base de datos.",
-                        icon: "success"
+                        icon: "success",
+                        didClose: setSwal(false)
                     });
                 }
             })
