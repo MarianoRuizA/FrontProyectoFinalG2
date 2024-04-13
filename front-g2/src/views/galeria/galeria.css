@@ -12,6 +12,7 @@ h3{
     color: #950101;
 }
 
+
 #divGaleria {
     display: flex;
     flex-direction: row;
@@ -68,6 +69,7 @@ figure img:hover{
     max-width: 90%;
     max-height: 90%;
 }
+
 
 button{
     background: none;
