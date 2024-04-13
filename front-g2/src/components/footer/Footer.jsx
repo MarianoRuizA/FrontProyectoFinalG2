@@ -26,7 +26,7 @@ const Footer = () => {
             <div  ><span   style={{color: 'darkred'}}><FontAwesomeIcon style={{height:"30px"}} icon={faLocationDot} /></span><h2 className='border_button' >Sucursales </h2> </div>
             <div><h3>Chacabuco 474</h3></div>
            <div><h3>San Martin 821</h3></div>
-          <div><h3>24 de septiembre y congreso</h3></div>
+          <div><h3>24 de septiembre y Congreso</h3></div>
        </div>
        <div className='container_div  '>
           <div  ><span   style={{color: 'darkred'}}><FontAwesomeIcon style={{height:"30px"}} icon={faMessage} /></span><h2 className='border_button'>Contactate</h2></div>

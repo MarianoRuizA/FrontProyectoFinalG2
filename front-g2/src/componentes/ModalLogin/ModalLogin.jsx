@@ -1,8 +1,10 @@
 import { Modal } from "react-bootstrap";
 import Login from "../Login/Login";
 import '../Login/Login.css'
+import { useNavigate } from "react-router";
 
 const ModalLogin = ({ show, handleClose }) => {
+  const navegacion = useNavigate()
   return (
     <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false} className="modal">
       <Modal.Header closeButton className="modal-header">
@@ -12,7 +14,7 @@ const ModalLogin = ({ show, handleClose }) => {
         <Login handleClose={handleClose} />
       </Modal.Body>
       <Modal.Footer>
-        <p>Si aún no te registraste, seguí los pasos <a href="/" className="link-registro">aquí</a>.</p>
+        <p onClick={navegacion("/registro")}>Si aún no te registraste, seguí los pasos <a href="/" className="link-registro">aquí</a>.</p>
       </Modal.Footer>
     </Modal>
   );

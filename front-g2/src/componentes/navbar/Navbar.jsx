@@ -3,8 +3,10 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import ModalLogin from "../ModalLogin/ModalLogin";
 import { UsuariosProvider } from "../../context/UsuariosContext";
 import "./Navbar.css";
+import { useNavigate } from "react-router";
 
 function Navbar() {
+	const navegacion = useNavigate()
 	const navRef = useRef();
 
 	const showNavbar = () => {
@@ -38,10 +40,10 @@ function Navbar() {
 					<FaBars />
 				</button>
 				<nav ref={navRef}>
-					<a href="" className="link-underline">GALERÍA</a>
-					<a href="" className="link-underline">CONTACTO</a>
-					<a href="" className="link-underline">CARTA</a>
-					<a href="" className="link-underline">RESERVAS</a>
+					<a onClick={navegacion("/galeria")} className="link-underline">GALERÍA</a>
+					<a onClick={navegacion("/contacto")} className="link-underline">CONTACTO</a>
+					<a onClick={navegacion("/carta")} className="link-underline">CARTA</a>
+					<a onClick={navegacion("/reservas")}className="link-underline">RESERVAS</a>
 
 					{user ? (
 						<a className="link-login" onClick={() => logout()}>

@@ -22,3 +22,7 @@
 .button-container a:hover {
     color: #FF0000; /* Cambia el color del texto cuando el cursor está sobre el enlace */
 }
+
+a:hover{
+    cursor: pointer;
+}
