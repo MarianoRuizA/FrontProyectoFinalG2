@@ -1,6 +1,6 @@
 import { useState } from "react";
 import UsuariosContext from "./context/UsuariosContext";
-import Navbar from "./componentes/Navbar/Navbar";
+import Navbar from "./componentes/navbar/Navbar";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
