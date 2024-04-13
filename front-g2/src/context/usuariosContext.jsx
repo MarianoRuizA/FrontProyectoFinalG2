@@ -16,24 +16,16 @@ const UsuarioContext = ({children}) =>
             console.log("No funciona traerUsuarios", error)
         }
     }
+
     const modificarUsuario = async (usuario) =>
     {
         try {
             await axios.put(`http://localhost:8000/usuarios/${usuario.id}`, usuario)
             traerUsuarios()
                 } catch (error) {
-            console("No funciona modificarUsuario-->", error)
+            console.log("No funciona modificarUsuario-->", error)
         }
     }
-
-    // const suspenderUsuario = async (pedido) =>
-    // {       
-    //     try {
-    //         const response
-    //     } catch (error) {
-    //         console.log("No funciona suspenderUsuario-->", error)
-    //     }
-    // }
 
     const eliminarUsuario = async (usuario) =>
     {

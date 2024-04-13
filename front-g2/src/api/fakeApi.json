@@ -4,7 +4,15 @@
       "id": "46af",
       "nombre": "Martia del Pilar Gutierrez",
       "email": "martugutierrez166@gmail.com",
-      "isAdmin": 1
+      "isAdmin": 1,
+      "isSuspended": false
+    },
+    {
+      "id": "0239",
+      "nombre": "Luciana del Carlo",
+      "email": "Luchiii@hotmal.com",
+      "isAdmin": 0,
+      "isSuspended": true
     }
   ],
   "reservas": [
