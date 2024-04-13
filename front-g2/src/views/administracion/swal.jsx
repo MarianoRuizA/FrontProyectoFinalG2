@@ -2,13 +2,13 @@ import { useContext, useEffect } from "react";
 import Swal from "sweetalert2";
 import { UsuarioProvider } from "../../context/usuariosContext";
 
-const SwalDependiente = ({ usuarioEliminar, usuarioSuspender }) => {
+const SwalDependiente = ({ usuarioEliminar, usuarioSuspender, pedido }) => {
 
     const { eliminarUsuario, modificarUsuario } = useContext(UsuarioProvider)
 
     useEffect(() => {
         if (usuarioSuspender) {
-
+            usuarioSuspender.isSuspended = pedido
             modificarUsuario(usuarioSuspender)
             Swal.fire({
                 title: "Suspensión correcta",

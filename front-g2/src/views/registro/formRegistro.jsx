@@ -12,7 +12,9 @@ const FormRegistro = ({ usuarioModificar, handleClose }) => {
             id: usuarioModificar ? usuarioModificar.id : "",
             nombre: usuarioModificar ? usuarioModificar.nombre : "",
             email: usuarioModificar ? usuarioModificar.email : "",
-            isAdmin: usuarioModificar ? usuarioModificar.isAdmin : false
+            contraseña: usuarioModificar ? usuarioModificar.contraseña : "",
+            isAdmin: usuarioModificar ? usuarioModificar.isAdmin : false,
+            isSuspended: usuarioModificar ? usuarioModificar.isSuspended : false
         }
     )
 
@@ -36,7 +38,9 @@ const FormRegistro = ({ usuarioModificar, handleClose }) => {
                     id: "",
                     nombre: "",
                     email: "",
-                    isAdmin: false
+                    contraseña: "",
+                    isAdmin: false,
+                    isSuspended: false
                 }
             )
         }

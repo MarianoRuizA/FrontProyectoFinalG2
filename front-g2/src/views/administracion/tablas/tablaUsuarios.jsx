@@ -9,53 +9,56 @@ import SwalDependiente from "../swal"
 
 
 const TablaUsuarios = () => {
+
+    const { usuarios, modificarUsuario } = useContext(UsuarioProvider)
+
     const [swal, setSwal] = useState(false)
     const [swal2, setSwal2] = useState(false)
     const [show, setShow] = useState(false)
-    const [suspension, setSuspension] = useState(false)
+    // const [suspension, setSuspension] = useState(
+    //     {
+    //         isSuspended: false
+    //     }
+    // )
     const [usuario, setUsuario] = useState(
         {
             id: "",
             nombre: "",
             email: "",
-            isSuspended: false
+            contraseña: "",
+            isAdmin: false,
+            isSuspended: false 
         }
     )
-    const { usuarios, modificarUsuario } = useContext(UsuarioProvider)
 
     const handleOpen = (item) =>
     {
         setUsuario(item)
         setShow(true)
     }
+
     const handleClose = () =>
     {
         setShow(false)
     }
+
     const handleEliminar = (item) =>
     {
         setUsuario(item)
         setSwal(true)
     }
+    
     const handleSuspension = (item) =>
     {
-        (item.isSuspended)?setSuspension(false):setSuspension(true)
-        item.isSuspended = suspension
         setUsuario(item)
-        console.log("se suspendió", usuario)
         setSwal2(true)
     }
 
-    useEffect(()=>{
-        let fila = document.getElementById("trUsuarios")
-        if (suspension) {
-            fila.style.backgroundColor = "red"
-        }
-    }, [suspension])
+
     return (
         <>
         {swal && <SwalDependiente usuarioEliminar={usuario} />}
-        {swal2 && <SwalDependiente usuarioSuspender={usuario}/>}
+        {swal2 && <SwalDependiente usuarioSuspender={usuario} pedido={suspension}/>}
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>

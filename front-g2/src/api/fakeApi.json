@@ -2,16 +2,18 @@
   "usuarios": [
     {
       "id": "46af",
-      "nombre": "Martia del Pilar Gutierrez",
+      "nombre": "Martonaaaaa del Pilar Gutierrez",
       "email": "martugutierrez166@gmail.com",
-      "isAdmin": 1,
+      "contraseña": "wuegfhiuf",
+      "isAdmin": true,
       "isSuspended": false
     },
     {
       "id": "0239",
       "nombre": "Luciana del Carlo",
       "email": "Luchiii@hotmal.com",
-      "isAdmin": 0,
+      "contraseña": "wuegfhiuf",
+      "isAdmin": false,
       "isSuspended": true
     }
   ],
