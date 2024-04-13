@@ -3,7 +3,9 @@ import './reserva.css'
 import { Button } from 'react-bootstrap';
  import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
  import {faArrowLeft, faArrowRight} from "@fortawesome/free-solid-svg-icons"
- import DatePicker from 'react-datepicker';
+import Fecha from '../fecha/Fecha.jsx';
+ 
+
 import 'react-datepicker/dist/react-datepicker.css';
  
 const reserva = () => {
@@ -11,7 +13,7 @@ const [showSucursales, setShowSucursales]  = useState(true)
 const [showComensales, setShowComensales] = useState(false)
  const [showServicio, setShowServicio] = useState(false)
  const [showFecha, setShowFecha] = useState (false)
- const [selectedDate, setSelectedDate] = useState(new Date());
+
  const [cantidad, setCantidad] = useState(1)
  const [reserva, setReserva] = useState({
   sucursal: "",
@@ -105,15 +107,8 @@ const nextServicioFunction = (servicioElejido) =>{
       {showServicio ? <><h2>Elija el servicio que le gustaria recibir</h2>
             <Button onClick={(e)=>nextServicioFunction( e.target.textContent)} className='mb-3' style={{width: "50%", height: "50px"} } variant='light'>Almuerzo</Button>
             <Button onClick={(e)=>nextServicioFunction( e.target.textContent)} style={{width: "50%", height: "50px"} } variant='light'>Cena</Button></> : null}
-       {showFecha ?  <> <h2>Selecciona una fecha:</h2>
-      <DatePicker selected={selectedDate} 
-  
-      onChange={date => setSelectedDate(date)} 
-      minDate={new Date()} // Establece la fecha mínima al día actual
-      maxDate={ new Date().setMonth(new Date().getMonth() + 2)} // Establece la fecha máxima a dos meses después del día actual
-      showTimeSelect
-        dateFormat={"dd/MM/yyyy HH:mm"} />
-      {selectedDate && <p>Fecha seleccionada: {selectedDate.toLocaleDateString()} </p>}
+       {showFecha ?  <> 
+       <Fecha />
       </> :null}      
     </div> 
   

@@ -1,0 +1,12 @@
+.divFecha{
+    display: flex;
+    justify-content: center;
+      justify-items: "center";
+        border-style: "groove";
+        border-width: 1px;
+      border-radius : "100px";
+      width: "100px";
+       height: "100px";
+}
+/* Estilo personalizado para el input de react-datepicker */
+ 
