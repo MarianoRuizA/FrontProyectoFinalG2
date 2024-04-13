@@ -10,7 +10,7 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #fad9d8;
+    background-color: #fff;
 }
 .form-content{
     display: flex;
