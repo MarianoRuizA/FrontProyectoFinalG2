@@ -29,13 +29,13 @@ h5{
 }
 
 
-.btn {
+.banner .content-banner .btn {
     background-color: #FF0000 !important;
     border-color: transparent;
     color: white;
 }
 
-.btn:hover {
+.banner .content-banner .btn:hover {
     border-color: #950101;
 }
 
