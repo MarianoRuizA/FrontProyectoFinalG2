@@ -4,6 +4,7 @@ import Navbar from "./componentes/navbar/Navbar";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import PaginaPrincipal from "./views/paginaPrincipal/paginaPrincipal"
 
+import Footer from './components/footer/Footer.jsx'
 function App() {
   const [count, setCount] = useState(0);
 
@@ -13,6 +14,7 @@ function App() {
         <Navbar />
          <PaginaPrincipal>
          </PaginaPrincipal>
+         <Footer/>
       </UsuariosContext>
     </>
   );
