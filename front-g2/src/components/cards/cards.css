@@ -22,6 +22,7 @@
 }
 .title h2{
     font-size: 35px;
+    text-align: center;
     letter-spacing: 1.5px;
     color: black;
 }
@@ -34,7 +35,7 @@
 }
 .team-card .card{
     width: 100%;
-    background-color: #fff;
+    background-color: #950101;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -43,7 +44,7 @@
     cursor: pointer;
 }
 .team-card .card:hover{
-    background-color: #f3f3f3;
+    background-color: #6c6c6c;
     transition: 0.3s;
 }
 .img-section img{
@@ -62,20 +63,20 @@
     margin-top: 10px;
     font-weight: bolder;
     letter-spacing: 1.5px;
-    color: #950101;
+    color: #fff;
 }
 .content h4{
     font-size: 16px;
     margin-top: 10px;
     letter-spacing: 1.5px;
     font-weight: bold;
-    color: #6a6a6a;
+    color: #fff;
 }
 .content p{
     font-size: 15px;
     margin: 16px 0px;
     line-height: 1.5;
-    color: #6c6c6c;
+    color: #fff;
 }
 .social{
     margin-top: 10px;
@@ -83,7 +84,7 @@
 .social a{
     font-size: 23px;
     padding: 0px 10px;
-    color: #5b5b5b;
+    color: #fff;
 }
 
 @media screen and (max-width: 900px){

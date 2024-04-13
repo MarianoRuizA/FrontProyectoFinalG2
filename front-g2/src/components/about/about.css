@@ -6,7 +6,7 @@
     font-family: "Montserrat", sans-serif;
 }
 body{
-   background-color: #fad9d8;
+   background-color: #fff;
 }
 .seccion{
     width: 100%;
@@ -28,7 +28,7 @@ body{
 }
 .img-nosotros img{
     width: 100%;
-    height: 500px;
+    height: 450px;
     margin-top: 15%;
     object-fit: cover;
 }
@@ -40,7 +40,7 @@ body{
 }
 .contenido-nosotros h3{
     margin-top: 20px;
-    color: #6c6c6c;
+    color: black;
     font-weight: bold;
     font-size: 20px;
 }
@@ -48,7 +48,7 @@ body{
     margin-top: 10px;
     font-size: 18px;
     line-height: 1.5;
-    color:  #6c6c6c;
+    color:  black;
 }
 @media screen and (max-width: 1024px){
     .img-nosotros img{
