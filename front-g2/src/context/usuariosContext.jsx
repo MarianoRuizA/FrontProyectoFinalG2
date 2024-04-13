@@ -21,7 +21,6 @@ const UsuarioContext = ({children}) =>
     {
         try {
             await axios.put(`http://localhost:8000/usuarios/${usuario.id}`, usuario)
-            console.log("Se modificó el usuario _>>", usuario)
             traerUsuarios()
             } catch (error) {
             console.log("No funciona modificarUsuario-->", error)

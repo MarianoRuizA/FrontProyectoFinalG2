@@ -8,11 +8,10 @@ const SwalDependiente = ({ usuarioEliminar, usuarioSuspender, pedido }) => {
 
     useEffect(() => {
         if (usuarioSuspender) {
-            usuarioSuspender.isSuspended = pedido
-            modificarUsuario(usuarioSuspender)
+            modificarUsuario({...usuarioSuspender, isSuspended: pedido})
             Swal.fire({
-                title: "Suspensión correcta",
-                text: `Se suspendió al usuario ${usuarioSuspender.nombre}`,
+                title: pedido?"Suspensión exitosa":"Reanudación exitosa",
+                text: pedido?`Se suspendió al usuario ${usuarioSuspender.nombre}`:`Se reanudó al usuario ${usuarioSuspender.nombre}`,
                 icon: "success"
             });
         }

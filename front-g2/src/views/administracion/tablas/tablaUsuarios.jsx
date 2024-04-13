@@ -15,11 +15,7 @@ const TablaUsuarios = () => {
     const [swal, setSwal] = useState(false)
     const [swal2, setSwal2] = useState(false)
     const [show, setShow] = useState(false)
-    // const [suspension, setSuspension] = useState(
-    //     {
-    //         isSuspended: false
-    //     }
-    // )
+    const [suspension, setSuspension] = useState(false)
     const [usuario, setUsuario] = useState(
         {
             id: "",
@@ -50,6 +46,7 @@ const TablaUsuarios = () => {
     
     const handleSuspension = (item) =>
     {
+        setSuspension(!item.isSuspended)
         setUsuario(item)
         setSwal2(true)
     }
