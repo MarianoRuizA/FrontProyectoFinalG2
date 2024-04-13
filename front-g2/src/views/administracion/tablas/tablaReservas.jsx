@@ -6,7 +6,6 @@ const TablaReservas = () =>
 {
     return(
         <>
-
         <Table hover striped bordered responsive className="tablaInfo">
             <thead>
                 

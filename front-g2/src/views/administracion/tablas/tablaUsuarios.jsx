@@ -2,15 +2,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCircleMinus, faPencilSquare, faTrash } from "@fortawesome/free-solid-svg-icons"
 import { Table, Button } from "react-bootstrap"
 import { useContext, useEffect, useState } from "react"
-import { UsuarioProvider } from "../../../context/usuariosContext"
+import {UsuariosContext} from "../../../context/ContextUsuarios"
 import Modal from 'react-bootstrap/Modal';
-import FormRegistro from "../../registro/formRegistro"
 import SwalDependiente from "../swal"
+import FormRegistro from "../../../components/formRegistro/FormRegistro"
 
 
 const TablaUsuarios = () => {
 
-    const { usuarios, modificarUsuario } = useContext(UsuarioProvider)
+    const { usuarios, modificarUsuario } = useContext(UsuariosContext)
 
     const [swal, setSwal] = useState(false)
     const [swal2, setSwal2] = useState(false)
@@ -58,7 +58,7 @@ const TablaUsuarios = () => {
                     <Modal.Title>Modificar Usuario</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <FormRegistro usuarioModificar={usuario} handleClose={handleClose} />
+                    <FormRegistro usuarioModificar={usuario} handleClose={handleClose}/>
                 </Modal.Body>
 
             </Modal>
@@ -71,6 +71,7 @@ const TablaUsuarios = () => {
                     <th>ID</th>
                     <th>NOMBRE</th>
                     <th>EMAIL</th>
+                    <th>CARGO</th>
                     <th>ESTADO</th>
                     <th>OPCIONES</th>
                 </thead>
@@ -82,6 +83,7 @@ const TablaUsuarios = () => {
                                 <td>{item.id}</td>
                                 <td>{item.nombre}</td>
                                 <td>{item.email}</td>
+                                <td>{item.isAdmin ? "Administrador" : "Usuario"}</td>
                                 <td>{item.isSuspended ? "Suspendido" : "Activo"}</td>
                                 <td id="tdIconos">
                                     <div>

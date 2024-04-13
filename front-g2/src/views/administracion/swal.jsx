@@ -1,10 +1,11 @@
 import { useContext, useEffect } from "react";
 import Swal from "sweetalert2";
-import { UsuarioProvider } from "../../context/usuariosContext";
+import { UsuariosContext } from "../../context/ContextUsuarios";
+
 
 const SwalDependiente = ({ usuarioEliminar, usuarioSuspender, pedido, setSwal, setSwal2 }) => {
 
-    const { eliminarUsuario, modificarUsuario } = useContext(UsuarioProvider)
+    const { eliminarUsuario, modificarUsuario } = useContext(UsuariosContext)
 
     useEffect(() => {
         if (usuarioSuspender) {
