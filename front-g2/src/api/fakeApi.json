@@ -1,0 +1,30 @@
+{
+  "usuarios": [
+    {
+      "id": "46af",
+      "nombre": "Martonaaaaa del Pilar Gutierrez",
+      "email": "martugutierrez166@gmail.com",
+      "contraseña": "wuegfhiuf",
+      "isAdmin": true,
+      "isSuspended": true
+    },
+    {
+      "id": "0239",
+      "nombre": "Luciana del Carlo",
+      "email": "Luchiii@hotmal.com",
+      "contraseña": "wuegfhiuf",
+      "isAdmin": false,
+      "isSuspended": false
+    }
+  ],
+  "reservas": [
+    {
+      "usuario": "lucasg1980@mail.com",
+      "sucursal": "Rondeau y Buenos Aires",
+      "comensales": 4,
+      "fecha": "Abril 10",
+      "hora": "21:00",
+      "id": "4e2b"
+    }
+  ]
+}
