@@ -1,6 +1,7 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useContext } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import ModalLogin from "../ModalLogin/ModalLogin";
+import { UsuariosProvider } from "../../context/UsuariosContext";
 import "./Navbar.css";
 
 function Navbar() {
@@ -14,8 +15,12 @@ function Navbar() {
 
 	const [show, setShow] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+	const handleClose = () => setShow(false);
+	const handleShow = () => setShow(true);
+
+	const user = JSON.parse(localStorage.getItem("user"));
+
+	const { logout } = useContext(UsuariosProvider);
 
 	return (
 		<>
@@ -37,9 +42,17 @@ function Navbar() {
 					<a href="" className="link-underline">CONTACTO</a>
 					<a href="" className="link-underline">CARTA</a>
 					<a href="" className="link-underline">RESERVAS</a>
-					<a onClick={handleShow}>
-						<img className="login-icon" src="src/img/login_icon.png" alt="Icono del login" />
-					</a>
+
+					{user ? (
+						<a className="link-login" onClick={() => logout()}>
+							CERRAR SESIÓN
+						</a>
+					) : (
+						<a className="link-login" onClick={handleShow}>
+							{/* <img className="login-icon" src="src/img/login_icon.png" alt="Icono del login" /> */}
+							INICIAR SESIÓN
+						</a>
+					)}
 					<button
 						className="nav-btn nav-close-btn"
 						onClick={showNavbar}>

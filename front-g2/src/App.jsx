@@ -1,5 +1,6 @@
 import { useState } from "react";
-import Navbar from "./componentes/Navbar/Navbar";
+import UsuariosContext from "./context/UsuariosContext";
+import Navbar from "./componentes/navbar/Navbar";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import PaginaPrincipal from "./views/paginaPrincipal/paginaPrincipal"
 
@@ -8,10 +9,11 @@ function App() {
 
   return (
     <>
-      <Navbar />
-      <PaginaPrincipal>
-
-      </PaginaPrincipal>
+      <UsuariosContext>
+        <Navbar />
+         <PaginaPrincipal>
+         </PaginaPrincipal>
+      </UsuariosContext>
     </>
   );
 }
