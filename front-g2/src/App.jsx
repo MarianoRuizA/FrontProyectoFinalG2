@@ -1,16 +1,16 @@
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Rutas from './components/rutas/Rutas.jsx';
-import Error404 from "./views/error404/error404"
+ 
+ 
+import Nosotros from './views/nosotros/Nosotros.jsx';
 
 
 function App() {
 
   return (
     <>
-    <Rutas />
-      <Error404>
-      </Error404>
+      <Nosotros />
+       
     </>
   )
 }
