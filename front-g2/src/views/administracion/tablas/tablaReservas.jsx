@@ -14,7 +14,8 @@ const TablaReservas = () =>
                 <th>USUARIO</th>
                 <th>SUCURSAL</th>
                 <th>COMENSALES</th>
-                <th>FECHA Y HORA</th>
+                <th>FECHA</th>
+                <th>HORA</th>
                 <th>OPCIONES</th>
             </thead>
             <tbody>
@@ -24,12 +25,15 @@ const TablaReservas = () =>
                     <td>Chacabuco 474</td>
                     <td>6</td>
                     <td>Abril, 24
-                        21:00
                     </td>
-                    <td className="d-flex justify-content-around p-3">
+                    <td>21:00</td>
+                    <td id="tdIconos">
+                        <div>
+
                         <FontAwesomeIcon icon={faPencilSquare} className="iconEditar"/>
 
                         <FontAwesomeIcon icon={faTrash} className="iconEliminar"/>
+                        </div>
                     </td>
                 </tr>
             </tbody>

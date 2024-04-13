@@ -63,9 +63,11 @@ const TablaUsuarios = () => {
 
             </Modal>
 
+        {usuarios.length === 0?
+            (<h3>No hay usuarios para mostrar</h3>):
+            (
             <Table hover striped bordered responsive className="tablaInfo">
                 <thead>
-
                     <th>ID</th>
                     <th>NOMBRE</th>
                     <th>EMAIL</th>
@@ -104,6 +106,8 @@ const TablaUsuarios = () => {
 
                 </tbody>
             </Table>
+        )
+    }
         </>
     )
 }
