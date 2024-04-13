@@ -1,25 +1,20 @@
 {
-    "usuarios":[
-        {
-            "isAdmin": 0,
-            "nombre": "Lucas Galante Ortiz",
-            "email": "lucasg1980@mail.com",
-            "contraseña": "1234567890"
-        },
-        {
-            "isAdmin": 1,
-            "nombre": "Martina del Pilar Gutierrez",
-            "email": "martugutierrez166@gmail.com",
-            "contraseña": "0987654321"
-        }        
-    ],
-    "reservas":[
-        {
-            "usuario": "lucasg1980@mail.com",
-            "sucursal": "Rondeau y Buenos Aires",
-            "comensales": 4,
-            "fecha": "Abril 10",
-            "hora": "21:00"
-        }
-    ]
+  "usuarios": [
+    {
+      "id": "46af",
+      "nombre": "Martia del Pilar Gutierrez",
+      "email": "martugutierrez166@gmail.com",
+      "isAdmin": 1
+    }
+  ],
+  "reservas": [
+    {
+      "usuario": "lucasg1980@mail.com",
+      "sucursal": "Rondeau y Buenos Aires",
+      "comensales": 4,
+      "fecha": "Abril 10",
+      "hora": "21:00",
+      "id": "4e2b"
+    }
+  ]
 }

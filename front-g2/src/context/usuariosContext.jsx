@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import axios from "axios"
 
+
 export const UsuarioProvider = createContext()
 
 const UsuarioContext = ({children}) =>
@@ -11,7 +12,6 @@ const UsuarioContext = ({children}) =>
         try {
             const response = await axios.get(`http://localhost:8000/usuarios`)
             setUsuarios(response.data)
-            console.log("funcona che")
         } catch (error) {
             console.log("No funciona traerUsuarios", error)
         }
@@ -20,6 +20,7 @@ const UsuarioContext = ({children}) =>
     {
         try {
             await axios.put(`http://localhost:8000/usuarios/${usuario.id}`, usuario)
+            traerUsuarios()
                 } catch (error) {
             console("No funciona modificarUsuario-->", error)
         }
@@ -30,14 +31,15 @@ const UsuarioContext = ({children}) =>
     //     try {
     //         const response
     //     } catch (error) {
-    //         console.log("No funciona suspenderUSuario-->", error)
+    //         console.log("No funciona suspenderUsuario-->", error)
     //     }
     // }
 
-    const eliminarUsuario = async (id) =>
+    const eliminarUsuario = async (usuario) =>
     {
         try{
-            await axios.delete(`http://localhost:8000/usuarios/${id}`)
+            await axios.delete(`http://localhost:8000/usuarios/${usuario.id}`)
+            traerUsuarios()
 
         }catch(error)
         {
