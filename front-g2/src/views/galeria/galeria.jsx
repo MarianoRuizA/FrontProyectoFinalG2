@@ -1,79 +1,15 @@
-
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleLeft, faCircleRight, faCircleXmark } from '@fortawesome/free-solid-svg-icons'
 import "./galeria.css"
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
+import { GaleriaProvider } from '../../context/galeriaContext'
+
 
 
 const Galeria = () => {
 
-    const imagenes = [
-        {
-            link: "https://doroitalianbar.com/wp-content/uploads/2021/08/MAE0944-1030x1030.jpg",
-            nombre: "Primer plato"
-        },
-        {
-            link: "https://doroitalianbar.com/wp-content/uploads/2021/08/MAE5686-1-1030x1030.jpg",
-            nombre: "Barra de servicios"
-        },
-        {
-            link: "https://doroitalianbar.com/wp-content/uploads/2021/08/MAE5032-1030x1030.jpg",
-            nombre: "Segundo plato"
-        },
-        {
-            link: "https://doroitalianbar.com/wp-content/uploads/2021/08/MAE0951-1-1030x1030.jpg",
-            nombre: "Tercer plato"
-        },
-        {
-            link: "https://doroitalianbar.com/wp-content/uploads/2021/08/MAE5196-1030x1030.jpg",
-            nombre: "Cuarto plato"
-        },
-        {
-            link: "src/views/galeria/img/mas-mesas-de-bar.jpg",
-            nombre: "Quinto plato"
-        },
-        {
-            link: "https://doroitalianbar.com/wp-content/uploads/2021/08/MAE5113-1030x1030.jpg",
-            nombre: "Quinto plato"
-        },
-        {
-            link: "https://doroitalianbar.com/wp-content/uploads/2021/08/MAE5128-1030x1030.jpg",
-            nombre: "Sexto plato"
-        },
-        {
-            link: "src/views/galeria/img/bar-por-fuera.jpg",
-            nombre: "Arquitectura del restaurant"
-        },
-        {
-            link: "src/views/galeria/img/noveno-plato.jpg",
-            nombre: "Séptimo plato"
-        },
-        {
-            link: "src/views/galeria/img/mesas-bar.jpg",
-            nombre: "Mesas del bar"
-        },
-        {
-            link: "src/views/galeria/img/ultimo-plato.jpg",
-            nombre: "Octavo plato"
-        },
-        {
-            link: "https://doroitalianbar.com/wp-content/uploads/2021/08/IMG-8146-1030x1024.jpg",
-            nombre: "Noveno plato"
-        },
-        {
-            link: "https://doroitalianbar.com/wp-content/uploads/2021/08/MAE5057-1030x1030.jpg",
-            nombre: "Décimo plato"
-        },
-        {
-            link: "src/views/galeria/img/picada.jpg",
-            nombre: "Picada de fiambre"
-        },
-        {
-            link: "src/views/galeria/img/plato-de-fideos.jpg",
-            nombre: "Onceavo plato"
-        }
-    ]
+    const {imagenes} = useContext(GaleriaProvider)
+    let ultInd = (imagenes.length) - 1
 
     const [imagen, setImagen] = useState({ link: '', nombre: '', i: -1 })
 
@@ -83,7 +19,6 @@ const Galeria = () => {
 
     const handleOpciones = (opcion, i) => {
         let estructura
-        let ultInd = (imagenes.length) - 1
         if (opcion === "ant" && i === 0) {
             estructura = { link: imagenes[ultInd].link, nombre: imagenes[ultInd].nombre, i: ultInd }
         } else {
@@ -121,19 +56,19 @@ const Galeria = () => {
             {
                 imagen.link &&
                 <div id="divImagenCarousel">
-                    <img src={imagen.link} alt={imagen.nombre}/>
+                    <img src={imagen.link} alt={imagen.nombre} />
 
                     <button id="btnCerrar" onClick={() => handleOpciones("cerrar", imagen.i)}>
-                    <FontAwesomeIcon icon={faCircleXmark} className='iconos'/>
+                        <FontAwesomeIcon icon={faCircleXmark} className='iconos' />
                     </button>
 
                     <button id="btnAnterior" onClick={() => handleOpciones("ant", imagen.i)}
                     >
-                        <FontAwesomeIcon icon={faCircleLeft} className='iconos'/>
+                        <FontAwesomeIcon icon={faCircleLeft} className='iconos' />
                     </button>
 
                     <button id="btnSiguiente" onClick={() => handleOpciones("sig", imagen.i)}>
-                    <FontAwesomeIcon icon={faCircleRight} className='iconos'/>
+                        <FontAwesomeIcon icon={faCircleRight} className='iconos' />
                     </button>
                 </div>
             }
