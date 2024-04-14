@@ -1,5 +1,6 @@
 import { Form, FormLabel, Button } from "react-bootstrap";
 import { useEffect, useState } from "react";
+import "./formReserva.css"
 
 const FormReserva = ({ reservaModificar, handleClose }) => {
 
@@ -49,7 +50,7 @@ const FormReserva = ({ reservaModificar, handleClose }) => {
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Comensales</Form.Label>
-                    <Form.Control type="number" minLength={1} maxLength={10}
+                    <Form.Control type="number" min={2} max={10}
                         name="comensales"
                         value={reserva.comensales}
                         onChange={handleChange} required>
@@ -58,6 +59,14 @@ const FormReserva = ({ reservaModificar, handleClose }) => {
                 <Form.Group>
                     <Form.Label>Fecha</Form.Label>
                     <Form.Control type="date"
+                        name="fecha"
+                        value={reserva.fecha}
+                        onChange={handleChange} required>
+                    </Form.Control>
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label>Hora</Form.Label>
+                    <Form.Control type="text"
                         name="fecha"
                         value={reserva.fecha}
                         onChange={handleChange} required>

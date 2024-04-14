@@ -5,7 +5,7 @@ import { useContext, useState } from "react"
 import {UsuariosContext} from "../../context/ContextUsuarios"
 import Modal from 'react-bootstrap/Modal';
 import SwalDependiente from "../../views/administracion/swal"
-import FormRegistro from "../form/formRegistro/FormRegistro"
+import FormUsuarios from "../form/formUsuarios/formUsuarios"
 
 
 const TablaUsuarios = () => {
@@ -58,7 +58,7 @@ const TablaUsuarios = () => {
                     <Modal.Title>Modificar Usuario</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <FormRegistro usuarioModificar={usuario} handleClose={handleClose}/>
+                    <FormUsuarios usuarioModificar={usuario} handleClose={handleClose}/>
                 </Modal.Body>
 
             </Modal>
