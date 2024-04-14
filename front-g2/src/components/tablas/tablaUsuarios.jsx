@@ -1,11 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCircleMinus, faPencilSquare, faTrash } from "@fortawesome/free-solid-svg-icons"
-import { Table, Button } from "react-bootstrap"
-import { useContext, useEffect, useState } from "react"
-import {UsuariosContext} from "../../../context/ContextUsuarios"
+import { Table } from "react-bootstrap"
+import { useContext, useState } from "react"
+import {UsuariosContext} from "../../context/ContextUsuarios"
 import Modal from 'react-bootstrap/Modal';
-import SwalDependiente from "../swal"
-import FormRegistro from "../../../components/formRegistro/FormRegistro"
+import SwalDependiente from "../../views/administracion/swal"
+import FormRegistro from "../form/formRegistro/FormRegistro"
 
 
 const TablaUsuarios = () => {

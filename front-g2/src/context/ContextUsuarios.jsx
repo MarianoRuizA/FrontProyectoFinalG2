@@ -13,7 +13,7 @@ const ContextUsuarios = ({ children }) => {
       setUsuarios(response.data) // se guardan los datos del http.
     }
     catch (error) {
-      console.log("error")
+      console.log("No funciona getUsuario-->", error)
     }
   }
 
@@ -21,19 +21,10 @@ const ContextUsuarios = ({ children }) => {
   const createUsuario = async (registroUsers) => {
     try {
       const response = await axios.post("http://localhost:8000/usuarios", registroUsers)
-      setUsuario([...usuarios, response.data]) //se recuperan los datos existentes y se agregan los nuevos usuarios.
+      setUsuarios([...usuarios, response.data]) //se recuperan los datos existentes y se agregan los nuevos usuarios.
     }
     catch {
-      console.log("error")
-    }
-  }
-
-  const traerUsuarios = async () => {
-    try {
-      const response = await axios.get(`http://localhost:8000/usuarios`)
-      setUsuarios(response.data)
-    } catch (error) {
-      console.log("No funciona traerUsuarios--> ", error)
+      console.log("No funciona createUsuario-->", error)
     }
   }
 

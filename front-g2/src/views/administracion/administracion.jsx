@@ -1,8 +1,8 @@
 import { Button } from "react-bootstrap";
 import "./administracion.css"
 import { useState } from "react"
-import TablaUsuarios from "./tablas/tablaUsuarios"
-import TablaReservas from "./tablas/tablaReservas"
+import TablaUsuarios from "../../components/tablas/tablaUsuarios"
+import TablaReservas from "../../components/tablas/tablaReservas"
 
 
 const Administracion = () => {

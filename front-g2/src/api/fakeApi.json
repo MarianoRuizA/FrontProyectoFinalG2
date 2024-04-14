@@ -2,7 +2,7 @@
   "usuarios": [
     {
       "id": "46af",
-      "nombre": "Maaaaaa del Pilar Gutierrez",
+      "nombre": "m",
       "email": "martugutierrez166@gmail.com",
       "contraseña": "wuegfhiuf",
       "isAdmin": true,
@@ -11,7 +11,7 @@
     {
       "id": "0239",
       "nombre": "Luciana del Carlo",
-      "email": "Luchiii@hotmal.com",
+      "email": "Luchiii@k.com",
       "contraseña": "wuegfhiuf",
       "isAdmin": false,
       "isSuspended": false
@@ -19,12 +19,13 @@
   ],
   "reservas": [
     {
-      "usuario": "lucasg1980@mail.com",
-      "sucursal": "Rondeau y Buenos Aires",
+      "id": "4e2b",
+      "usuario": "Lucas Gaon Bellona",
+      "email": "LucasGaon87@hotmail.com",
+      "sucursal": "Crisóstomo Álvarez y Buenos Aires",
       "comensales": 4,
-      "fecha": "Abril 10",
-      "hora": "21:00",
-      "id": "4e2b"
+      "fecha": "10/04/2024",
+      "hora": "21:00"
     }
   ]
 }
