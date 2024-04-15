@@ -4,7 +4,7 @@ import { UsuariosContext } from "../../../context/ContextUsuarios"
 import "../formReserva/formReserva.css"
 import Swal from "sweetalert2"
 
-const FormUsuarios = ({ usuarioModificar, handleClose }) => {
+const FormUsuarios = ({ usuarioModificar, handleClose, cantAdmins }) => {
     const { modificarUsuario } = useContext(UsuariosContext)
     const [usuario, setUsuario] = useState(
         {
@@ -46,6 +46,7 @@ const FormUsuarios = ({ usuarioModificar, handleClose }) => {
 
     const handleChange = (e) => {
         setUsuario({
+            ...usuario,
             [e.target.name]: e.target.value
         }
         )
@@ -72,13 +73,14 @@ const FormUsuarios = ({ usuarioModificar, handleClose }) => {
                 </Form.Control>
             </Form.Group>
 
-            {
+            
                 <Form.Group className="mb-3 mt-3">
                     <Form.Check
                         type="switch"
                         id="custom-switch"
                         label="Administrador"
                         checked={usuario.isAdmin}
+                        disabled={usuario.isAdmin && cantAdmins==1}
                         onChange={(e) => {
                             setUsuario({
                                 ...usuario,
@@ -87,9 +89,12 @@ const FormUsuarios = ({ usuarioModificar, handleClose }) => {
                         }} />
                 </Form.Group>
 
-            }
+            
 
-            <Button type="submit" className='btn-danger'>Guardar</Button>
+            <div className="divBoton">
+
+                <Button type="submit" className='btn-danger'>Guardar</Button>
+            </div>
         </Form>
     )
 }

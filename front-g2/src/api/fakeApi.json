@@ -2,18 +2,18 @@
   "usuarios": [
     {
       "id": "46af",
-      "nombre": "m",
+      "nombre": "martina ",
       "email": "martugutierrez166@gmail.com",
       "contraseña": "wuegfhiuf",
       "isAdmin": true,
-      "isSuspended": true
+      "isSuspended": false
     },
     {
       "id": "0239",
       "nombre": "Luciana del Carlo",
       "email": "Luchiii@k.com",
       "contraseña": "wuegfhiuf",
-      "isAdmin": false,
+      "isAdmin": true,
       "isSuspended": false
     }
   ],

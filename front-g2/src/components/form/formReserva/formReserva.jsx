@@ -26,7 +26,7 @@ const FormReserva = ({ reservaModificar, handleClose }) => {
             Swal.fire({
                 title: "Reserva modificada",
                 icon: "success"
-            })  
+            })
         } else {
             Swal.fire({
                 title: "Ningún cambio realizado",
@@ -93,7 +93,10 @@ const FormReserva = ({ reservaModificar, handleClose }) => {
                     </Form.Control>
                 </Form.Group>
 
-                <Button type="submit" className="btn-danger">Guardar</Button>
+                <div className="divBoton">
+
+                    <Button type="submit" className="btn-danger">Guardar</Button>
+                </div>
             </Form>
         </>
     )

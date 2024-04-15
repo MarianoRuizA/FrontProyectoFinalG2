@@ -5,8 +5,9 @@
     box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
 }
-.btn-danger{
-    position: relative;
-    left: 200px;
-    margin-top: 2rem;
+.divBoton{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    margin-top: 1rem;
 }

@@ -24,10 +24,10 @@ const SwalDependiente2 = ({ reservaEliminar, setSwal }) => {
                         title: "Reserva eliminada",
                         text: "Reserva correctamente eliminado de la base de datos.",
                         icon: "success",
-                        didClose: setSwal(false)
                     });
                 }
             })
+            setSwal(false)
     }, []
     )
 
