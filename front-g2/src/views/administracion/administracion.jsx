@@ -1,12 +1,17 @@
 import { Button } from "react-bootstrap";
 import "./administracion.css"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import TablaUsuarios from "../../components/tablas/tablaUsuarios"
 import TablaReservas from "../../components/tablas/tablaReservas"
 
 
 const Administracion = () => {
   const [opcion, setOpcion] = useState(1)
+
+  useEffect(() => {
+    document.title = "Administración";
+  }, []);
+
   return (
     <>
       <main>
