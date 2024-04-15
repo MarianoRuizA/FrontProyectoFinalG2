@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "./fecha.css"
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -6,6 +6,7 @@ import { Button   } from 'react-bootstrap';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+ 
 
 const Fecha = ({date}) => {
   const [selectedDate, setSelectedDate] = useState(new Date());
@@ -14,8 +15,8 @@ const Fecha = ({date}) => {
   // const minutosASumar = 60 - currentDate.getMinutes();
   // currentDate.setMinutes(currentDate.getMinutes() + minutosASumar);
   // const nuevaHoraSeteada = currentDate.toLocaleTimeString();
-
-
+const [index, setIndexInicio] = useState(0)
+const [indexFin, setIndexFin] = useState(7)
   
   const daySelected = selectedDate.getDay();
   const daysToAdd = daySelected === 0 ? 1 : 8 - daySelected;
@@ -71,41 +72,68 @@ const Fecha = ({date}) => {
    slidesToShow: 4,
    slidesToScroll: 1,
  };
-  return (
-    <>
-        {/*Div que muestra las fechas a elegir*/}
-        <Slider {...settings}>
-      {dates.map(date => {
-        const dateObject = new Date(date);
-        const day = dateObject.getDate();
-        const monthName = dateObject.toLocaleDateString('es-ES', { month: 'long' });
-
-        return (
-          <div key={day}>
-            <div style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              borderStyle: "groove",
-              borderRadius: "100px",
-              width: "100px",
-              height: "100px",
-              margin: "5px"
-            }}>
-              <Button style={{
-                background: "none",
-                borderColor: "none",
-                borderStyle: "hidden"
-              }} onClick={() => setFechaSeleccionada(dateObject)}>
-                <h2>{monthName}</h2>
-                <h4>{day}</h4>
-              </Button>
-            </div>
-          </div>
-        );
-      })}
-    </Slider>
-     
+ const   [elements, setElements] = useState([]);
+ useEffect(()=>{
+  const elementsToPush = []
+  for (let i = index; i < indexFin; i++) {
+    const dateObject = new Date(dates[i]);
+    const day = dateObject.getDate();
+    const monthName = dateObject.toLocaleDateString('es-ES', { month: 'long' });
+    elementsToPush.push( 
+      <div key={day}>
+        <div style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          borderStyle: "groove",
+          borderRadius: "100px",
+          width: "100px",
+          height: "100px",
+          margin: "5px"
+        }}>
+          <Button style={{
+            background: "none",
+            borderColor: "none",
+            borderStyle: "hidden"
+          }} onClick={() => setFechaSeleccionada(dateObject)}>
+            <h2>{monthName}</h2>
+            <h4>{day}</h4>
+          </Button>
+        </div>
+      </div>
+    ) 
+  //   setElements([elements.push(
+  //    <div key={day}>
+  //      <div style={{
+  //        display: "flex",
+  //        justifyContent: "center",
+  //        alignItems: "center",
+  //        borderStyle: "groove",
+  //        borderRadius: "100px",
+  //        width: "100px",
+  //        height: "100px",
+  //        margin: "5px"
+  //      }}>
+  //        <Button style={{
+  //          background: "none",
+  //          borderColor: "none",
+  //          borderStyle: "hidden"
+  //        }} onClick={() => setFechaSeleccionada(dateObject)}>
+  //          <h2>{monthName}</h2>
+  //          <h4>{day}</h4>
+  //        </Button>
+  //      </div>
+  //    </div>
+  //  )]) 
+   
+ }
+ setElements(elementsToPush);
+ },[index])
+return(<>
+<button onClick={() => {setIndexInicio(0), setIndexFin(7)}}>Volver</button>
+ <div style={{ display: "flex" }}>{elements}</div>;
+ <button onClick={() => {setIndexFin(15),setIndexInicio(8)}}>Avanzar</button> 
+     {console.log(dates.length)}
        
           <h2>Selecciona una fecha:</h2>
       <DatePicker 
@@ -126,9 +154,8 @@ const Fecha = ({date}) => {
   </DatePicker> 
       
        
-     
-    </>
-  );
- 
-}
+    
+
+  </>
+)}
 export default Fecha;
