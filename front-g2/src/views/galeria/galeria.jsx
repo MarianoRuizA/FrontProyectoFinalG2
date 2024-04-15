@@ -33,6 +33,11 @@ const Galeria = () => {
         setImagen(estructura)
     }
 
+    useEffect(() => {
+        document.title = "Galería de fotos";
+      }, []);
+    
+
 
     return (
 
