@@ -1,8 +1,12 @@
 import { Form, FormLabel, Button } from "react-bootstrap";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "./formReserva.css"
+import { ReservasContext } from "../../../context/ContextReservas";
+import Swal from "sweetalert2";
 
 const FormReserva = ({ reservaModificar, handleClose }) => {
+
+    const { modificarReserva } = useContext(ReservasContext)
 
     const [reserva, setReserva] = useState({
         id: reservaModificar.id,
@@ -14,7 +18,23 @@ const FormReserva = ({ reservaModificar, handleClose }) => {
         hora: reservaModificar.hora
     })
 
-
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        const cambiosRealizados = Object.keys(reserva).some(key => reserva[key] !== reservaModificar[key]);
+        if (cambiosRealizados) {
+            modificarReserva(reserva)
+            Swal.fire({
+                title: "Reserva modificada",
+                icon: "success"
+            })  
+        } else {
+            Swal.fire({
+                title: "Ningún cambio realizado",
+                icon: "question"
+            })
+        }
+        handleClose()
+    }
 
 
     const handleChange = (e) => {
@@ -27,12 +47,12 @@ const FormReserva = ({ reservaModificar, handleClose }) => {
 
     return (
         <>
-            <Form>
+            <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" >
                     <FormLabel>Usuario</FormLabel>
                     <Form.Control
                         type="text" placeholder="por ejemplo, Juan Lopez"
-                        name="nombre"
+                        name="usuario"
                         value={reserva.usuario}
                         onChange={handleChange} required minLength={3} maxLength={85}>
                     </Form.Control>
