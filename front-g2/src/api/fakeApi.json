@@ -19,13 +19,13 @@
   ],
   "reservas": [
     {
-      "id": "4e2b",
-      "usuario": "Lucas Gaon Bellona",
-      "email": "LucasGaon87@hotmail.com",
-      "sucursal": "Crisóstomo Álvarez y Buenos Aires",
-      "comensales": 4,
-      "fecha": "2024-04-10",
-      "hora": "21:00"
+      "id": "0007",
+      "usuario": "Sergio Agustín Valverdi",
+      "email": "sagustinvalverdi@gmail.com",
+      "sucursal": "San Martín 821",
+      "comensales": 8,
+      "fecha": "2024-05-08",
+      "hora": "12:00"
     }
   ]
 }

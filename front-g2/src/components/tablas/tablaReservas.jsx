@@ -4,12 +4,14 @@ import { faPencilSquare, faTrash } from "@fortawesome/free-solid-svg-icons"
 import { useContext, useState } from "react"
 import { ReservasContext } from "../../context/ContextReservas"
 import FormReserva from "../form/formReserva/formReserva"
+import SwalDependiente2 from "../../views/administracion/eliminarReserva/eliminarReserva"
 
 const TablaReservas = () => {
     const { reservas } = useContext(ReservasContext)
 
     const [reserva, setReserva] = useState()
     const [show, setShow] = useState(false)
+    const [swal, setSwal] = useState(false)
 
     const handleShow = (item) =>
     {
@@ -22,8 +24,16 @@ const TablaReservas = () => {
         setShow(false)
     }
 
+    const handleSwal = (item) =>
+    {
+        setSwal(true)
+        setReserva(item)
+    }
+
     return (
         <>
+        {swal && <SwalDependiente2 reservaEliminar={reserva} setSwal={setSwal}/>}
+
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>Modificar Usuario</Modal.Title>
@@ -60,7 +70,9 @@ const TablaReservas = () => {
                                         <FontAwesomeIcon icon={faPencilSquare} className="iconEditar" />
                                         </a>
 
+                                        <a onClick={()=>{handleSwal(item)}}>
                                         <FontAwesomeIcon icon={faTrash} className="iconEliminar" />
+                                        </a>
                                     </div>
                                 </td>
                             </tr>

@@ -1,6 +1,7 @@
 import { useContext, useEffect } from "react";
 import Swal from "sweetalert2";
-import { UsuariosContext } from "../../context/ContextUsuarios";
+import { UsuariosContext } from "../../../context/ContextUsuarios";
+
 
 
 const SwalDependiente = ({ usuarioEliminar, usuarioSuspender, pedido, setSwal, setSwal2 }) => {

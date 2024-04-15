@@ -4,8 +4,9 @@ import { Table } from "react-bootstrap"
 import { useContext, useState } from "react"
 import {UsuariosContext} from "../../context/ContextUsuarios"
 import Modal from 'react-bootstrap/Modal';
-import SwalDependiente from "../../views/administracion/swal"
+
 import FormUsuarios from "../form/formUsuarios/formUsuarios"
+import SwalDependiente from "../../views/administracion/swal/swal"
 
 
 const TablaUsuarios = () => {
