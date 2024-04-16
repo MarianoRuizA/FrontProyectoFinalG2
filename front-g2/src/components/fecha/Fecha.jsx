@@ -3,19 +3,15 @@ import "./fecha.css"
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { Button   } from 'react-bootstrap';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
+import {faArrowLeft, faArrowRight} from "@fortawesome/free-solid-svg-icons"
  
-
-const Fecha = ({date}) => {
+const Fecha = ( ) => {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const currentDate = new Date();
   const FechaMax = new Date();
-  // const minutosASumar = 60 - currentDate.getMinutes();
-  // currentDate.setMinutes(currentDate.getMinutes() + minutosASumar);
-  // const nuevaHoraSeteada = currentDate.toLocaleTimeString();
-const [index, setIndexInicio] = useState(0)
+   
+const [indexInicio, setIndexInicio] = useState(0)
 const [indexFin, setIndexFin] = useState(7)
   
   const daySelected = selectedDate.getDay();
@@ -54,7 +50,8 @@ const [indexFin, setIndexFin] = useState(7)
 
  const [fechaSeleccionada, setFechaSeleccionada] = useState(null);
 
- 
+ const [selectedTime, setSelectedTime] = useState(null);
+
  const twoWeeksLater = new Date();
  twoWeeksLater.setDate(today.getDate() + 14);
 
@@ -65,81 +62,62 @@ const [indexFin, setIndexFin] = useState(7)
    dates.push(new Date(d));
  }
 
- const settings = {
-   dots: true,
-   infinite: true,
-   speed: 500,
-   slidesToShow: 4,
-   slidesToScroll: 1,
- };
+  
  const   [elements, setElements] = useState([]);
  useEffect(()=>{
   const elementsToPush = []
-  for (let i = index; i < indexFin; i++) {
+  for (let i = indexInicio; i < indexFin; i++) {
     const dateObject = new Date(dates[i]);
     const day = dateObject.getDate();
+    const dayName= dateObject.toLocaleString('es-ES', { weekday: 'short' });
     const monthName = dateObject.toLocaleDateString('es-ES', { month: 'long' });
+    
+     
     elementsToPush.push( 
       <div key={day}>
-        <div style={{
+        <div className='divFecha' style={{
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
           borderStyle: "groove",
           borderRadius: "100px",
           width: "100px",
-          height: "100px",
-          margin: "5px"
+          height: "120px",
+          margin: " 5px",
+          
         }}>
           <Button style={{
             background: "none",
             borderColor: "none",
             borderStyle: "hidden"
           }} onClick={() => setFechaSeleccionada(dateObject)}>
-            <h2>{monthName}</h2>
-            <h4>{day}</h4>
+           
+            <h3>{dayName}.</h3>
+            <h4>{day} {monthName}</h4>
           </Button>
+         
         </div>
       </div>
     ) 
-  //   setElements([elements.push(
-  //    <div key={day}>
-  //      <div style={{
-  //        display: "flex",
-  //        justifyContent: "center",
-  //        alignItems: "center",
-  //        borderStyle: "groove",
-  //        borderRadius: "100px",
-  //        width: "100px",
-  //        height: "100px",
-  //        margin: "5px"
-  //      }}>
-  //        <Button style={{
-  //          background: "none",
-  //          borderColor: "none",
-  //          borderStyle: "hidden"
-  //        }} onClick={() => setFechaSeleccionada(dateObject)}>
-  //          <h2>{monthName}</h2>
-  //          <h4>{day}</h4>
-  //        </Button>
-  //      </div>
-  //    </div>
-  //  )]) 
-   
+  
  }
+
  setElements(elementsToPush);
- },[index])
+ },[indexInicio])
+ 
 return(<>
-<button onClick={() => {setIndexInicio(0), setIndexFin(7)}}>Volver</button>
- <div style={{ display: "flex" }}>{elements}</div>;
- <button onClick={() => {setIndexFin(15),setIndexInicio(8)}}>Avanzar</button> 
-     {console.log(dates.length)}
-       
-          <h2>Selecciona una fecha:</h2>
+ 
+ <div style={{ display: "flex" }}>{elements}</div>
+ 
+  {indexInicio ===7 ?
+  <>
+  <Button onClick={() => {setIndexInicio(0), setIndexFin(7)} }variant='light' className='my-2'><FontAwesomeIcon icon={faArrowLeft} /></Button> 
+    <div>
+    <h3>Seleccione otra fecha:</h3>
       <DatePicker 
-        selected={selectedDate}
+        selected={fechaSeleccionada  ? fechaSeleccionada: selectedDate}
         onChange={date => setSelectedDate(date)}
-        minDate={new Date()}
+        minDate={new Date() }
         maxDate={FechaMax.setMonth(new Date().getMonth() + 2)}
         timeIntervals={60}
         minTime={minTime}
@@ -150,10 +128,16 @@ return(<>
         show
         showTimeSelect
         showMonthDropdown>
-         
   </DatePicker> 
-      
+    </div>
+  </>
+ : <Button  className='my-2' onClick={() => {setIndexInicio(7),setIndexFin(14)} } variant='light'> <FontAwesomeIcon icon={faArrowRight} /></Button>
+    
+}
+  
+     
        
+
     
 
   </>

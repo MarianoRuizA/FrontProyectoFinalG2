@@ -16,6 +16,10 @@ const [showComensales, setShowComensales] = useState(false)
 
  const [cantidad, setCantidad] = useState(1)
  const [reserva, setReserva] = useState({
+  usuario: "",
+  email: "",
+  hora: "",
+  id: "",
   sucursal: "",
   comensales: 0,
   servicio: "",
@@ -97,9 +101,12 @@ const nextServicioFunction = (servicioElejido) =>{
         <h2>Escoja la cantidad de comensales</h2>
           <div className='div_comensales'>
              <button className='comensales_button' onClick={()=> setCantidad(cantidad-1)}><h4>-</h4></button>
-               {cantidad < 1 ? setCantidad(1): null  }
+                {cantidad < 1 ? setCantidad(1): null  }
+                {cantidad >30 ? setCantidad(30): null}
+            {console.log(cantidad)}
               <div className='comensales_cantidad'> <h4> {cantidad}</h4> </div>
                <button className='comensales_button' onClick={()=>setCantidad(cantidad+1)}><h4>+</h4></button>
+                
           </div>
           <Button variant='light' onClick={()=> nextComensalesFunction()} ><FontAwesomeIcon icon={faArrowRight} /></Button>
         </>            

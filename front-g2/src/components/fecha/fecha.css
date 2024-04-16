@@ -9,4 +9,10 @@
        height: "100px";
 }
 /* Estilo personalizado para el input de react-datepicker */
+ .inputPicker react-datepicker__input-container{
+    display: none;
+ }
  
+ .divFecha:hover{
+    background-color: rgba(240, 248, 255, 0.329);
+ }
