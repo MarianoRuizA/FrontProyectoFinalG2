@@ -50,20 +50,20 @@ const TablaReservas = () => {
                         <th>ID</th>
                         <th>USUARIO</th>
                         <th>SUCURSAL</th>
+                        <th>SERVICIO</th>
                         <th>COMENSALES</th>
                         <th>FECHA</th>
-                        <th>HORA</th>
                         <th>OPCIONES</th>
                     </thead>
                     <tbody>
-                        {reservas.map((item) => (
-                            <tr>
+                        {reservas.map((item, index) => (
+                            <tr  key={index}>
                                 <td>{item.id}</td>
                                 <td>{item.usuario}</td>
                                 <td>{item.sucursal}</td>
+                                <td>{item.servicio}</td>
                                 <td>{item.comensales}</td>
                                 <td>{item.fecha}</td>
-                                <td>{item.hora}</td>
                                 <td id="tdIconos">
                                     <div>
                                         <a onClick={()=>{handleShow(item)}}>

@@ -56,7 +56,7 @@ const TablaUsuarios = () => {
 
     return (
         <>
-            {swal && <SwalDependiente usuarioEliminar={usuario} setSwal={setSwal} setSwal2={setSwal2} cantAdmins={admins}/>}
+            {swal && <SwalDependiente usuarioEliminar={usuario} setSwal={setSwal} setSwal2={setSwal2} cantAdmins={admins} />}
             {swal2 && <SwalDependiente usuarioSuspender={usuario} pedido={suspension} setSwal={setSwal} setSwal2={setSwal2} />}
 
             <Modal show={show} onHide={handleClose}>
@@ -82,34 +82,34 @@ const TablaUsuarios = () => {
                             <th>OPCIONES</th>
                         </thead>
                         <tbody>
-                            {usuarios.map((item) =>
+                            {usuarios.map((item, index) =>
                             (
-                                <>
-                                    <tr id="trUsuarios" className={item.isSuspended ? "filaSuspendida" : ""}>
-                                        <td>{item.id}</td>
-                                        <td>{item.nombre}</td>
-                                        <td>{item.email}</td>
-                                        <td>{item.isAdmin ? "Administrador" : "Usuario"}</td>
-                                        <td>{item.isSuspended ? "Suspendido" : "Activo"}</td>
-                                        <td id="tdIconos">
-                                            <div>
 
-                                                <a onClick={() => { handleOpen(item) }}>
-                                                    <FontAwesomeIcon icon={faPencilSquare} className="iconEditar" />
-                                                </a>
+                                <tr id="trUsuarios" className={item.isSuspended ? "filaSuspendida" : ""} key={index}>
+                                    <td>{item.id}</td>
+                                    <td>{item.nombre}</td>
+                                    <td>{item.email}</td>
+                                    <td>{item.isAdmin ? "Administrador" : "Usuario"}</td>
+                                    <td>{item.isSuspended ? "Suspendido" : "Activo"}</td>
+                                    <td id="tdIconos">
+                                        <div>
 
-                                                <a onClick={() => { handleSuspension(item) }}>
+                                            <a onClick={() => { handleOpen(item) }}>
+                                                <FontAwesomeIcon icon={faPencilSquare} className="iconEditar" />
+                                            </a>
 
-                                                    <FontAwesomeIcon icon={faCircleMinus} className="iconSuspender" />
-                                                </a>
-                                                <a onClick={() => { handleEliminar(item) }}>
+                                            <a onClick={() => { handleSuspension(item) }}>
 
-                                                    <FontAwesomeIcon icon={faTrash} className="iconEliminar" />
-                                                </a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </>
+                                                <FontAwesomeIcon icon={faCircleMinus} className="iconSuspender" />
+                                            </a>
+                                            <a onClick={() => { handleEliminar(item) }}>
+
+                                                <FontAwesomeIcon icon={faTrash} className="iconEliminar" />
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+
                             ))}
 
                         </tbody>

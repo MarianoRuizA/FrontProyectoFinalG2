@@ -13,7 +13,7 @@
       "nombre": "Luciana del Carlo",
       "email": "Luchiii@k.com",
       "contraseña": "wuegfhiuf",
-      "isAdmin": true,
+      "isAdmin": false,
       "isSuspended": false
     }
   ],
@@ -23,9 +23,9 @@
       "usuario": "Sergio Agustín Valverdi",
       "email": "sagustinvalverdi@gmail.com",
       "sucursal": "San Martín 821",
+      "servicio": "Almuerzo",
       "comensales": 8,
-      "fecha": "2024-05-08",
-      "hora": "12:00"
+      "fecha": "2024-04-09T12:00"
     }
   ]
 }

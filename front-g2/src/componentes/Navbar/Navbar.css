@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --mainColor: #3D0000;
+  --secondaryColor: #ffffff;
+  --textColor: #a0a0a0;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "Montserrat", sans-serif;
+}
+
+header {
+  display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 .5rem;
+  font-weight: 500;
+	background-color: var(--mainColor);
+	color: var(--textColor);
+}
+
+nav a {
+  margin: 0 1rem;
+	color: var(--textColor);
+	text-decoration: none;
+  transition: all 500ms;
+}
+
+nav a:hover {
+  color: var(--secondaryColor);
+  transition: all 500ms;
+}
+
+header .nav-btn {
+  padding: 5px;
+	cursor: pointer;
+	background: transparent;
+	border: none;
+	outline: none;
+	color: var(--secondaryColor);
+	visibility: hidden;
+	opacity: 0;
+	font-size: 1.8rem;
+}
+
+nav {
+  display: flex;
+	align-items: center;
+}
+
+/* LOGOS E ICONOS */
+
+.logo-tango {
+	margin-left: 1rem;
+  padding: 0.25rem;
+  width: 5rem;
+  transition: 200ms;
+}
+
+.logo-tango:hover {
+  transform: scale(1.08);
+  transition: 200ms;
+}
+
+.login-icon {
+  transition: all 0.2s;
+	cursor: pointer;
+}
+
+.login-icon:hover {
+  transform: scale(1.1);
+  transition: 0.2s;
+}
+
+/* EFECTO ENLACES */
+
+.link-underline::after {
+  content: "";
+  height: 2px;
+  width: 0;
+  background-color: white;
+  display: block;
+  transition: all 400ms;
+}
+
+.link-underline:hover::after {
+  width: 100%;
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 750px) {
+	header .nav-btn {
+		visibility: visible;
+		opacity: 1;
+	}
+
+	header nav {
+		position: fixed;
+		top: -100vh;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 1.5rem;
+		background-color: var(--mainColor);
+		transition: 1s;
+	}
+
+	header .responsive_nav {
+		transform: translateY(100vh);
+	}
+
+	nav .nav-close-btn {
+		position: absolute;
+		top: 2rem;
+		right: 2rem;
+	}
+
+	nav a {
+		font-size: 1.5rem;
+	}
+}

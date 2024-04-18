@@ -1,0 +1,24 @@
+.icon-large {
+    font-size: 26px;
+    /* Tamaño grande */
+}
+
+.button-container {
+    display: flex; /* Activa el modelo de caja flexible */
+    align-items: center; /* Alinea verticalmente los elementos al centro */
+}
+.button-container a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.button-container p {
+    margin-left: 12px; /* Añade espacio entre el párrafo y el ícono */
+    font-weight:bolder;
+    transition: color 0.1s ease;
+}
+.button-container a:hover {
+    color: #FF0000; /* Cambia el color del texto cuando el cursor está sobre el enlace */
+}

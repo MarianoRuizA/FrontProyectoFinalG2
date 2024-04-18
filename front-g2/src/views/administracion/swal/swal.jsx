@@ -24,7 +24,7 @@ const SwalDependiente = ({ usuarioEliminar, usuarioSuspender, pedido, setSwal, s
         if (usuarioEliminar) {
             if (cantAdmins == 1 && usuarioEliminar.isAdmin) {
                 Swal.fire({
-                    title: "ERROR!",
+                    title: "ERROR",
                     text: "No se puede eliminar al único administrador",
                     icon: "error",
                 });

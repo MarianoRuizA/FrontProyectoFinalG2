@@ -14,26 +14,30 @@ const FormReserva = ({ reservaModificar, handleClose }) => {
         email: reservaModificar.email,
         sucursal: reservaModificar.sucursal,
         comensales: reservaModificar.comensales,
-        fecha: reservaModificar.fecha,
-        hora: reservaModificar.hora
+        fecha: reservaModificar.fecha
+        
     })
+
+
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        const cambiosRealizados = Object.keys(reserva).some(key => reserva[key] !== reservaModificar[key]);
-        if (cambiosRealizados) {
-            modificarReserva(reserva)
-            Swal.fire({
-                title: "Reserva modificada",
-                icon: "success"
-            })
-        } else {
-            Swal.fire({
-                title: "Ningún cambio realizado",
-                icon: "question"
-            })
-        }
-        handleClose()
+       
+            const cambiosRealizados = Object.keys(reserva).some(key => reserva[key] !== reservaModificar[key]);
+            if (cambiosRealizados) {
+                modificarReserva(reserva)
+                Swal.fire({
+                    title: "Reserva modificada",
+                    icon: "success"
+                })
+            } else {
+                Swal.fire({
+                    title: "Ningún cambio realizado",
+                    icon: "question"
+                })
+            }
+            handleClose()
+
     }
 
 
@@ -44,6 +48,11 @@ const FormReserva = ({ reservaModificar, handleClose }) => {
         })
     }
 
+    const fechaHoy = new Date();
+    const diaActual = fechaHoy.toISOString().slice(0, 16); // Formato yyyy-mm-ddThh:mm
+    const fechaMaxima = new Date(fechaHoy);
+    fechaMaxima.setMonth(fechaMaxima.getMonth() + 2);
+    const fechaMaximaFormateada = fechaMaxima.toISOString().slice(0, 16);
 
     return (
         <>
@@ -70,7 +79,7 @@ const FormReserva = ({ reservaModificar, handleClose }) => {
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Comensales</Form.Label>
-                    <Form.Control type="number" min={2} max={10}
+                    <Form.Control type="number" min={2} max={15}
                         name="comensales"
                         value={reserva.comensales}
                         onChange={handleChange} required>
@@ -78,23 +87,18 @@ const FormReserva = ({ reservaModificar, handleClose }) => {
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Fecha</Form.Label>
-                    <Form.Control type="date"
+                    <Form.Control type="datetime-local"
                         name="fecha"
                         value={reserva.fecha}
-                        onChange={handleChange} required>
+                        onChange={handleChange}
+                        min={diaActual}
+                        max={fechaMaximaFormateada}
+                        required>
                     </Form.Control>
                 </Form.Group>
-                <Form.Group>
-                    <Form.Label>Hora</Form.Label>
-                    <Form.Control type="text"
-                        name="fecha"
-                        value={reserva.fecha}
-                        onChange={handleChange} required>
-                    </Form.Control>
-                </Form.Group>
+
 
                 <div className="divBoton">
-
                     <Button type="submit" className="btn-danger">Guardar</Button>
                 </div>
             </Form>
