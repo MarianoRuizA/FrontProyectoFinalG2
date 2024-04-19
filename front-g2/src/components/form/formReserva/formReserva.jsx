@@ -42,7 +42,6 @@ const FormReserva = ({ reservaModificar, handleClose }) => {
             })
         }
         handleClose()
-        console.log(typeof (reserva.fecha))
 
     }
 
@@ -72,7 +71,6 @@ const FormReserva = ({ reservaModificar, handleClose }) => {
     useEffect(() => {
         const hora = new Date(maxHora)
         const diaSeleccionado = dayjs(reserva.fecha).day();
-        console.log("Día seleccionado:", diaSeleccionado);
         if(dayjs(reserva.fecha).day() == 0)
         {
             hora.setHours(16, 0, 0)

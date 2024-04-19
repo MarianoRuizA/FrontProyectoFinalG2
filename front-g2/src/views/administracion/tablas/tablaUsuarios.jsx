@@ -42,7 +42,6 @@ const TablaUsuarios = () => {
         (item.isSuspended)?setSuspension(false):setSuspension(true)
         item.isSuspended = suspension
         setUsuario(item)
-        console.log("se suspendió", usuario)
         setSwal2(true)
     }
 
