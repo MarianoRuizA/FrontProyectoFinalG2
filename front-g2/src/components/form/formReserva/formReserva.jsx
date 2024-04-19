@@ -3,6 +3,9 @@ import { useContext, useEffect, useState } from "react";
 import "./formReserva.css"
 import { ReservasContext } from "../../../context/ContextReservas";
 import Swal from "sweetalert2";
+import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
+import dayjs from "dayjs";
+
 
 const FormReserva = ({ reservaModificar, handleClose }) => {
 
@@ -13,30 +16,33 @@ const FormReserva = ({ reservaModificar, handleClose }) => {
         usuario: reservaModificar.usuario,
         email: reservaModificar.email,
         sucursal: reservaModificar.sucursal,
+        servicio: reservaModificar.servicio,
         comensales: reservaModificar.comensales,
         fecha: reservaModificar.fecha
-        
+
     })
 
+    const [maxHora, setMaxHora] = useState(new Date())
 
 
     const handleSubmit = (e) => {
         e.preventDefault()
-       
-            const cambiosRealizados = Object.keys(reserva).some(key => reserva[key] !== reservaModificar[key]);
-            if (cambiosRealizados) {
-                modificarReserva(reserva)
-                Swal.fire({
-                    title: "Reserva modificada",
-                    icon: "success"
-                })
-            } else {
-                Swal.fire({
-                    title: "Ningún cambio realizado",
-                    icon: "question"
-                })
-            }
-            handleClose()
+
+        const cambiosRealizados = Object.keys(reserva).some(key => reserva[key] !== reservaModificar[key]);
+        if (cambiosRealizados) {
+            modificarReserva(reserva)
+            Swal.fire({
+                title: "Reserva modificada",
+                icon: "success"
+            })
+        } else {
+            Swal.fire({
+                title: "Ningún cambio realizado",
+                icon: "question"
+            })
+        }
+        handleClose()
+        console.log(typeof (reserva.fecha))
 
     }
 
@@ -48,11 +54,36 @@ const FormReserva = ({ reservaModificar, handleClose }) => {
         })
     }
 
-    const fechaHoy = new Date();
-    const diaActual = fechaHoy.toISOString().slice(0, 16); // Formato yyyy-mm-ddThh:mm
-    const fechaMaxima = new Date(fechaHoy);
-    fechaMaxima.setMonth(fechaMaxima.getMonth() + 2);
-    const fechaMaximaFormateada = fechaMaxima.toISOString().slice(0, 16);
+    const handleFecha = (fechaInput) => {
+        setReserva({
+            ...reserva,
+            fecha: fechaInput
+        })
+    }
+
+    const fechaHoy = new Date()
+    const fechaMaxima = new Date()
+    fechaMaxima.setMonth(fechaHoy.getMonth() + 2)
+
+    const minHora = new Date()
+    minHora.setHours(12, 0, 0)
+
+
+    useEffect(() => {
+        const hora = new Date(maxHora)
+        const diaSeleccionado = dayjs(reserva.fecha).day();
+        console.log("Día seleccionado:", diaSeleccionado);
+        if(dayjs(reserva.fecha).day() == 0)
+        {
+            hora.setHours(16, 0, 0)
+        }else{
+            hora.setHours(23, 0, 0)
+        }
+        setMaxHora(hora)
+    }, [reserva.fecha])
+
+
+
 
     return (
         <>
@@ -74,9 +105,21 @@ const FormReserva = ({ reservaModificar, handleClose }) => {
                         onChange={handleChange}>
                         <option value="Chacabuco 474">Chacabuco 474</option>
                         <option value="San Martín 821">San Martín 821</option>
-                        <option value="Crisóstomo Álvarez y Buenos Aires">Crisóstomo Álvarez y Buenos Aires</option>
+                        <option value="24 de septiembre y Congreso">24 de septiembre y Congreso</option>
                     </Form.Select>
                 </Form.Group>
+
+                <Form.Group>
+                    <Form.Label>Servicio</Form.Label>
+                    <Form.Select aria-label="Default select example" name="sucursal"
+                        value={reserva.servicio}
+                        onChange={handleChange}>
+                        <option value="Almuerzo">Almuerzo</option>
+                        <option value="Cena">Cena</option>
+                    </Form.Select>
+                </Form.Group>
+
+
                 <Form.Group>
                     <Form.Label>Comensales</Form.Label>
                     <Form.Control type="number" min={2} max={15}
@@ -85,16 +128,18 @@ const FormReserva = ({ reservaModificar, handleClose }) => {
                         onChange={handleChange} required>
                     </Form.Control>
                 </Form.Group>
-                <Form.Group>
+                <Form.Group id="grupoFecha">
                     <Form.Label>Fecha</Form.Label>
-                    <Form.Control type="datetime-local"
+                    <DateTimePicker
+                        format="YYYY-MM-DD HH:MM:ss"
                         name="fecha"
-                        value={reserva.fecha}
-                        onChange={handleChange}
-                        min={diaActual}
-                        max={fechaMaximaFormateada}
-                        required>
-                    </Form.Control>
+                        value={dayjs(reserva.fecha)}
+                        onChange={handleFecha}
+                        minDate={dayjs(fechaHoy)}
+                        maxDate={dayjs(fechaMaxima)}
+                        minTime={dayjs(minHora)}
+                        maxTime={dayjs(maxHora)} 
+                        minutesStep={60}/>
                 </Form.Group>
 
 

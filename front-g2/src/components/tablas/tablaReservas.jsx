@@ -13,33 +13,30 @@ const TablaReservas = () => {
     const [show, setShow] = useState(false)
     const [swal, setSwal] = useState(false)
 
-    const handleShow = (item) =>
-    {
+    const handleShow = (item) => {
         setReserva(item)
         setShow(true)
     }
 
-    const handleClose = () =>
-    {
+    const handleClose = () => {
         setShow(false)
     }
 
-    const handleSwal = (item) =>
-    {
+    const handleSwal = (item) => {
         setSwal(true)
         setReserva(item)
     }
 
     return (
         <>
-        {swal && <SwalDependiente2 reservaEliminar={reserva} setSwal={setSwal}/>}
+            {swal && <SwalDependiente2 reservaEliminar={reserva} setSwal={setSwal} />}
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>Modificar Usuario</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                   <FormReserva reservaModificar={reserva} handleClose={handleClose}/>
+                    <FormReserva reservaModificar={reserva} handleClose={handleClose} />
                 </Modal.Body>
             </Modal>
             {reservas.length === 0 ? (<h3>No hay reservas para mostrar</h3>) : (
@@ -53,30 +50,41 @@ const TablaReservas = () => {
                         <th>SERVICIO</th>
                         <th>COMENSALES</th>
                         <th>FECHA</th>
+                        <th>HORA</th>
                         <th>OPCIONES</th>
                     </thead>
                     <tbody>
-                        {reservas.map((item, index) => (
-                            <tr  key={index}>
-                                <td>{item.id}</td>
-                                <td>{item.usuario}</td>
-                                <td>{item.sucursal}</td>
-                                <td>{item.servicio}</td>
-                                <td>{item.comensales}</td>
-                                <td>{item.fecha}</td>
-                                <td id="tdIconos">
-                                    <div>
-                                        <a onClick={()=>{handleShow(item)}}>
-                                        <FontAwesomeIcon icon={faPencilSquare} className="iconEditar" />
-                                        </a>
+                        {reservas.map((item, index) => {
+                           
+                            const fecha = new Date(item.fecha)
+                            return (
+                                <tr key={index}>
+                                    <td>{item.id}</td>
+                                    <td>{item.usuario}</td>
+                                    <td>{item.sucursal}</td>
+                                    <td>{item.servicio}</td>
+                                    <td>{item.comensales}</td>
+                                   
+                                    <td>
+                                        {fecha.toLocaleDateString()}
+                                    </td>
+                                    <td>
+                                    {fecha.toLocaleTimeString()}
+                                    </td>
+                                    <td id="tdIconos">
+                                        <div>
+                                            <a onClick={() => { handleShow(item) }}>
+                                                <FontAwesomeIcon icon={faPencilSquare} className="iconEditar" />
+                                            </a>
 
-                                        <a onClick={()=>{handleSwal(item)}}>
-                                        <FontAwesomeIcon icon={faTrash} className="iconEliminar" />
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                        ))}
+                                            <a onClick={() => { handleSwal(item) }}>
+                                                <FontAwesomeIcon icon={faTrash} className="iconEliminar" />
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            )
+                        })}
 
                     </tbody>
                 </Table>

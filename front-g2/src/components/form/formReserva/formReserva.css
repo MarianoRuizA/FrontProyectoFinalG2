@@ -11,3 +11,7 @@
     justify-content: end;
     margin-top: 1rem;
 }
+#grupoFecha{
+    display: flex;
+    flex-direction: column;
+}

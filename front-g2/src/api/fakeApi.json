@@ -20,12 +20,11 @@
   "reservas": [
     {
       "id": "0007",
-      "usuario": "Sergio Agustín Valverdi",
-      "email": "sagustinvalverdi@gmail.com",
+      "usuario": "sagustinvalverdi@gmail.com",
       "sucursal": "San Martín 821",
       "servicio": "Almuerzo",
       "comensales": 8,
-      "fecha": "2024-04-09T12:00"
+      "fecha": "2024-05-14T15:00:00.000Z"
     }
   ]
 }
