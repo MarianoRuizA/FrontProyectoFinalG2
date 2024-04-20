@@ -102,7 +102,7 @@ const nextServicioFunction = (servicioElejido) =>{
           <div className='div_comensales'>
              <button className='comensales_button' onClick={()=> setCantidad(cantidad-1)}><h4>-</h4></button>
                 {cantidad < 1 ? setCantidad(1): null  }
-                {cantidad >30 ? setCantidad(30): null}
+                {cantidad >15 ? setCantidad(15): null}
             {console.log(cantidad)}
               <div className='comensales_cantidad'> <h4> {cantidad}</h4> </div>
                <button className='comensales_button' onClick={()=>setCantidad(cantidad+1)}><h4>+</h4></button>

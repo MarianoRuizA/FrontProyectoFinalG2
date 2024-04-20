@@ -7,12 +7,27 @@
       border-radius : "100px";
       width: "100px";
        height: "100px";
-}
-/* Estilo personalizado para el input de react-datepicker */
- .inputPicker react-datepicker__input-container{
-    display: none;
- }
+}.inputPicker input{
+  width: 90px;
+  text-align: center;
+  border-radius: 30px;
+  border-style: hidden;
+  
+  }
  
+
+/* Estilo personalizado para el input de react-datepicker */
+  .divPicker input{
+    width: 150px;
+    border-radius: 30px;
+    border-style: hidden;
+   text-align: center;
+  
+  }
+  .divPicker input:hover{
+   background-color: rgba(255, 255, 255, 0.712);
+  }
+  
  .divFecha:hover{
     background-color: rgba(240, 248, 255, 0.329);
  }

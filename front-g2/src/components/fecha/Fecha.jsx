@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import "./fecha.css"
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -8,12 +8,29 @@ import {faArrowLeft, faArrowRight} from "@fortawesome/free-solid-svg-icons"
  
 const Fecha = ( ) => {
   const [selectedDate, setSelectedDate] = useState(new Date());
+ const [showDivFechas, setShowDivFechas  ] = useState (true)
   const currentDate = new Date();
   const FechaMax = new Date();
    
-const [indexInicio, setIndexInicio] = useState(0)
-const [indexFin, setIndexFin] = useState(7)
+  const [indexInicio, setIndexInicio] = useState(0);
+  const [indexFin, setIndexFin] = useState(7);
+  const [showTimePicker, setShowTimePicker] = useState(false);
   
+  const handleDateButtonClick = (date) => {
+    setSelectedDate(date);
+    setShowTimePicker(true);
+   
+  };
+console.log(selectedDate)
+  const handleTimeChange = (time) => {
+    setSelectedDate(prevDate => {
+      const newDate = new Date(prevDate);
+      newDate.setHours(time.getHours(), time.getMinutes());
+      setShowTimePicker(false);
+      return newDate;
+    });
+  };
+
   const daySelected = selectedDate.getDay();
   const daysToAdd = daySelected === 0 ? 1 : 8 - daySelected;
   const nextMonday = new Date(currentDate);
@@ -50,14 +67,13 @@ const [indexFin, setIndexFin] = useState(7)
 
  const [fechaSeleccionada, setFechaSeleccionada] = useState(null);
 
- const [selectedTime, setSelectedTime] = useState(null);
+ const [selectedTime, setSelectedTime] = useState( null);
 
  const twoWeeksLater = new Date();
  twoWeeksLater.setDate(today.getDate() + 14);
 
  const dates = [];
- const dateOptions = { weekday: 'long', month: 'short', day: 'numeric' };
-
+  
  for (let d = today; d <= twoWeeksLater; d.setDate(d.getDate() + 1)) {
    dates.push(new Date(d));
  }
@@ -75,6 +91,7 @@ const [indexFin, setIndexFin] = useState(7)
      
     elementsToPush.push( 
       <div key={day}>
+          
         <div className='divFecha' style={{
           display: "flex",
           justifyContent: "center",
@@ -90,13 +107,34 @@ const [indexFin, setIndexFin] = useState(7)
             background: "none",
             borderColor: "none",
             borderStyle: "hidden"
-          }} onClick={() => setFechaSeleccionada(dateObject)}>
-           
+          }} onClick={() => {handleDateButtonClick(dateObject) ,  setTimeout(() => {
+            document.querySelector('.react-datepicker-time__input').click();
+          }, 100); }}>
+             
             <h3>{dayName}.</h3>
+           
             <h4>{day} {monthName}</h4>
+      
+   
           </Button>
          
         </div>
+        {selectedDate.getDate() === dateObject.getDate() && selectedDate.getMonth() === dateObject.getMonth() && selectedDate.getFullYear() === dateObject.getFullYear() ?
+            <div key={day} className='inputPicker'> 
+        <DatePicker
+              timeIntervals={60}
+              minTime={minTime}
+              maxTime={maxTime}
+              excludeTimes={horarioExcluido}
+              placeholderText='Seleccione el horario  '
+              showTimePicker
+              selected={selectedTime}
+              onChange={date => setSelectedTime(date)}
+              showTimeSelect
+              showTimeSelectOnly
+              dateFormat="h:mm aa"
+            />
+            </div> : null}
       </div>
     ) 
   
@@ -107,14 +145,19 @@ const [indexFin, setIndexFin] = useState(7)
  
 return(<>
  
- <div style={{ display: "flex" }}>{elements}</div>
+ {showDivFechas ?   <>   
+    <div style={{ display: "flex", position: "fixed"}}> 
+    
+    {indexInicio ===7 ? <Button onClick={() => {setIndexInicio(0), setIndexFin(7)} }variant='light'  ><FontAwesomeIcon icon={faArrowLeft} />  </Button> : null}
+    {elements} 
+    {indexInicio ==! 7 ? <Button onClick={() => {setIndexInicio(7),setIndexFin(14)} } variant='light'> <FontAwesomeIcon icon={faArrowRight} /> </Button>  : null}
  
-  {indexInicio ===7 ?
+ </div>  {indexInicio ===7 ?
   <>
-  <Button onClick={() => {setIndexInicio(0), setIndexFin(7)} }variant='light' className='my-2'><FontAwesomeIcon icon={faArrowLeft} /></Button> 
-    <div>
-    <h3>Seleccione otra fecha:</h3>
-      <DatePicker 
+    <div   style={{display: "flex", marginTop: "270px"}}>
+      <h3 className='me-2 '>Seleccione otra fecha: </h3>
+      <div className='divPicker'><DatePicker 
+     
         selected={fechaSeleccionada  ? fechaSeleccionada: selectedDate}
         onChange={date => setSelectedDate(date)}
         minDate={new Date() }
@@ -123,23 +166,45 @@ return(<>
         minTime={minTime}
         maxTime={maxTime}
         excludeTimes={horarioExcluido}
-        dateFormat="dd/MM/yyyy HH:mm"
-        showIcon
-        show
         showTimeSelect
+        showTimePicker
+        
+        dateFormat="dd/MM/yyyy  "
+        showIcon
+        
         showMonthDropdown>
-  </DatePicker> 
+  </DatePicker> </div>
     </div>
-  </>
- : <Button  className='my-2' onClick={() => {setIndexInicio(7),setIndexFin(14)} } variant='light'> <FontAwesomeIcon icon={faArrowRight} /></Button>
+    <Button onClick={() => {setShowDivFechas(false), setShowTimePicker(true) }} variant='light' className='my-2'>  <FontAwesomeIcon icon={faArrowRight} /> </Button> 
     
-}
+  </>
+      : null
+    
+} </>  : null} 
+ {/* {showTimePicker ? <> 
+  <h4>Reservas disponibles para el {selectedDate.toLocaleString('es-ES', { weekday: 'long' })} {selectedDate.getDate()} de {selectedDate.toLocaleDateString('es-ES', { month: 'long' })}</h4>
+         
+     <div className='inputPicker'> 
+      <DatePicker
+              timeIntervals={60}
+              minTime={minTime}
+              maxTime={maxTime}
+              excludeTimes={horarioExcluido}
+              placeholderText='  horario  '
+              showTimePicker
+              selected={selectedTime}
+              onChange={date => setSelectedTime(date)}
+              showTimeSelect
+              showTimeSelectOnly
+              dateFormat="h:mm aa"
+            />
+      </div> 
+              </> : null}
+  */}
   
      
-       
-
-    
 
   </>
 )}
 export default Fecha;
+
