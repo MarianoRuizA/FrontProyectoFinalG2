@@ -3,7 +3,7 @@ import { faCircleLeft, faCircleRight, faCircleXmark } from '@fortawesome/free-so
 import "./galeria.css"
 import { useContext, useEffect, useState } from "react"
 import { GaleriaProvider } from '../../context/galeriaContext'
-import Titulo from '../../componentes/imgCarousel/titulo/titulo'
+import Titulo from '../../componentes/titulo/titulo'
 
 
 
@@ -35,7 +35,7 @@ const Galeria = () => {
 
     useEffect(() => {
         document.title = "Galería de fotos";
-      }, []);
+      }, [])
     
 
 

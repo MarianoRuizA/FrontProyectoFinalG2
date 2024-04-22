@@ -1,11 +1,14 @@
+import { useEffect } from 'react'
 import "./paginaPrincipal.css"
 import Banner from "../../componentes/Banner/Banner";
 import TarjetaDer from "../../componentes/Tarjeta/TarjetaDer";
 import TarjetaIzq from "../../componentes/Tarjeta/TarjetaIzq";
-import { useNavigate } from "react-router-dom";
+
 
 const PaginaPrincipal = () => {
-    const navegacion = useNavigate()
+    useEffect(() => {
+        document.title = "Tango Restaurante";
+      }, []);
     return (
         <>
             <main>

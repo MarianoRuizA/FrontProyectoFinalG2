@@ -6,7 +6,7 @@ const CardsGrupo = () => {
   return (
 <>
     <div className="team-section">
-        <div className="container">
+        <div className="containerNosotros">
             <div className="rowNosotros">
                 <div className="title">
                     <h2> Nuestro Equipo</h2>

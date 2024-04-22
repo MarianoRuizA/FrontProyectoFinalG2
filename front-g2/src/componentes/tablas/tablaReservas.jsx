@@ -3,8 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faPencilSquare, faTrash } from "@fortawesome/free-solid-svg-icons"
 import { useContext, useState } from "react"
 import { ReservasContext } from "../../context/ContextReservas"
-import FormReserva from "../form/formReserva/formReserva"
 import SwalDependiente2 from "../../views/administracion/eliminarReserva/eliminarReserva"
+import FormReserva from "../form/formReserva/formReserva"
 
 const TablaReservas = () => {
     const { reservas } = useContext(ReservasContext)

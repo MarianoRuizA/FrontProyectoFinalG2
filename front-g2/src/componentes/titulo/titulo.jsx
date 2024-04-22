@@ -1,4 +1,4 @@
-import { Container, Col } from "react-bootstrap"
+import { Col } from "react-bootstrap"
 import './titulo.css'
 
 const Titulo = ({link, texto, nombre}) =>

@@ -49,9 +49,13 @@ header .nav-btn {
 	font-size: 1.8rem;
 }
 
+header img:hover{
+	cursor: pointer;
+}
+
 nav {
   display: flex;
-	align-items: center;
+  align-items: center;
 }
 
 /* LOGOS E ICONOS */
