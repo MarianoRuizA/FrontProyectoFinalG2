@@ -79,7 +79,7 @@ const Galeria = () => {
 
                             {imagenes.map((foto, index) =>
                             (
-                                <figure className="col-12 col-sm-6 col-lg-3">
+                                <figure className="col-12 col-sm-6 col-lg-3" key={index}>
 
                                     <img src={foto.link}
                                         alt={foto.nombre}

@@ -1,5 +1,5 @@
-import About from "../../components/about/About"
-import CardsGrupo from "../../components/cards/CardsGrupo"
+import About from "../../componentes/about/About"
+import CardsGrupo from "../../componentes/cards/CardsGrupo"
 
 const Nosotros = () => {
   return (

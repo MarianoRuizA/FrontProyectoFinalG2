@@ -1,9 +1,7 @@
 import { Button } from "react-bootstrap";
 import "./administracion.css"
 import { useState, useEffect } from "react"
-import TablaUsuarios from "../../components/tablas/tablaUsuarios"
-import TablaReservas from "../../components/tablas/tablaReservas"
-
+import TablaUsuarios from "../../componentes/tablas/tablaUsuarios";
 
 const Administracion = () => {
   const [opcion, setOpcion] = useState(1)
