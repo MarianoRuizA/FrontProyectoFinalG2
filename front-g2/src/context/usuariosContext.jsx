@@ -1,53 +1,36 @@
 import { createContext, useEffect, useState } from "react";
-import axios from "axios"
+import axios from "axios";
 
+export const UsuariosProvider = createContext();
 
-export const UsuarioProvider = createContext()
+const UsuariosContext = ({ children }) => {
 
-const UsuarioContext = ({children}) =>
-{
     const [usuarios, setUsuarios] = useState([])
-    const traerUsuarios = async () =>
-    {
-        try {
-            const response = await axios.get(`http://localhost:8000/usuarios`)
-            setUsuarios(response.data)
-        } catch (error) {
-            console.log("No funciona traerUsuarios", error)
-        }
-    }
 
-    const modificarUsuario = async (usuario) =>
-    {
+  const getUsers = async () => {
         try {
-            await axios.put(`http://localhost:8000/usuarios/${usuario.id}`, usuario)
-            traerUsuarios()
+      const response = await axios.get("http://localhost:8000/usuarios");
+      setUsuarios(response.data);
                 } catch (error) {
-            console.log("No funciona modificarUsuario-->", error)
+      console.log(error);
         }
-    }
+  };
 
-    const eliminarUsuario = async (usuario) =>
-    {
-        try{
-            await axios.delete(`http://localhost:8000/usuarios/${usuario.id}`)
-            traerUsuarios()
+  const logout = () => {
+    localStorage.removeItem("user");
+    window.location.href = "/";
+  };
 
-        }catch(error)
-        {
-            console.log("No funciona eliminarUsuario-->", error)
-        }
-    }
+  useEffect(() => {
+    getUsers();
+  }, []);
 
-    useEffect(()=>{
-        traerUsuarios()
-    }, [])
-
-    return(
-        <UsuarioProvider.Provider value={{usuarios, modificarUsuario, eliminarUsuario}}>
+  return (
+    <UsuariosProvider.Provider value={{ usuarios, getUsers, logout }}>
             {children}
-        </UsuarioProvider.Provider>
+    </UsuariosProvider.Provider>
     )
+
 }
 
-export default UsuarioContext
+export default UsuariosContext
