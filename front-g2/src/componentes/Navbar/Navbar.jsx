@@ -38,7 +38,7 @@ function Navbar() {
 				</button>
 				<nav ref={navRef}>
 					<a onClick={() => navegacion("/galeria")} className="link-underline">GALERÍA</a>
-					<a onClick={() => navegacion("/carta")} className="link-underline">CARTA</a>
+					<a href="https://doroitalianbar.com/wp-content/uploads/2024/04/Menu-Principal-13-4-2024.pdf" target="_blank" className="link-underline">CARTA</a>
 					<a onClick={() => navegacion("/nosotros")} className="link-underline">NOSOTROS</a>
 					<a onClick={() => navegacion("/reservas")} className="link-underline">RESERVAS</a>
 

@@ -1,5 +1,5 @@
-import GaleriaContext from './context/galeriaContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import GaleriaContext from './context/galeriaContext';
 import ContextUsuarios from './context/ContextUsuarios';
 import ContextReservas from './context/ContextReservas';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'

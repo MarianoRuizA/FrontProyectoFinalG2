@@ -14,7 +14,8 @@ const ModalLogin = ({ show, handleClose }) => {
         <Login handleClose={handleClose} />
       </Modal.Body>
       <Modal.Footer>
-        <p onClick={() => navegacion("/registro")}>Si aún no te registraste, seguí los pasos <a href="/" className="link-registro">aquí</a>.</p>
+        <p>Si aún no te registraste, seguí los pasos <a onClick={() => {navegacion("/registro")
+         show=false}}className="link-registro">aquí</a>.</p>
       </Modal.Footer>
     </Modal>
   );

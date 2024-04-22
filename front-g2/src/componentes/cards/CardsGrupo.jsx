@@ -7,7 +7,7 @@ const CardsGrupo = () => {
 <>
     <div className="team-section">
         <div className="container">
-            <div className="row">
+            <div className="rowNosotros">
                 <div className="title">
                     <h2> Nuestro Equipo</h2>
                 </div>
@@ -88,7 +88,7 @@ const CardsGrupo = () => {
                     </div>
                     <div className="content">
                         <h3>Martina</h3>
-                        <h4>Adminisradora</h4>
+                        <h4>Administradora</h4>
                         <p>"Dirigiendo con pasión, superando expectativas."</p>
                     </div>
                     <div className="social">
