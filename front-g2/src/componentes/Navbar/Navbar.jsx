@@ -29,6 +29,7 @@ function Navbar() {
 					src="src/img/logo_tango.png"
 					alt="Logo de Tango Restaurante"
 					className="logo-tango"
+					onClick={() => navegacion("/")} 
 				/>
 				<button
 					className="nav-btn"

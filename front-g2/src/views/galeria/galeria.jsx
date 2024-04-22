@@ -67,8 +67,8 @@ const Galeria = () => {
                 <section id='sectionGaleria'>
                     <Titulo link="https://doroitalianbar.com/wp-content/uploads/2021/08/179-1.jpg" texto="imagen de mesas" nombre="Galería" />
                     <article className="p-3 m-5">
-                        <h3>UN LUGAR QUE HABLA POR SI MISMO…</h3>
-                        <h5>Te invitammos a conocer el diseño de una Gatronomia y un ambiente diferente.
+                        <h3 className='h3Galeria'>UN LUGAR QUE HABLA POR SI MISMO…</h3>
+                        <h5 className='h5Galeria'>Te invitammos a conocer el diseño de una Gatronomia y un ambiente diferente.
                             Su historia, la calidad y la diferenciacion, lo convierten en una de las citas obligadas de la gastronomia de Tucumán.
 
                         </h5>
@@ -79,7 +79,7 @@ const Galeria = () => {
 
                             {imagenes.map((foto, index) =>
                             (
-                                <figure className="col-12 col-sm-6 col-lg-3" key={index}>
+                                <figure className="col-12 col-sm-6 col-lg-3 figureGaleria" key={index}>
 
                                     <img src={foto.link}
                                         alt={foto.nombre}

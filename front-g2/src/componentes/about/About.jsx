@@ -10,8 +10,8 @@ const About = () => {
           <h1>Nosotros</h1>
         </div>
         <div className="contenido-nosotros">
-          <h3>nuestra historia</h3>
-           <p>En una esquina bulliciosa del barrio de San Telmo en Buenos Aires, cinco jóvenes emprendedores decidieron abrir un restaurante con un nombre que evocaba la esencia de su país: "Tango". 
+          <h3>Nuestra historia</h3>
+           <p>En una esquina bulliciosa del barrio de San Miguel de Tucumán en Tucumán, cinco jóvenes emprendedores decidieron abrir un restaurante con un nombre que evocaba la esencia de su país: "Tango". 
              Cada uno de ellos había crecido inmerso en la cultura argentina del tango y la pasión por la gastronomía local.</p> 
             <p>Desde el momento en que abrieron las puertas, el restaurante Tango se convirtió en un éxito instantáneo. Los aromas tentadores de empanadas recién horneadas y carnes jugosas a la parrilla flotaban en el aire,
               atrayendo a los clientes de todas partes de la ciudad y más allá.</p>

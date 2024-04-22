@@ -8,10 +8,13 @@
     font-family: 'Montserrat';
 }
 
-h3{
+.h3Galeria{
     color: #950101;
 }
 
+.h5Galeria{
+    color: black;
+}
 
 #divGaleria {
     display: flex;
@@ -19,21 +22,21 @@ h3{
     flex-wrap: wrap;
 }
 
-figure {
+.figureGaleria {
     max-height: 500px;
     max-width: 500px;
     margin: 0 auto;
     overflow: hidden;
 }
 
-figure img {
+.figureGaleria img {
     object-fit: cover;
     max-width: 100%;
     cursor: pointer;
     transition: 0.6s;
 }
 
-figure img:hover{
+.figureGaleria img:hover{
     transform: scale(1.1);
 }
 
