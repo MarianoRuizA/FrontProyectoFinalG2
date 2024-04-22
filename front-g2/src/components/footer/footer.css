@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.footer{
+ 
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.678), rgba(24, 24, 24, 0.4)), url('https://cdn.tourcms.com/a/11676/4901/3/large.jpg')  ;
+     background-size: 100% 100%;
+     color: white;
+ 
+   bottom: 0;
+    width: 100%;
+    height:70% ;    
+ 
+}
+.footer_container{
+    display: flex;
+    animation-name:navbar_animation  ;
+    animation-duration: 1.5s;
+   
+        
+ }  
+.container_div{
+    width: 550px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content:   space-evenly ;
+   text-align: center;
+  
+     
+}
+.border_button{
+     margin: 0px 40px 0px 40px;
+    border-style: none none inset none;
+    border-radius:  2px;
+    border-width: 3px; 
+    border-color:rgb(0, 0, 0) ;
+}
+.container_div_aLink{
+    text-decoration: none;
+    color: white;
+}
+.container_div_aLink:hover{
+    color:#ffffff8e;
+}
+ 
+@keyframes navbar_animation  {
+    0% {
+      transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
+      transform-origin: 50% 0;
+      filter: blur(40px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0) scaleY(1) scaleX(1);
+      transform-origin: 50% 50%;
+      filter: blur(0);
+      opacity: 1;
+    }
+  }
+  
+  .snavbar_animation  {
+    animation: navbar_animation  0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  }
+ 
+  
+ 
+.montserrat-font {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+  @media screen  and (max-width: 765px){
+    
+    
+    .footer_container {
+        flex-wrap: wrap;
+    }
+    .container_div{
+        height: 320px;
+    }
+    .footer{
+        height: 100%;
+        width: 100%;
+        background-size: cover  ;
+        
+        background-position: center;
+        position:   initial;
+    }
+  }
+  @media screen and (max-width: 1024px){
+    
+    .footer{
+        height:60%;
+     width: 100%;
+    }
+   
+  }
