@@ -1,7 +1,6 @@
 import { useRef, useState, useContext } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import ModalLogin from "../ModalLogin/ModalLogin";
-import { UsuariosProvider } from "../../context/UsuariosContext";
 import "./Navbar.css";
 import { useNavigate } from "react-router";
 
@@ -22,7 +21,6 @@ function Navbar() {
 
 	const user = JSON.parse(localStorage.getItem("user"));
 
-	const { logout } = useContext(UsuariosProvider);
 
 	return (
 		<>
@@ -46,7 +44,7 @@ function Navbar() {
 					<a onClick={navegacion("/reservas")}className="link-underline">RESERVAS</a>
 
 					{user ? (
-						<a className="link-login" onClick={() => logout()}>
+						<a className="link-login" >
 							CERRAR SESIÓN
 						</a>
 					) : (

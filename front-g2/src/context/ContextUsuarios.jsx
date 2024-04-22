@@ -47,13 +47,20 @@ const ContextUsuarios = ({ children }) => {
     }
   }
 
+  const logout = () => {
+    localStorage.removeItem("user");
+    window.location.href = "/";
+  }
+  
   useEffect(() => {
     getUsuario()
   }, [])
+
+  
   // los children hacen referencia a los componentes que estan dentro de context usuarios en el app.
   return (
     <>
-      <UsuariosContext.Provider value={{ usuarios, getUsuario, createUsuario, modificarUsuario, eliminarUsuario }}>
+      <UsuariosContext.Provider value={{ usuarios, getUsuario, createUsuario, modificarUsuario, eliminarUsuario, logout }}>
         {children}
       </UsuariosContext.Provider>
     </>

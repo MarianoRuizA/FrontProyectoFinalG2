@@ -1,12 +1,12 @@
 import { Routes, Route } from "react-router-dom";
-import Home from "../../views/home/Home";
 import Nosotros from "../../views/nosotros/Nosotros";
+import PaginaPrincipal from "../../views/paginaPrincipal/paginaPrincipal";
 
 function Rutas() {
   return (
     <>
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<PaginaPrincipal />} />
       <Route path="/nosotros" element={<Nosotros/>}></Route>
     </Routes>
     </>
