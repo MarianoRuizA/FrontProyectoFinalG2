@@ -5,15 +5,15 @@ export const UsuariosProvider = createContext();
 
 const UsuariosContext = ({ children }) => {
 
-    const [usuarios, setUsuarios] = useState([])
+  const [usuarios, setUsuarios] = useState([])
 
   const getUsers = async () => {
-        try {
+    try {
       const response = await axios.get("http://localhost:8000/usuarios");
       setUsuarios(response.data);
-                } catch (error) {
+    } catch (error) {
       console.log(error);
-        }
+    }
   };
 
   const logout = () => {
@@ -27,9 +27,9 @@ const UsuariosContext = ({ children }) => {
 
   return (
     <UsuariosProvider.Provider value={{ usuarios, getUsers, logout }}>
-            {children}
+      {children}
     </UsuariosProvider.Provider>
-    )
+  )
 
 }
 
