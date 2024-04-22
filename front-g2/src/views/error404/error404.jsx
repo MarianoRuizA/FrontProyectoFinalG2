@@ -15,7 +15,7 @@ const Error404 = () => {
             <div className="text-center">
                 <h1>PÁGINA NO ENCONTRADA</h1>
                 <p>Lo sentimos, no se pudo encontrar la página que solicitaste</p>
-                <Button variant="primary"><a onClick={() => navegacion("/")}>Volver a inicio</a></Button>{' '}
+                <Button variant="primary" onClick={() => navegacion("/")}>Volver a inicio</Button>{' '}
             </div>
         </div>
     );

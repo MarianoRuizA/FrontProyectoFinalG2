@@ -4,6 +4,7 @@ import "./galeria.css"
 import { useContext, useEffect, useState } from "react"
 import { GaleriaProvider } from '../../context/galeriaContext'
 import Titulo from '../../componentes/titulo/titulo'
+import Footer from '../../componentes/footer/Footer'
 
 
 
@@ -97,6 +98,7 @@ const Galeria = () => {
 
 
             </main>
+            <Footer/>
         </>
 
     )

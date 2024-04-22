@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import FormRegistro from "../../componentes/form/formRegistro/FormRegistro"
+import Footer from "../../componentes/footer/Footer";
 
 const Registro = () => {
   useEffect(() => {
@@ -7,7 +8,10 @@ const Registro = () => {
   }, []);
   return (
     <>
-      <FormRegistro />
+      <main className="mainRegistro">
+        <FormRegistro />
+      </main>
+      <Footer />
     </>
   )
 }
