@@ -9,7 +9,7 @@ const Login = ({ handleClose }) => {
   const [email, setEmail] = useState("")
   const [contraseña, setContraseña] = useState("")
 
-  const { usuarios } = useContext(UsuariosProvider);
+  const { usuarios } = useContext(UsuariosContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();

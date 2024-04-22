@@ -3,28 +3,42 @@
     margin: 0;
 }
 
-.container {
+body {
+    padding: 0 !important;
+}
+
+.contenedor-404 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
     width: 100vw;
-    /* background-color: whitesmoke; */
+    padding: 1rem;
+}
+
+.contenedor-404 h2 {
+    color: black;
 }
 
 .image-container {
     width: 70%;
     max-width: 450px; /* Ajusta el ancho máximo según sea necesario */
+    user-select: none;
 }
 
 .img-fluid {
     width: 100%;
-    height: auto;
+    height: 100%
 }
 
 .text-center {
     margin-top: 5px; /* Espacio entre la imagen y el botón */
+}
+
+.text-center h1 {
+    color: black;
+    background-color: white;
 }
 
 .btn {

@@ -25,13 +25,11 @@ function Navbar() {
 	return (
 		<>
 			<header>
-				<figure>
-					<img
-						src="src/img/logo_tango.png"
-						alt="Logo de Tango Restaurante"
-						className="logo-tango"
-					/>
-				</figure>
+				<img
+					src="src/img/logo_tango.png"
+					alt="Logo de Tango Restaurante"
+					className="logo-tango"
+				/>
 				<button
 					className="nav-btn"
 					onClick={showNavbar}>
@@ -41,7 +39,7 @@ function Navbar() {
 					<a onClick={() => navegacion("/galeria")} className="link-underline">GALERÍA</a>
 					<a onClick={() => navegacion("/carta")} className="link-underline">CARTA</a>
 					<a onClick={() => navegacion("/nosotros")} className="link-underline">NOSOTROS</a>
-					<a onClick={() => navegacion("/reservas")}className="link-underline">RESERVAS</a>
+					<a onClick={() => navegacion("/reservas")} className="link-underline">RESERVAS</a>
 
 					{user ? (
 						<a className="link-login" >
@@ -49,7 +47,6 @@ function Navbar() {
 						</a>
 					) : (
 						<a className="link-login" onClick={handleShow}>
-							{/* <img className="login-icon" src="src/img/login_icon.png" alt="Icono del login" /> */}
 							INICIAR SESIÓN
 						</a>
 					)}

@@ -21,4 +21,3 @@ const ModalLogin = ({ show, handleClose }) => {
 };
 
 export default ModalLogin;
- 

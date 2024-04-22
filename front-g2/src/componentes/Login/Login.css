@@ -32,6 +32,8 @@
 
 .form {
   font-family: "Montserrat", sans-serif !important;
+  width: 100%;
+  padding: 1.25rem;
 }
 
 .input-form:focus {
@@ -46,6 +48,16 @@
   font-family: "Montserrat", sans-serif !important;
 }
 
+.modal-body {
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+}
+
 .text-email, .text-contraseña {
-  font-weight: 450;
+  font-weight: 500;
+}
+
+.mb-3 {
+  text-align: start;
 }
