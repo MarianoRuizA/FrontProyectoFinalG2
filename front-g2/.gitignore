@@ -1,3 +1,4 @@
+
 # Logs
 logs
 *.log
@@ -26,7 +27,7 @@ dist-ssr
 
 # macOS
 .DS_Store
-
+../.DS_Store
 # Visual Studio Code
 .vscode/
 .vscode/*
@@ -38,4 +39,4 @@ yarn-error.log
 
 # React build
 /build/
-node_modules/
+
