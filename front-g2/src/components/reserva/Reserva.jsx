@@ -13,7 +13,7 @@ const [showSucursales, setShowSucursales]  = useState(true)
 const [showComensales, setShowComensales] = useState(false)
  const [showServicio, setShowServicio] = useState(false)
  const [showFecha, setShowFecha] = useState (false)
- const [showReserva, setShowReserva] = useState(false)
+ 
 
  const [cantidad, setCantidad] = useState(1)
  const [reserva, setReserva] = useState({
@@ -25,7 +25,7 @@ const [showComensales, setShowComensales] = useState(false)
   comensales: 0,
   servicio: "",
   fecha:"",
-  hora: ""
+   
  })
  const actualizarFechaReserva = (nuevaFecha, nuevaHora) => {
   setReserva(prevState => ({
@@ -140,11 +140,7 @@ const nextServicioFunction = (servicioElejido) =>{
        <Fecha reserva = {reserva} actualizarFechaReserva = {(nuevaFecha, nuevaHora)=>{actualizarFechaReserva(nuevaFecha,nuevaHora)}}/>
        
       </> :null}   
-      {showReserva ? <>
-       <h2>das</h2>
-
       
-      </>: null}
     </div> 
   
  
