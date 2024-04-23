@@ -9,15 +9,13 @@ const Login = ({ handleClose }) => {
   const [email, setEmail] = useState("")
   const [contraseña, setContraseña] = useState("")
 
-  const { usuarios } = useContext(UsuariosContext);
+  const { loginUser, usuarioLogueado} = useContext(UsuariosContext);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const user = usuarios.find(
-        (user) => user.email === email && user.contraseña === contraseña
-      );
-      if (user) {
+      await loginUser({email, contrasenia});
+      if (usuarioLogueado) {
         Swal.fire({
           title: "Bienvenido",
           text: "Inicio de sesión exitoso",
@@ -31,7 +29,7 @@ const Login = ({ handleClose }) => {
             htmlContainer: 'custom-container'
           }
         });
-        localStorage.setItem("user", JSON.stringify(user));
+        localStorage.setItem("user", JSON.stringify(usuarioLogueado));
         // navigate("/"); 
         handleClose();
       } else {
