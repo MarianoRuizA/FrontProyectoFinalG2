@@ -9,28 +9,28 @@ main {
     background-color: white;
 }
 
-.contenedor-logo {
+main .contenedor-logo {
     height: 20vh;
     background-color: #3D0000;
 }
 
-.contenedor-logo {
+main .contenedor-logo {
     width: 100%;
     padding: 0 15px;
     /* Ajusta el relleno según sea necesario */
 }
 
-figure {
+main .contenedor-logo figure {
     height: 100%;
     overflow: hidden;
 }
 
-.contenedor-logo img {
+main .contenedor-logo figure .contenedor-logo img {
     max-width: 100%;
     max-height: 100%;
 }
 
-.contenedor-logo p{
+main .contenedor-logo p{
     color: white;
 }
 

@@ -50,8 +50,10 @@ const ContextUsuarios = ({ children }) => {
   }
 
   const logout = () => {
-    localStorage.removeItem("user");
-    window.location.href = "/";
+      // Borra el token de usuario del local storage
+  localStorage.removeItem("user");
+  // Actualiza el estado de usuario logueado a null
+  setUsuarioLogueado(null);
   }
 
   const loginUser = async (usuario) => {

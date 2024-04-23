@@ -7,7 +7,7 @@ import './Login.css'
 const Login = ({ handleClose }) => {
 
   const [email, setEmail] = useState("")
-  const [contraseña, setContraseña] = useState("")
+  const [contrasenia, setContraseña] = useState("")
 
   const { loginUser, usuarioLogueado} = useContext(UsuariosContext);
 
@@ -68,7 +68,7 @@ const Login = ({ handleClose }) => {
         <Form.Label><p className='text-contraseña'>Contraseña</p></Form.Label>
         <Form.Control className='input-form'
           type="password"
-          value={contraseña}
+          value={contrasenia}
           onChange={(e) => setContraseña(e.target.value)}
           name="contraseña"
           placeholder="Contraseña" />
