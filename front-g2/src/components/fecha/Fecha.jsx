@@ -1,11 +1,14 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import "./fecha.css"
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { Button   } from 'react-bootstrap';
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
+import {FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import {faClock} from "@fortawesome/free-regular-svg-icons"
 import {faArrowLeft, faArrowRight} from "@fortawesome/free-solid-svg-icons"
- 
+import es from 'date-fns/locale/es';
+
+
 const Fecha = ( ) => {
   const [selectedDate, setSelectedDate] = useState(new Date());
  const [showDivFechas, setShowDivFechas  ] = useState (true)
@@ -15,21 +18,8 @@ const Fecha = ( ) => {
   const [indexInicio, setIndexInicio] = useState(0);
   const [indexFin, setIndexFin] = useState(7);
   const [showTimePicker, setShowTimePicker] = useState(false);
-  
-  const handleDateButtonClick = (date) => {
-    setSelectedDate(date);
-    setShowTimePicker(true);
-   
-  };
-console.log(selectedDate)
-  const handleTimeChange = (time) => {
-    setSelectedDate(prevDate => {
-      const newDate = new Date(prevDate);
-      newDate.setHours(time.getHours(), time.getMinutes());
-      setShowTimePicker(false);
-      return newDate;
-    });
-  };
+  const [reservas, setReservas] = useState([new Date(2024, 3, 22, 15  )]);
+  const [banDate, setBanDate] = useState(false)
 
   const daySelected = selectedDate.getDay();
   const daysToAdd = daySelected === 0 ? 1 : 8 - daySelected;
@@ -51,35 +41,72 @@ console.log(selectedDate)
  
  
 
-  let horarioExcluido = [];
-  const diaExcluido = new Date(2024, 3, 15, 14);
-  if (selectedDate.getTime() === diaExcluido.getTime()) {
-    console.log(selectedDate.getTime())
-    horarioExcluido = [diaExcluido];
-    selectedDate.setDate( null)
-  }
- const today = new Date( ) 
+ //Seteo las variables a partir de mañana como fecha minima seleccionable
+ const today = new Date()
+ today.setDate(today.getDate()+1) 
+  
  const tomorrow = new Date(today)
  const after = new Date (today)
  tomorrow.setDate(today.getDate()+1)
  after.setDate(today.getDate()-1)
 
 
- const [fechaSeleccionada, setFechaSeleccionada] = useState(null);
+ const [fechaSeleccionada, setFechaSeleccionada] = useState(new Date());
 
- const [selectedTime, setSelectedTime] = useState( null);
+ const [selectedTime, setSelectedTime] = useState( new Date());
 
  const twoWeeksLater = new Date();
  twoWeeksLater.setDate(today.getDate() + 14);
 
  const dates = [];
   
- for (let d = today; d <= twoWeeksLater; d.setDate(d.getDate() + 1)) {
-   dates.push(new Date(d));
+ for (let index = today; index <= twoWeeksLater; index.setDate(index.getDate() + 1)) {
+   dates.push(new Date(index));
  }
 
   
  const   [elements, setElements] = useState([]);
+  
+  const handleDateButtonClick = (date) => {
+    setBanDate(true)
+    setSelectedDate(date);
+  setFechaSeleccionada(new Date(date.getFullYear(), date.getMonth(), date.getDate(), selectedTime.getHours(), selectedTime.getMinutes()));
+  setSelectedTime(null) //temer cuidado porque cuando es nulo me tira varios errores en consola
+  };
+ 
+  const handleTimeChange = (time) => {
+    setSelectedTime(time);
+  setFechaSeleccionada(new Date(selectedDate.getFullYear(), selectedDate.getMonth(), selectedDate.getDate(), time.getHours(), time.getMinutes()));
+  setSelectedDate(fechaSeleccionada)
+  setShowTimePicker(false);
+  };
+  
+  const handleReservar = () => {
+     
+    if(fechaSeleccionada.getDate() === new Date().getDate() || fechaSeleccionada.getHours() === new Date().getHours() &&  fechaSeleccionada.getMinutes() === new Date().getMinutes()){
+      alert("Seleccione una fecha y hora por favor.")
+      return;
+    }
+    fechaSeleccionada.setHours(selectedTime.getHours(), selectedTime.getMinutes());
+     
+    const reservaExistente = reservas.find(reserva => reserva.getTime() === fechaSeleccionada.getTime());
+    if (reservaExistente) {
+      alert('Esta fecha y hora ya han sido seleccionadas. Por favor, elige otra.');
+      return;
+    }
+   else{
+    alert('La fecha y hora seleccionadas estan disponibles')
+    const nuevasReservas = [...reservas, fechaSeleccionada];
+    setReservas(nuevasReservas);
+    console.log(nuevasReservas )
+     
+   }
+   
+  };
+
+
+
+  
  useEffect(()=>{
   const elementsToPush = []
   for (let i = indexInicio; i < indexFin; i++) {
@@ -93,117 +120,109 @@ console.log(selectedDate)
       <div key={day}>
           
         <div className='divFecha' style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          borderStyle: "groove",
-          borderRadius: "100px",
-          width: "100px",
-          height: "120px",
-          margin: " 5px",
-          
+         
+         
         }}>
           <Button style={{
             background: "none",
             borderColor: "none",
             borderStyle: "hidden"
-          }} onClick={() => {handleDateButtonClick(dateObject) ,  setTimeout(() => {
-            document.querySelector('.react-datepicker-time__input').click();
-          }, 100); }}>
+          }} onClick={() => {handleDateButtonClick(dateObject)}}>
              
             <h3>{dayName}.</h3>
            
             <h4>{day} {monthName}</h4>
-      
-   
-          </Button>
+         </Button>
          
         </div>
-        {selectedDate.getDate() === dateObject.getDate() && selectedDate.getMonth() === dateObject.getMonth() && selectedDate.getFullYear() === dateObject.getFullYear() ?
-            <div key={day} className='inputPicker'> 
-        <DatePicker
+        {selectedDate.getDate() === dateObject.getDate()  ?
+        
+            < div key={day} className='inputPicker'   > 
+    
+              <span > <FontAwesomeIcon icon={faClock} style={{height : "25px", marginTop: "2px"  }} /></span>
+            <div  >
+            <DatePicker
+        
               timeIntervals={60}
               minTime={minTime}
               maxTime={maxTime}
-              excludeTimes={horarioExcluido}
-              placeholderText='Seleccione el horario  '
+               placeholderText='Horario'
               showTimePicker
-              selected={selectedTime}
-              onChange={date => setSelectedTime(date)}
+              selected={selectedTime }
+              onChange={data => {handleTimeChange (data)  }}
               showTimeSelect
               showTimeSelectOnly
               dateFormat="h:mm aa"
             />
+            </div>
+         
             </div> : null}
       </div>
     ) 
   
  }
-
- setElements(elementsToPush);
- },[indexInicio])
  
+ 
+ setElements(elementsToPush);
+ },[indexInicio,selectedDate,selectedTime ])
+ 
+
+ 
+
 return(<>
  
  {showDivFechas ?   <>   
-    <div style={{ display: "flex", position: "fixed"}}> 
-    
-    {indexInicio ===7 ? <Button onClick={() => {setIndexInicio(0), setIndexFin(7)} }variant='light'  ><FontAwesomeIcon icon={faArrowLeft} />  </Button> : null}
-    {elements} 
-    {indexInicio ==! 7 ? <Button onClick={() => {setIndexInicio(7),setIndexFin(14)} } variant='light'> <FontAwesomeIcon icon={faArrowRight} /> </Button>  : null}
- 
- </div>  {indexInicio ===7 ?
-  <>
-    <div   style={{display: "flex", marginTop: "270px"}}>
-      <h3 className='me-2 '>Seleccione otra fecha: </h3>
-      <div className='divPicker'><DatePicker 
+  {indexInicio ==!7 ? <h2 className='h2Date' >Seleccione fecha y hora</h2>  : null}
+    <div className='divElements'  > 
      
-        selected={fechaSeleccionada  ? fechaSeleccionada: selectedDate}
-        onChange={date => setSelectedDate(date)}
-        minDate={new Date() }
+    {indexInicio ===7 ? <Button style={{margin: "10px"}} onClick={() => {setIndexInicio(0), setIndexFin(7)} }variant='light'  ><FontAwesomeIcon icon={faArrowLeft} />  </Button> : null}
+    
+    {elements} 
+    
+    {indexInicio ==! 7 ? <Button style={{margin: "10px"}} onClick={() => {setIndexInicio(7),setIndexFin(14)} } variant='light'> <FontAwesomeIcon icon={faArrowRight} /> </Button>  : null}
+ 
+ </div>  
+  
+ {indexInicio ===7 ?
+ 
+  <>
+    <div  className='divOtherDate' >
+      <h3 className='me-lg-2 '>Seleccione otra fecha y hora </h3>
+      <div className='divPicker my-sm-1'><DatePicker 
+         popperPlacement="top-start"
+        selected={ fechaSeleccionada.getDate()  === new Date().getDate() ||  banDate    ? null : selectedDate  }
+        onChange={date =>{ setSelectedDate(date), setFechaSeleccionada(date), setBanDate(false), setSelectedTime(date) }}
+        minDate={new Date(new Date().getTime() + 24 * 60 * 60 * 1000)} // Fecha actual más un día
         maxDate={FechaMax.setMonth(new Date().getMonth() + 2)}
         timeIntervals={60}
         minTime={minTime}
         maxTime={maxTime}
-        excludeTimes={horarioExcluido}
+        placeholderText=' Elija fecha y hora'
         showTimeSelect
         showTimePicker
-        
-        dateFormat="dd/MM/yyyy  "
+        locale={es}
+        dateFormat="dd/MM/yyyy h:mm aa"
         showIcon
-        
+        className='otherDatePicker'
         showMonthDropdown>
   </DatePicker> </div>
     </div>
-    <Button onClick={() => {setShowDivFechas(false), setShowTimePicker(true) }} variant='light' className='my-2'>  <FontAwesomeIcon icon={faArrowRight} /> </Button> 
-    
+    <Button onClick={() => {   handleReservar()}} variant='light' className='my-2'>  <FontAwesomeIcon icon={faArrowRight} /> </Button> 
+    {console.log(fechaSeleccionada.toLocaleDateString() )}
+    {console.log(selectedDate.toLocaleDateString() )}
   </>
       : null
     
 } </>  : null} 
- {/* {showTimePicker ? <> 
-  <h4>Reservas disponibles para el {selectedDate.toLocaleString('es-ES', { weekday: 'long' })} {selectedDate.getDate()} de {selectedDate.toLocaleDateString('es-ES', { month: 'long' })}</h4>
-         
-     <div className='inputPicker'> 
-      <DatePicker
-              timeIntervals={60}
-              minTime={minTime}
-              maxTime={maxTime}
-              excludeTimes={horarioExcluido}
-              placeholderText='  horario  '
-              showTimePicker
-              selected={selectedTime}
-              onChange={date => setSelectedTime(date)}
-              showTimeSelect
-              showTimeSelectOnly
-              dateFormat="h:mm aa"
-            />
-      </div> 
-              </> : null}
-  */}
-  
-     
+ {/* fechaSeleccionada.toLocaleDateString(fechaSeleccionada.getTime()) muestra la fecha como dia/mes/año <Button variant='light'>Fecha: {fechaSeleccionada.toLocaleDateString(fechaSeleccionada.getTime())}</Button>*/}
 
+ {showTimePicker ? <> 
+ 
+  <h4>Realizo una reserva para el dia {fechaSeleccionada.toLocaleString('es-ES', { weekday: 'long' })} {fechaSeleccionada.getDate()} de  {fechaSeleccionada.toLocaleDateString('es-ES', { month: 'long' })} a las { fechaSeleccionada.toLocaleString('es-ES', { hour: 'numeric', minute: 'numeric', hour12: true })}  </h4>
+  <Button onClick={ handleReservar } variant='success'>Reservar</Button>   
+   
+              </> : null}
+   
   </>
 )}
 export default Fecha;

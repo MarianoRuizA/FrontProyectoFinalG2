@@ -75,26 +75,29 @@ const nextServicioFunction = (servicioElejido) =>{
  return (
    
 <>
-
+ 
  <h1 style={{textAlign: "center"}}>Te damos la bienvenida !!</h1> 
     <div className='montserrat-font div_conteiner'>
-      <header><Button onClick={() => backComensal()} variant='dark' className='m-3'><FontAwesomeIcon icon={faArrowLeft} /></Button>
-   <span >
+      <div><Button onClick={() => backComensal()} variant='dark' className='  backButton '> <FontAwesomeIcon icon={faArrowLeft} /></Button>
+   <div className='divButtons' >
     {reserva.sucursal ? <Button   variant='light'>Sucursal: {reserva.sucursal}</Button>  : null}
      {reserva.comensales  ? <><Button variant='light'>Comensales: {reserva.comensales}</Button></> : null}
      {reserva.servicio ? <Button variant='light'>Servicio: {reserva.servicio}</Button>: null}
       {reserva.fecha ? <Button variant='light'>Fecha: {reserva.fecha}</Button> : null}
-   </span>
-    </header>
+   </div>
+    </div>
     
     <div className='conteiner_div '> 
        
          {showSucursales ?  <>
          <h2  >Sucursales</h2>
-        <Button variant='light'  onClick={ (e)=>setReserva({sucursal: e.target.textContent}) } style={{width: "50%", height: "50px"} } className='mb-3' >Chacabuco 474 </Button>
-        <Button  variant='light'  onClick={(e)=>setReserva({sucursal: e.target.textContent}) } style={{width: "50% ", height: "50px"}} className='mb-3'   >San Martin 821</Button>
-        <Button  variant='light' onClick={(e)=>setReserva({sucursal: e.target.textContent}) } style={{width: "50%", height: "50px"}}>24 de septiembre y congreso</Button>
-        {reserva.sucursal ? setShowComensales(true)  & setShowSucursales(false) : null}
+          
+          <Button variant='light'   onClick={ (e)=>setReserva({sucursal: e.target.textContent}) }   className='sucursalButton mb-lg-3' >Chacabuco 474 </Button>
+        <Button  variant='light'  onClick={(e)=>setReserva({sucursal: e.target.textContent}) }   className='sucursalButton mb-lg-3'  >San Martin 821</Button>
+        <Button  variant='light' onClick={(e)=>setReserva({sucursal: e.target.textContent}) }   className='sucursalButton  mb-lg-3' >Gral. Paz 576</Button>
+      
+      
+         {reserva.sucursal ? setShowComensales(true)  & setShowSucursales(false) : null}
       </>:null}
       
         {showComensales ? <>  {/* Si show comensales es TRUE se muestra esto*/}
@@ -111,17 +114,19 @@ const nextServicioFunction = (servicioElejido) =>{
           <Button variant='light' onClick={()=> nextComensalesFunction()} ><FontAwesomeIcon icon={faArrowRight} /></Button>
         </>            
          : null }
-      {showServicio ? <><h2>Elija el servicio que le gustaria recibir</h2>
-            <Button onClick={(e)=>nextServicioFunction( e.target.textContent)} className='mb-3' style={{width: "50%", height: "50px"} } variant='light'>Almuerzo</Button>
-            <Button onClick={(e)=>nextServicioFunction( e.target.textContent)} style={{width: "50%", height: "50px"} } variant='light'>Cena</Button></> : null}
+      {showServicio ? <><h2 className='mb-lg-3'>Elija el servicio que le gustaria recibir</h2>
+            <Button onClick={(e)=>nextServicioFunction( e.target.textContent)} className='sucursalButton mb-lg-3' variant='light'>Almuerzo</Button>
+            <Button onClick={(e)=>nextServicioFunction( e.target.textContent)}  className='sucursalButton mb-lg-3' variant='light'>Cena</Button></> : null}
        {showFecha ?  <> 
+    
        <Fecha />
+       
       </> :null}      
     </div> 
   
  
      </div>
-
+ 
 </>
     
 
