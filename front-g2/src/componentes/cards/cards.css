@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+.team-section{
+    width: 100%;
+    margin-bottom: 3rem;
+}
+.containerNosotros{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.rowNosotros{
+    width: 60%;
+    margin: 0;
+}
+.title{
+    text-align: center;
+    margin-top: 50px;
+}
+.title h2{
+    font-size: 2.25 rem;
+    text-align: center;
+    letter-spacing: 1.5px;
+    color: black;
+}
+.team-card{
+   width: 100%;
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 40px;
+   margin-top: 50px;
+}
+.team-card .card{
+    width: 100%;
+    background-color: #950101;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    cursor: pointer;
+}
+.team-card .card:hover{
+    background-color: #6c6c6c;
+    transition: 0.3s;
+}
+.img-section img{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    border: 6px solid #ff0000;
+    object-fit: cover;
+}
+.content{
+    width: 100%;
+    text-align: center;
+}
+.content h3{
+    font-size: 30px;
+    margin-top: 10px;
+    font-weight: bolder;
+    letter-spacing: 1.5px;
+    color: #fff;
+}
+.content h4{
+    font-size: 16px;
+    margin-top: 10px;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    color: #fff;
+}
+.content p{
+    font-size: 15px;
+    margin: 16px 0px;
+    line-height: 1.5;
+    color: #fff;
+}
+.social{
+    margin-top: 10px;
+}
+.social a{
+    font-size: 23px;
+    padding: 0px 10px;
+    color: #fff;
+}
+
+@media screen and (max-width: 900px){
+    .team-card{
+    grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (max-width: 768px){
+    .team-card{
+    grid-template-columns: 1fr;
+    }
+}

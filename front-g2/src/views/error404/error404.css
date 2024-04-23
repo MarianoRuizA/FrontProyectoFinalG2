@@ -1,0 +1,54 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    padding: 0 !important;
+}
+
+.contenedor-404 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    padding: 1rem;
+}
+
+.contenedor-404 h2 {
+    color: black;
+    font-weight: 550;
+}
+
+.image-container {
+    width: 70%;
+    max-width: 450px; /* Ajusta el ancho máximo según sea necesario */
+    user-select: none;
+}
+
+.img-fluid {
+    width: 100%;
+    height: 100%
+}
+
+.text-center {
+    margin-top: 5px; /* Espacio entre la imagen y el botón */
+}
+
+.text-center h1 {
+    color: black;
+    background-color: white;
+}
+
+.btn {
+    background-color: #FF0000 !important;
+    border-color: transparent;
+    color: white;
+    margin-top: 2.5px;
+}
+
+.btn:hover {
+    border-color: #950101;
+}

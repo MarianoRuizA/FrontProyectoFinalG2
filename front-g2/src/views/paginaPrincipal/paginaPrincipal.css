@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+main {
+    background-color: white;
+}
+
+main .contenedor-logo {
+    height: 20vh;
+    background-color: #3D0000;
+}
+
+main .contenedor-logo {
+    width: 100%;
+    padding: 0 15px;
+    /* Ajusta el relleno según sea necesario */
+}
+
+main .contenedor-logo figure {
+    height: 100%;
+    overflow: hidden;
+}
+
+main .contenedor-logo figure .contenedor-logo img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+main .contenedor-logo p{
+    color: white;
+}
+
+.separator {
+    height: 10px; /* Altura del separador */
+    background-color: whitesmoke; /* Color del separador */
+    margin: 20px 0; /* Espaciado entre el separador y los elementos adyacentes */
+}
+
+.separator {
+    border-top: 2px dashed black; /* Línea de puntos */
+    margin: 20px auto; /* Espaciado entre el separador y los elementos adyacentes */
+    width: 80%; /* Ancho del separador */
+}
