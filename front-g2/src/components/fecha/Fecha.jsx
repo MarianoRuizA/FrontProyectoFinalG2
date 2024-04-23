@@ -7,14 +7,14 @@ import {FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {faClock} from "@fortawesome/free-regular-svg-icons"
 import {faArrowLeft, faArrowRight} from "@fortawesome/free-solid-svg-icons"
 import es from 'date-fns/locale/es';
+import Swal from 'sweetalert2'
 
-
-const Fecha = ( ) => {
+const Fecha = ({reserva, actualizarFechaReserva} ) => {
   const [selectedDate, setSelectedDate] = useState(new Date());
- const [showDivFechas, setShowDivFechas  ] = useState (true)
+  
   const currentDate = new Date();
   const FechaMax = new Date();
-   
+   console.log(reserva)
   const [indexInicio, setIndexInicio] = useState(0);
   const [indexFin, setIndexFin] = useState(7);
   const [showTimePicker, setShowTimePicker] = useState(false);
@@ -84,24 +84,36 @@ const Fecha = ( ) => {
   const handleReservar = () => {
      
     if(fechaSeleccionada.getDate() === new Date().getDate() || fechaSeleccionada.getHours() === new Date().getHours() &&  fechaSeleccionada.getMinutes() === new Date().getMinutes()){
-      alert("Seleccione una fecha y hora por favor.")
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Seeccione una fecha y hora, por favor!",
+    
+      });
       return;
     }
     fechaSeleccionada.setHours(selectedTime.getHours(), selectedTime.getMinutes());
      
     const reservaExistente = reservas.find(reserva => reserva.getTime() === fechaSeleccionada.getTime());
-    if (reservaExistente) {
-      alert('Esta fecha y hora ya han sido seleccionadas. Por favor, elige otra.');
+    if (reservaExistente && reserva.comensales) {
+     
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Esta fecha y hora ya han sido seleccionadas. Por favor, elija otra.",
+    
+      });
       return;
     }
    else{
-    alert('La fecha y hora seleccionadas estan disponibles')
+  
     const nuevasReservas = [...reservas, fechaSeleccionada];
     setReservas(nuevasReservas);
-    console.log(nuevasReservas )
+ 
+      actualizarFechaReserva(fechaSeleccionada.toLocaleDateString(),fechaSeleccionada.toLocaleTimeString() )
      
    }
-   
+    
   };
 
 
@@ -170,8 +182,7 @@ const Fecha = ( ) => {
  
 
 return(<>
- 
- {showDivFechas ?   <>   
+     <>   
   {indexInicio ==!7 ? <h2 className='h2Date' >Seleccione fecha y hora</h2>  : null}
     <div className='divElements'  > 
      
@@ -188,7 +199,7 @@ return(<>
   <>
     <div  className='divOtherDate' >
       <h3 className='me-lg-2 '>Seleccione otra fecha y hora </h3>
-      <div className='divPicker my-sm-1'><DatePicker 
+      <div className='divPicker '><DatePicker 
          popperPlacement="top-start"
         selected={ fechaSeleccionada.getDate()  === new Date().getDate() ||  banDate    ? null : selectedDate  }
         onChange={date =>{ setSelectedDate(date), setFechaSeleccionada(date), setBanDate(false), setSelectedTime(date) }}
@@ -209,19 +220,19 @@ return(<>
     </div>
     <Button onClick={() => {   handleReservar()}} variant='light' className='my-2'>  <FontAwesomeIcon icon={faArrowRight} /> </Button> 
     {console.log(fechaSeleccionada.toLocaleDateString() )}
-    {console.log(selectedDate.toLocaleDateString() )}
+ 
   </>
       : null
     
-} </>  : null} 
+} </>  
  {/* fechaSeleccionada.toLocaleDateString(fechaSeleccionada.getTime()) muestra la fecha como dia/mes/año <Button variant='light'>Fecha: {fechaSeleccionada.toLocaleDateString(fechaSeleccionada.getTime())}</Button>*/}
-
+{/* 
  {showTimePicker ? <> 
  
   <h4>Realizo una reserva para el dia {fechaSeleccionada.toLocaleString('es-ES', { weekday: 'long' })} {fechaSeleccionada.getDate()} de  {fechaSeleccionada.toLocaleDateString('es-ES', { month: 'long' })} a las { fechaSeleccionada.toLocaleString('es-ES', { hour: 'numeric', minute: 'numeric', hour12: true })}  </h4>
   <Button onClick={ handleReservar } variant='success'>Reservar</Button>   
    
-              </> : null}
+              </> : null} */}
    
   </>
 )}

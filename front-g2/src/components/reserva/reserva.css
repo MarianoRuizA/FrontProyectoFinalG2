@@ -19,7 +19,7 @@
     background-image: linear-gradient(to top, rgba(0, 0, 0, 0.678), rgba(24, 24, 24, 0.4)), url("https://fastly.4sqi.net/img/general/600x600/512751503_Dk1wmV0BHgxOiQ0AchzKHcPwSoxNdReX1EddeOcxniY.jpg");
      background-size: 100% 100%;
     padding: 10px;
-    
+    align-content: center;
     border-style: groove;
     border-width:3px;
     color: white;
@@ -78,12 +78,15 @@
     height:  50px;
   }
 .backButton{
-  margin: 10px;
+  
+  margin: -110px 10px 10px 10px;
 }
 
 .divButtons{
   display: flex;
  justify-content: center;
+ 
+ margin-top: -90px;
 } 
 .divButtons button{
   margin: 5px;
@@ -97,12 +100,13 @@
     justify-content: center;
     text-align: center;
   }
-  .sucursalButton{
-    margin: 5px;
-  }
+   
   .backButton{
    
-    margin: 10px 700px 10px 0px;
+    margin: -100px 50rem 10px 0px;
+   }
+   .sucursalButton{
+      margin: 5px;
    }
 }
   @media screen  and (max-width: 765px){
@@ -117,11 +121,12 @@
         display: flex;
         justify-content: center;
         width: 100%;
-       
+  
       }
       .divButtons button{
-        height: 50px;
-        margin: 5px;
+        height: 60px;
+        margin: 3px;
+        padding: 1px;
         font-size: 13px;
        
       }
@@ -135,13 +140,16 @@
   
     }
  .backButton{
-   
-  margin: 10px 320px 10px 0px;
+   display: flex;
+  margin: -200px 320px 10px 10px;
  }
   }
-  @media screen  and (max-width: 320px){
+  @media screen  and (max-width: 360px){
     .backButton{
    
-      margin: 10px 300px 10px 0px;
+      margin: -190px 300px 10px 0px;
+     }
+     .div_conteiner{
+      margin: auto;
      }
   }

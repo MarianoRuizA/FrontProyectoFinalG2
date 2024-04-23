@@ -4,7 +4,7 @@ import { Button } from 'react-bootstrap';
  import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
  import {faArrowLeft, faArrowRight} from "@fortawesome/free-solid-svg-icons"
 import Fecha from '../fecha/Fecha.jsx';
- 
+import Swal from 'sweetalert2'
 
 import 'react-datepicker/dist/react-datepicker.css';
  
@@ -13,6 +13,7 @@ const [showSucursales, setShowSucursales]  = useState(true)
 const [showComensales, setShowComensales] = useState(false)
  const [showServicio, setShowServicio] = useState(false)
  const [showFecha, setShowFecha] = useState (false)
+ const [showReserva, setShowReserva] = useState(false)
 
  const [cantidad, setCantidad] = useState(1)
  const [reserva, setReserva] = useState({
@@ -23,8 +24,25 @@ const [showComensales, setShowComensales] = useState(false)
   sucursal: "",
   comensales: 0,
   servicio: "",
-  fecha: ""
+  fecha:"",
+  hora: ""
  })
+ const actualizarFechaReserva = (nuevaFecha, nuevaHora) => {
+  setReserva(prevState => ({
+    ...prevState,
+    fecha: nuevaFecha,
+    hora: nuevaHora
+  }));
+ 
+  Swal.fire({
+    title: "Reserva realizada con exito!",
+     
+    icon: "success"
+})
+   
+
+};
+console.log(reserva)
  const backComensal = () =>{ //Funciom volver para el boton
     if (showComensales){
       setReserva(prevReserva => ({  // ...prevReserva conserva el estado de mi componente reserva con sus valores anteriores
@@ -119,9 +137,14 @@ const nextServicioFunction = (servicioElejido) =>{
             <Button onClick={(e)=>nextServicioFunction( e.target.textContent)}  className='sucursalButton mb-lg-3' variant='light'>Cena</Button></> : null}
        {showFecha ?  <> 
     
-       <Fecha />
+       <Fecha reserva = {reserva} actualizarFechaReserva = {(nuevaFecha, nuevaHora)=>{actualizarFechaReserva(nuevaFecha,nuevaHora)}}/>
        
-      </> :null}      
+      </> :null}   
+      {showReserva ? <>
+       <h2>das</h2>
+
+      
+      </>: null}
     </div> 
   
  
