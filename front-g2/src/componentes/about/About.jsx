@@ -8,11 +8,6 @@ const About = () => {
         <div className="contenido-seccion">
           <div className="titulo">
           </div>
-          <div className="contenido-nosotros">
-            <h3>Nuestra historia</h3>
-            <p>En una esquina bulliciosa del barrio de San Miguel de Tucumán en Tucumán, cinco jóvenes emprendedores decidieron abrir un restaurante con un nombre que evocaba la esencia de su país: "Tango".
-              Cada uno de ellos había crecido inmerso en la cultura argentina del tango y la pasión por la gastronomía local.</p>
-          </div>
           </div>
           <div className="contenedor">
             <div className="contenido-seccion">

@@ -5,7 +5,7 @@
     box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
 }
-body{
+.mainRegistro{
     display: flex;
     justify-content: center;
     align-items: center;

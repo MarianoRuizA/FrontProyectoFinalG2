@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
 import About from "../../componentes/about/About"
 import CardsGrupo from "../../componentes/cards/CardsGrupo"
-import Titulo from "../../componentes/titulo/titulo"
 import Footer from '../../componentes/footer/Footer'
+import Titulo from '../../componentes/imgCarousel/titulo/titulo'
 
 const Nosotros = () => {
   useEffect(() => {

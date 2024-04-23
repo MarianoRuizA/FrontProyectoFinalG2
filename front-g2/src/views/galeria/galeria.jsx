@@ -3,8 +3,8 @@ import { faCircleLeft, faCircleRight, faCircleXmark } from '@fortawesome/free-so
 import "./galeria.css"
 import { useContext, useEffect, useState } from "react"
 import { GaleriaProvider } from '../../context/galeriaContext'
-import Titulo from '../../componentes/titulo/titulo'
 import Footer from '../../componentes/footer/Footer'
+import Titulo from '../../componentes/imgCarousel/titulo/titulo'
 
 
 
