@@ -12,7 +12,7 @@ const Titulo = ({link, texto, nombre}) =>
             <h1>{nombre}
             </h1>
             </Col>
-            <Col className="bg-success d-flex justify-content-center align-items-center">
+            <Col className="bg-secondary d-flex justify-content-center align-items-center">
                 <img src={link} alt={texto} />
             </Col>
            
