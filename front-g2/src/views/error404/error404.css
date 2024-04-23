@@ -19,6 +19,7 @@ body {
 
 .contenedor-404 h2 {
     color: black;
+    font-weight: 550;
 }
 
 .image-container {

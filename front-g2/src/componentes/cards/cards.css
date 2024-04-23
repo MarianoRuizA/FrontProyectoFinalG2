@@ -12,17 +12,20 @@
 .containerNosotros{
     width: 80%;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .rowNosotros{
     width: 60%;
-    margin: auto;
+    margin: 0;
 }
 .title{
     text-align: center;
     margin-top: 50px;
 }
 .title h2{
-    font-size: 35px;
+    font-size: 2.25git rem;
     text-align: center;
     letter-spacing: 1.5px;
     color: black;
