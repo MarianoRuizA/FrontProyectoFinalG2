@@ -141,6 +141,7 @@ const Reserva = () => {
   
                 {/* Otros bloques de código */}
               </div>
+
             </div>
             
           </>

@@ -56,6 +56,7 @@ const ContextUsuarios = ({ children }) => {
     // Actualiza el estado de usuario logueado a null
     setUsuarioLogueado(null);
     setEmailLogueado(null)
+    window.location.href = "/";
   }
 
   const loginUser = async (usuario) => {
@@ -74,8 +75,6 @@ const ContextUsuarios = ({ children }) => {
     getUsuario()
   }, [])
 
-
-  // los children hacen referencia a los componentes que estan dentro de context usuarios en el app.
   return (
     <>
       <UsuariosContext.Provider value={{ usuarios, getUsuario, createUsuario, modificarUsuario, eliminarUsuario, logout, loginUser, usuarioLogueado, emailLogueado }}>

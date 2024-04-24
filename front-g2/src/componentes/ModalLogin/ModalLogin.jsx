@@ -3,10 +3,16 @@ import Login from "../Login/Login";
 import '../Login/Login.css'
 import { useNavigate } from "react-router-dom";
 
-const ModalLogin = ({ show, handleClose }) => {
+const ModalLogin = ({ show, handleClose, cerrarMenu  }) => {
   const navegacion = useNavigate()
+  
+  const irARegistro = () => {
+    navegacion("/registro");
+    handleClose();
+    cerrarMenu()
+  };
   return (
-    <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false} className="modal">
+    <Modal show={show} onHide={handleClose} cerrarMenu ={cerrarMenu} backdrop="static" keyboard={false} className="modal">
       <Modal.Header closeButton className="modal-header">
         <Modal.Title>Iniciar sesión</Modal.Title>
       </Modal.Header>
@@ -14,8 +20,7 @@ const ModalLogin = ({ show, handleClose }) => {
         <Login handleClose={handleClose} />
       </Modal.Body>
       <Modal.Footer>
-        <p>Si aún no te registraste, seguí los pasos <a onClick={() => {navegacion("/registro")
-         show=false}}className="link-registro">aquí</a>.</p>
+        <p>Si aún no te registraste, seguí los pasos <a onClick={irARegistro} className="link-registro">aquí</a>.</p>
       </Modal.Footer>
     </Modal>
   );

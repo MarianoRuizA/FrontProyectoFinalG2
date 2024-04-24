@@ -3,6 +3,12 @@
   padding: 0;
 }
 
+.h1-reserva {
+  background-color: white;
+  color: black;
+  padding: 1rem;
+}
+
 .montserrat-font {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
@@ -13,8 +19,7 @@
 .div_conteiner {
 
 
-  width: 900px;
-  height: 450px;
+  width: 100%;
   margin: auto;
   background-color: black;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0.678), rgba(24, 24, 24, 0.4)), url("https://fastly.4sqi.net/img/general/600x600/512751503_Dk1wmV0BHgxOiQ0AchzKHcPwSoxNdReX1EddeOcxniY.jpg");
@@ -121,7 +126,12 @@
   }
 }
 
-@media screen and (max-width: 765px) {
+@media screen and (max-width: 1023px) {
+
+  .h1-reserva {
+    font-size: 1.5rem;
+  }
+
   .div_conteiner {
 
     width: 100%;
@@ -170,5 +180,9 @@
 
   .div_conteiner {
     margin: auto;
+  }
+
+  .h1-reserva {
+    font-size: 1.25rem;
   }
 }

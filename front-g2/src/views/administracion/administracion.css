@@ -4,13 +4,21 @@
     box-sizing: border-box;
 }
 
-h1{
-    margin: 1rem;
+.h1-admin{
+    background-color: white;
+    color: black;
+    text-align: center;
+    padding: 1rem;
 }
 
 .btnAdmin{
     background-color: #950101;
     border-color: #950101;
+}
+
+.div-admin {
+    display: flex;
+    justify-content: center;
 }
 
 

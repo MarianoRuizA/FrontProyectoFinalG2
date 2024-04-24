@@ -10,8 +10,7 @@ const FormRegistro = () => {
 
   const { createUsuario } = useContext(UsuariosContext);
 
-  const [registroUsers, setRegistroUsers] = useState({ //guardar datos.
-    // id: uuidv4(),
+  const [registroUsers, setRegistroUsers] = useState({
     nombre: "",
     apellido: "",
     email: "",
@@ -20,16 +19,16 @@ const FormRegistro = () => {
     isSuspended: false
   });
 
-  const handleSubmit = (e) => { //enviar datos actualizados.
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     createUsuario(registroUsers);
-    Swal.fire({ //validación, agregar siempre.
+    Swal.fire({
       title: "Registración Exitosa",
       text: "Usuario registrado con éxito",
       icon: "success",
       confirmButtonText: "Aceptar"
-    }); //llamamos a la función (creada en el context) y le pasamos el estado creado en la linea 12.
+    });
     setRegistroUsers({
       // id: uuidv4(),
       nombre: "",
@@ -41,7 +40,7 @@ const FormRegistro = () => {
     });
   };
 
-  const handleChange = (e) => { //recuperar datos del estado y capturar datos actualizados.
+  const handleChange = (e) => {
     setRegistroUsers({
       ...registroUsers,
       [e.target.name]: e.target.value
@@ -91,7 +90,7 @@ const FormRegistro = () => {
             </div>
 
             <a href="#">Términos y Condiciones</a>
-            <input type="submit" className="btn" value="Registrarse" />
+            <input type="submit" className="botonRegistro" value="Registrarse" />
           </div>
         </form>
         <div className="text">
