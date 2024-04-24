@@ -94,7 +94,7 @@ const Reserva = () => {
 
     <>
 
-      <h1 style={{ textAlign: "center" }}>Te damos la bienvenida !!</h1>
+      <h1 className="h1-reserva" style={{ textAlign: "center" }}>Te damos la bienvenida !!</h1>
       <div className='montserrat-font div_conteiner'>
         <div><Button onClick={() => backComensal()} variant='dark' className='  backButton '> <FontAwesomeIcon icon={faArrowLeft} /></Button>
           <div className='divButtons' >

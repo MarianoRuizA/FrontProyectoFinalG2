@@ -3,6 +3,11 @@
   padding: 0;
 }
 
+.h1-reserva {
+  background-color: white;
+  color: black;
+}
+
 .montserrat-font {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
