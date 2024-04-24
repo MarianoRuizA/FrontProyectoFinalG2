@@ -7,6 +7,7 @@ export const UsuariosContext = createContext()
 const ContextUsuarios = ({ children }) => {
   const [usuarios, setUsuarios] = useState([]);
   const [usuarioLogueado, setUsuarioLogueado] = useState();
+  const [emailLogueado, setEmailLogueado] = useState()
 
   // GET ---> trae usuarios.
   const getUsuario = async () => {
@@ -54,10 +55,12 @@ const ContextUsuarios = ({ children }) => {
     localStorage.removeItem("user");
     // Actualiza el estado de usuario logueado a null
     setUsuarioLogueado(null);
+    setEmailLogueado(null)
   }
 
   const loginUser = async (usuario) => {
     try {
+      setEmailLogueado(usuario.email)
       const response = await axios.post(`https://backproyectofinalg2.onrender.com/api/login`, usuario);
       const { token } = response.data;
       const decodeToken = jwtDecode(token);
@@ -75,7 +78,7 @@ const ContextUsuarios = ({ children }) => {
   // los children hacen referencia a los componentes que estan dentro de context usuarios en el app.
   return (
     <>
-      <UsuariosContext.Provider value={{ usuarios, getUsuario, createUsuario, modificarUsuario, eliminarUsuario, logout, loginUser, usuarioLogueado }}>
+      <UsuariosContext.Provider value={{ usuarios, getUsuario, createUsuario, modificarUsuario, eliminarUsuario, logout, loginUser, usuarioLogueado, emailLogueado }}>
         {children}
       </UsuariosContext.Provider>
     </>

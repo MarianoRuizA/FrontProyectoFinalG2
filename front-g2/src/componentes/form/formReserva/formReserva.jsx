@@ -103,7 +103,7 @@ const FormReserva = ({ reservaModificar, handleClose }) => {
                         onChange={handleChange}>
                         <option value="Chacabuco 474">Chacabuco 474</option>
                         <option value="San Martín 821">San Martín 821</option>
-                        <option value="24 de septiembre y Congreso">24 de septiembre y Congreso</option>
+                        <option value="Gral. Paz 576">Gral. Paz 576</option>
                     </Form.Select>
                 </Form.Group>
 

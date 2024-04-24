@@ -23,7 +23,7 @@ const ContextReservas = ({children}) =>
         const response = await axios.post("https://backproyectofinalg2.onrender.com/api/crear", reserva)
         setReservas([...reservas, response.data])
       }
-      catch {
+      catch(error) {
         console.log("No funciona crearReserva-->", error)
       }
     }
