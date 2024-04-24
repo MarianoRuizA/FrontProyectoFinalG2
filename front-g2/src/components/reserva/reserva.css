@@ -51,7 +51,7 @@
   .comensales_cantidad{
     background-color: white;
     border-style:  solid;
-    border-color: #950101;
+ 
     border-width: 2px;
     display: flex;
     justify-content: center;
@@ -61,16 +61,16 @@
     height: 50px;
   }
   .comensales_button{
-    background-color: #950101;
-    color: white;
+    background-color: #d6d6d6;
+    color: rgb(0, 0, 0);
     width: 50px;
     height: 50px;
     border-radius: 20px;
-    border: #950101;
+   
   
   }
   .comensales_button:hover{
-    background-color:  #ff0000c9;
+    background-color:  #ffffff91;
   }
 
   .sucursalButton{

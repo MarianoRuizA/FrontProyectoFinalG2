@@ -13,8 +13,6 @@ const [showSucursales, setShowSucursales]  = useState(true)
 const [showComensales, setShowComensales] = useState(false)
  const [showServicio, setShowServicio] = useState(false)
  const [showFecha, setShowFecha] = useState (false)
- 
-
  const [cantidad, setCantidad] = useState(1)
  const [reserva, setReserva] = useState({
   usuario: "",
@@ -39,7 +37,7 @@ const [showComensales, setShowComensales] = useState(false)
      
     icon: "success"
 })
-   
+ 
 
 };
 console.log(reserva)
@@ -102,6 +100,7 @@ const nextServicioFunction = (servicioElejido) =>{
      {reserva.comensales  ? <><Button variant='light'>Comensales: {reserva.comensales}</Button></> : null}
      {reserva.servicio ? <Button variant='light'>Servicio: {reserva.servicio}</Button>: null}
       {reserva.fecha ? <Button variant='light'>Fecha: {reserva.fecha}</Button> : null}
+ 
    </div>
     </div>
     
@@ -140,6 +139,8 @@ const nextServicioFunction = (servicioElejido) =>{
        <Fecha reserva = {reserva} actualizarFechaReserva = {(nuevaFecha, nuevaHora)=>{actualizarFechaReserva(nuevaFecha,nuevaHora)}}/>
        
       </> :null}   
+      
+      
       
     </div> 
   

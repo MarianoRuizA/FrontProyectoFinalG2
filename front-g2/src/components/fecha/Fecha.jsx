@@ -17,8 +17,8 @@ const Fecha = ({reserva, actualizarFechaReserva} ) => {
    console.log(reserva)
   const [indexInicio, setIndexInicio] = useState(0);
   const [indexFin, setIndexFin] = useState(7);
-  const [showTimePicker, setShowTimePicker] = useState(false);
-  const [reservas, setReservas] = useState([new Date(2024, 3, 22, 15  )]);
+ 
+  const [reservas, setReservas] = useState([new Date(2024,3, 24, 15  )]);
   const [banDate, setBanDate] = useState(false)
 
   const daySelected = selectedDate.getDay();
@@ -78,7 +78,7 @@ const Fecha = ({reserva, actualizarFechaReserva} ) => {
     setSelectedTime(time);
   setFechaSeleccionada(new Date(selectedDate.getFullYear(), selectedDate.getMonth(), selectedDate.getDate(), time.getHours(), time.getMinutes()));
   setSelectedDate(fechaSeleccionada)
-  setShowTimePicker(false);
+  
   };
   
   const handleReservar = () => {
@@ -225,14 +225,7 @@ return(<>
       : null
     
 } </>  
- {/* fechaSeleccionada.toLocaleDateString(fechaSeleccionada.getTime()) muestra la fecha como dia/mes/año <Button variant='light'>Fecha: {fechaSeleccionada.toLocaleDateString(fechaSeleccionada.getTime())}</Button>*/}
-{/* 
- {showTimePicker ? <> 
  
-  <h4>Realizo una reserva para el dia {fechaSeleccionada.toLocaleString('es-ES', { weekday: 'long' })} {fechaSeleccionada.getDate()} de  {fechaSeleccionada.toLocaleDateString('es-ES', { month: 'long' })} a las { fechaSeleccionada.toLocaleString('es-ES', { hour: 'numeric', minute: 'numeric', hour12: true })}  </h4>
-  <Button onClick={ handleReservar } variant='success'>Reservar</Button>   
-   
-              </> : null} */}
    
   </>
 )}
