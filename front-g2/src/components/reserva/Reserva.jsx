@@ -24,10 +24,11 @@ const Reserva = () => {
     fecha: "",
 
   })
-  const actualizarFechaReserva = (nuevaFecha) => {
+  const actualizarFechaReserva = (nuevaFecha, nuevaHora) => {
+    const unido = nuevaFecha + " " + nuevaHora
     setReserva(prevState => ({
       ...prevState,
-      fecha: nuevaFecha
+      fecha: new Date(unido)
     }));
 
     Swal.fire({
