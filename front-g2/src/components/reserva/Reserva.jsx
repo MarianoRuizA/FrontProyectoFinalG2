@@ -16,21 +16,18 @@ const Reserva = () => {
   const [showFecha, setShowFecha] = useState(false)
   const [cantidad, setCantidad] = useState(1)
   const [reserva, setReserva] = useState({
-    id: "",
+    _id: "",
     usuario: "",
-    email: "",
-    hora: "",
     sucursal: "",
-    comensales: 0,
     servicio: "",
+    comensales: 0,
     fecha: "",
 
   })
-  const actualizarFechaReserva = (nuevaFecha, nuevaHora) => {
+  const actualizarFechaReserva = (nuevaFecha) => {
     setReserva(prevState => ({
       ...prevState,
-      fecha: nuevaFecha,
-      hora: nuevaHora
+      fecha: nuevaFecha
     }));
 
     Swal.fire({
@@ -102,8 +99,8 @@ const Reserva = () => {
         <div><Button onClick={() => backComensal()} variant='dark' className='  backButton '> <FontAwesomeIcon icon={faArrowLeft} /></Button>
           <div className='divButtons' >
             {reserva.sucursal ? <Button variant='light'>Sucursal: {reserva.sucursal}</Button> : null}
-            {reserva.comensales ? <><Button variant='light'>Comensales: {reserva.comensales}</Button></> : null}
             {reserva.servicio ? <Button variant='light'>Servicio: {reserva.servicio}</Button> : null}
+            {reserva.comensales ? <><Button variant='light'>Comensales: {reserva.comensales}</Button></> : null}
             {reserva.fecha ? <Button variant='light'>Fecha: {reserva.fecha}</Button> : null}
 
           </div>
