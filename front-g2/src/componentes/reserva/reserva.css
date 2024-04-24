@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+ 
+.conteinerReserva{
+  display: flex;
+  justify-content: center ;
+  align-items: center;
+ 
+  margin: 4rem;
+ 
+
+}
+.formReserva{
+  border-width: 3px;
+  border-color: red;
+   border-style:  groove;
+   background-color: #f7bfbe;
+}
+.textReserva{
+  font-weight: bold;
+  text-align: center;
+  margin: auto  ;
+}
