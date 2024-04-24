@@ -6,6 +6,7 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import Navbar from './componentes/Navbar/Navbar.jsx';
 import Rutas from './componentes/Rutas/Rutas.jsx';
+// agregado
 import Reserva from './components/reserva/Reserva'
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -24,7 +25,8 @@ function App() {
           </LocalizationProvider>
         </ContextReservas>
       </ContextUsuarios>
-      <Reserva/>
+      {/* agregado */}
+      <Reserva/> 
     </>
   );
 }
