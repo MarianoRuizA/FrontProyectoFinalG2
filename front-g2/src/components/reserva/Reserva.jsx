@@ -10,7 +10,8 @@ import 'react-datepicker/dist/react-datepicker.css';
 import Footer from '../../componentes/footer/Footer.jsx';
 import { UsuariosContext } from '../../context/ContextUsuarios.jsx';
 import Titulo from '../../componentes/imgCarousel/titulo/titulo.jsx';
-
+ 
+ 
 
 
 // import React, { useState } from 'react';
@@ -50,9 +51,12 @@ const FormularioReserva = () => {
 
   return (
     <>
-      <Form onSubmit={handleSubmit}>
+<Titulo link={"https://images.unsplash.com/photo-1513883049090-d0b7439799bf?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"} texto={"Piano con filtros blanco y negro"} nombre={"Reservas"} />
+      <body className='bodyReserva'>
+      <div className='conteinerReserva'>
+      <Form onSubmit={handleSubmit} className='formReserva'>
         <Form.Group className="mb-3">
-          <Form.Label>Usuario</Form.Label>
+          <Form.Label className='textReserva'>Usuario</Form.Label>
           <Form.Control
             type="text"
             placeholder="por ejemplo, Juan Lopez"
@@ -66,7 +70,7 @@ const FormularioReserva = () => {
         </Form.Group>
 
         <Form.Group>
-          <Form.Label>Sucursal</Form.Label>
+          <Form.Label className='textReserva'>Sucursal</Form.Label>
           <div>
             <Form.Check
               inline
@@ -99,7 +103,7 @@ const FormularioReserva = () => {
         </Form.Group>
 
         <Form.Group>
-          <Form.Label>Servicio</Form.Label>
+          <Form.Label className='textReserva'>Servicio</Form.Label>
           <div>
             <Form.Check
               inline
@@ -123,7 +127,7 @@ const FormularioReserva = () => {
         </Form.Group>
 
         <Form.Group>
-          <Form.Label>Comensales</Form.Label>
+          <Form.Label className='textReserva'>Comensales</Form.Label>
           <Form.Control
             type="number"
             min={2}
@@ -136,7 +140,7 @@ const FormularioReserva = () => {
         </Form.Group>
 
         <Form.Group id="grupoFecha">
-          <Form.Label>Fecha</Form.Label>
+          <Form.Label className='textReserva'>Fecha</Form.Label>
           <Form.Control
             type="datetime-local"
             name="fecha"
@@ -152,8 +156,14 @@ const FormularioReserva = () => {
           </Button>
         </div>
       </Form>
+
+      </div>
+      </body>
+
+    <Footer></Footer>    
     </>
   );
+
 };
 
 export default FormularioReserva;
