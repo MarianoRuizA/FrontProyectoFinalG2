@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './reserva.css'
 import { Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -16,10 +16,10 @@ const Reserva = () => {
   const [showFecha, setShowFecha] = useState(false)
   const [cantidad, setCantidad] = useState(1)
   const [reserva, setReserva] = useState({
+    id: "",
     usuario: "",
     email: "",
     hora: "",
-    id: "",
     sucursal: "",
     comensales: 0,
     servicio: "",
@@ -89,6 +89,10 @@ const Reserva = () => {
     setShowFecha(true)
 
   }
+
+  useEffect(() => {
+    document.title = "Reservar ahora";
+  }, [])
   return (
 
     <>
