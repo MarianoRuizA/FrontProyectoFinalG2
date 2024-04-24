@@ -21,8 +21,8 @@ const FormularioReserva = () => {
   const { crearReserva } = useContext(ReservasContext);
   const [reserva, setReserva] = useState({
     usuario: '',
-    sucursal: '',
-    servicio: '',
+    sucursal: 'Chacabuco 474', // Valor predeterminado para la sucursal
+    servicio: 'Almuerzo', // Valor predeterminado para el servicio
     comensales: '',
     fecha: ''
   });
@@ -41,8 +41,8 @@ const FormularioReserva = () => {
     crearReserva(reserva);
     setReserva({
       usuario: '',
-      sucursal: '',
-      servicio: '',
+      sucursal: 'Chacabuco 474',
+      servicio: 'Almuerzo',
       comensales: '',
       fecha: ''
     });
@@ -67,29 +67,59 @@ const FormularioReserva = () => {
 
         <Form.Group>
           <Form.Label>Sucursal</Form.Label>
-          <Form.Select
-            aria-label="Default select example"
-            name="sucursal"
-            value={reserva.sucursal}
-            onChange={handleChange}
-          >
-            <option value="Chacabuco 474">Chacabuco 474</option>
-            <option value="San Martín 821">San Martín 821</option>
-            <option value="Gral. Paz 576">Gral. Paz 576</option>
-          </Form.Select>
+          <div>
+            <Form.Check
+              inline
+              type="radio"
+              label="Chacabuco 474"
+              name="sucursal"
+              value="Chacabuco 474"
+              checked={reserva.sucursal === 'Chacabuco 474'}
+              onChange={handleChange}
+            />
+            <Form.Check
+              inline
+              type="radio"
+              label="San Martín 821"
+              name="sucursal"
+              value="San Martín 821"
+              checked={reserva.sucursal === 'San Martín 821'}
+              onChange={handleChange}
+            />
+            <Form.Check
+              inline
+              type="radio"
+              label="Gral. Paz 576"
+              name="sucursal"
+              value="Gral. Paz 576"
+              checked={reserva.sucursal === 'Gral. Paz 576'}
+              onChange={handleChange}
+            />
+          </div>
         </Form.Group>
 
         <Form.Group>
           <Form.Label>Servicio</Form.Label>
-          <Form.Select
-            aria-label="Default select example"
-            name="servicio"
-            value={reserva.servicio}
-            onChange={handleChange}
-          >
-            <option value="Almuerzo">Almuerzo</option>
-            <option value="Cena">Cena</option>
-          </Form.Select>
+          <div>
+            <Form.Check
+              inline
+              type="radio"
+              label="Almuerzo"
+              name="servicio"
+              value="Almuerzo"
+              checked={reserva.servicio === 'Almuerzo'}
+              onChange={handleChange}
+            />
+            <Form.Check
+              inline
+              type="radio"
+              label="Cena"
+              name="servicio"
+              value="Cena"
+              checked={reserva.servicio === 'Cena'}
+              onChange={handleChange}
+            />
+          </div>
         </Form.Group>
 
         <Form.Group>
