@@ -24,7 +24,7 @@ const PaginaPrincipal = () => {
                     <p className="mb-1">Tucumán - Argentina</p>
                 </section>
             </main>
-            {/* <Footer/> */}
+            <Footer/>
         </>
     );
 };
