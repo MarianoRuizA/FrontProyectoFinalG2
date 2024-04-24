@@ -8,10 +8,11 @@ const FormUsuarios = ({ usuarioModificar, handleClose, cantAdmins }) => {
     const { modificarUsuario } = useContext(UsuariosContext)
     const [usuario, setUsuario] = useState(
         {
-            id: usuarioModificar.id,
+            _id: usuarioModificar._id,
             nombre: usuarioModificar.nombre,
+            apellido: usuarioModificar.apellido,
             email: usuarioModificar.email,
-            contraseña: usuarioModificar.contraseña,
+            contrasenia: usuarioModificar.contrasenia,
             isAdmin: usuarioModificar.isAdmin,
             isSuspended: usuarioModificar.isSuspended
         }
@@ -34,10 +35,11 @@ const FormUsuarios = ({ usuarioModificar, handleClose, cantAdmins }) => {
         }
         handleClose()
         setUsuario({
-            id: "",
+            _id: "",
             nombre: "",
+            apellido: "",
             email: "",
-            contraseña: "",
+            contrasenia: "",
             isAdmin: false,
             isSuspended: false
         })
@@ -57,12 +59,23 @@ const FormUsuarios = ({ usuarioModificar, handleClose, cantAdmins }) => {
             <Form.Group className="mb-3" >
                 <FormLabel>Nombre</FormLabel>
                 <Form.Control
-                    type="text" placeholder="por ejemplo, Juan Lopez"
+                    type="text" placeholder="por ejemplo, Juan"
                     name="nombre"
                     value={usuario.nombre}
                     onChange={handleChange} required minLength={3} maxLength={85}>
                 </Form.Control>
             </Form.Group>
+
+            <Form.Group className="mb-3" >
+                <FormLabel>Apellido</FormLabel>
+                <Form.Control
+                    type="text" placeholder="por ejemplo, Lopez"
+                    name="apellido"
+                    value={usuario.apellido}
+                    onChange={handleChange} required minLength={3} maxLength={85}>
+                </Form.Control>
+            </Form.Group>
+
 
             <Form.Group>
                 <Form.Label>Email</Form.Label>

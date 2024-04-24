@@ -32,7 +32,7 @@ const ContextUsuarios = ({ children }) => {
 
   const modificarUsuario = async (usuario) => {
     try {
-      await axios.patch(`https://backproyectofinalg2.onrender.com/api/usuarios/${usuario.id}`, usuario)
+      await axios.patch(`https://backproyectofinalg2.onrender.com/api/usuarios/${usuario._id}`, usuario)
       getUsuario()
     } catch (error) {
       console.log("No funciona modificarUsuario-->", error)
@@ -41,7 +41,7 @@ const ContextUsuarios = ({ children }) => {
 
   const eliminarUsuario = async (usuario) => {
     try {
-      await axios.delete(`https://backproyectofinalg2.onrender.com/api/usuarios/delete/${usuario.id}`)
+      await axios.delete(`https://backproyectofinalg2.onrender.com/api/usuarios/delete/${usuario._id}`)
       getUsuario()
 
     } catch (error) {

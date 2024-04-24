@@ -20,6 +20,7 @@ const TablaUsuarios = () => {
         {
             _id: "",
             nombre: "",
+            apellido: "",
             email: "",
             contrasenia: "",
             isAdmin: false,
@@ -74,6 +75,7 @@ const TablaUsuarios = () => {
                         <thead>
                             <th>ID</th>
                             <th>NOMBRE</th>
+                            <th>APELLIDO</th>
                             <th>EMAIL</th>
                             <th>CARGO</th>
                             <th>ESTADO</th>
@@ -86,6 +88,7 @@ const TablaUsuarios = () => {
                                 <tr id="trUsuarios" className={item.isSuspended ? "filaSuspendida" : ""} key={index}>
                                     <td>{item._id}</td>
                                     <td>{item.nombre}</td>
+                                    <td>{item.apellido}</td>
                                     <td>{item.email}</td>
                                     <td>{item.isAdmin ? "Administrador" : "Usuario"}</td>
                                     <td>{item.isSuspended ? "Suspendido" : "Activo"}</td>

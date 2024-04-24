@@ -11,8 +11,9 @@ const FormRegistro = () => {
   const { createUsuario } = useContext(UsuariosContext);
 
   const [registroUsers, setRegistroUsers] = useState({ //guardar datos.
-    id: uuidv4(),
+    // id: uuidv4(),
     nombre: "",
+    apellido: "",
     email: "",
     contrasenia: "",
     isAdmin: false,
@@ -30,8 +31,9 @@ const FormRegistro = () => {
       confirmButtonText: "Aceptar"
     }); //llamamos a la función (creada en el context) y le pasamos el estado creado en la linea 12.
     setRegistroUsers({
-      id: uuidv4(),
+      // id: uuidv4(),
       nombre: "",
+      apellido: "",
       email: "",
       contrasenia: "",
       isAdmin: false,
@@ -59,6 +61,15 @@ const FormRegistro = () => {
                 name="nombre"
                 onChange={handleChange}
                 placeholder="Nombre" maxLength="85" required />
+            </div>
+
+            <div className="input-container">
+              <FontAwesomeIcon className="icono" icon={faUser} />
+              <input type="text"
+                value={registroUsers.apellido}
+                name="apellido"
+                onChange={handleChange}
+                placeholder="Apellido" maxLength="85" required />
             </div>
 
             <div className="input-container">
