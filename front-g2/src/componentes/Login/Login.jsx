@@ -9,12 +9,12 @@ const Login = ({ handleClose }) => {
   const [email, setEmail] = useState("")
   const [contrasenia, setContraseña] = useState("")
 
-  const { loginUser, usuarioLogueado} = useContext(UsuariosContext);
+  const { loginUser, usuarioLogueado } = useContext(UsuariosContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await loginUser({email, contrasenia});
+      await loginUser({ email, contrasenia });
       if (usuarioLogueado) {
         Swal.fire({
           title: "Bienvenido",
@@ -30,8 +30,10 @@ const Login = ({ handleClose }) => {
           }
         });
         localStorage.setItem("user", JSON.stringify(usuarioLogueado));
-        // navigate("/"); 
         handleClose();
+        setTimeout(() => {
+          window.location.href = "/";
+        }, 2000)
       } else {
         Swal.fire({
           title: "Error",
