@@ -3,6 +3,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import ModalLogin from "../ModalLogin/ModalLogin";
 import "./Navbar.css";
 import { useNavigate } from "react-router-dom";
+import { UsuariosContext } from "../../context/ContextUsuarios";
 
 function Navbar() {
 	const navegacion = useNavigate()
@@ -19,6 +20,8 @@ function Navbar() {
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
 
+	const { logout } = useContext(UsuariosContext);
+
 	const user = JSON.parse(localStorage.getItem("user"));
 
 
@@ -29,7 +32,7 @@ function Navbar() {
 					src="src/img/logo_tango.png"
 					alt="Logo de Tango Restaurante"
 					className="logo-tango"
-					onClick={() => navegacion("/")} 
+					onClick={() => navegacion("/")}
 				/>
 				<button
 					className="nav-btn"
@@ -42,8 +45,14 @@ function Navbar() {
 					<a onClick={() => navegacion("/nosotros")} className="link-underline">NOSOTROS</a>
 					<a onClick={() => navegacion("/reservas")} className="link-underline">RESERVAS</a>
 
+					{user?.isAdmin ? (
+						<a className="link-underline" onClick={() => navegacion("/admin")}>
+							ADMIN
+						</a>
+					) : null}
+
 					{user ? (
-						<a className="link-login" >
+						<a className="link-login" onClick={() => logout()} >
 							CERRAR SESIÓN
 						</a>
 					) : (
