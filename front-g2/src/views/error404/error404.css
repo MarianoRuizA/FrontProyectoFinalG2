@@ -24,7 +24,7 @@ body {
 
 .image-container {
     width: 70%;
-    max-width: 450px; /* Ajusta el ancho máximo según sea necesario */
+    max-width: 450px;
     user-select: none;
 }
 
@@ -34,7 +34,7 @@ body {
 }
 
 .text-center {
-    margin-top: 5px; /* Espacio entre la imagen y el botón */
+    margin-top: 5px;
 }
 
 .text-center h1 {

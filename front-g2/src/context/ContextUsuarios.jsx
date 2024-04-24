@@ -50,9 +50,7 @@ const ContextUsuarios = ({ children }) => {
   }
 
   const logout = () => {
-    // Borra el token de usuario del local storage
     localStorage.removeItem("user");
-    // Actualiza el estado de usuario logueado a null
     setUsuarioLogueado(null);
     window.location.href = "/";
   }
@@ -72,8 +70,6 @@ const ContextUsuarios = ({ children }) => {
     getUsuario()
   }, [])
 
-
-  // los children hacen referencia a los componentes que estan dentro de context usuarios en el app.
   return (
     <>
       <UsuariosContext.Provider value={{ usuarios, getUsuario, createUsuario, modificarUsuario, eliminarUsuario, logout, loginUser, usuarioLogueado }}>
