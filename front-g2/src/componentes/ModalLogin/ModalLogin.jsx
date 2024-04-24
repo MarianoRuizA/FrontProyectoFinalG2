@@ -5,6 +5,11 @@ import { useNavigate } from "react-router-dom";
 
 const ModalLogin = ({ show, handleClose }) => {
   const navegacion = useNavigate()
+  
+  const irARegistro = () => {
+    navegacion("/registro");
+    handleClose(); // Cerrar el modal después de redirigir
+  };
   return (
     <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false} className="modal">
       <Modal.Header closeButton className="modal-header">
@@ -14,8 +19,7 @@ const ModalLogin = ({ show, handleClose }) => {
         <Login handleClose={handleClose} />
       </Modal.Body>
       <Modal.Footer>
-        <p>Si aún no te registraste, seguí los pasos <a onClick={() => {navegacion("/registro")
-         show=false}}className="link-registro">aquí</a>.</p>
+        <p>Si aún no te registraste, seguí los pasos <a onClick={irARegistro} className="link-registro">aquí</a>.</p>
       </Modal.Footer>
     </Modal>
   );
