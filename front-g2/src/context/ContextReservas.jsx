@@ -20,6 +20,7 @@ const ContextReservas = ({children}) =>
     // POST ---> agrega reserva.
     const crearReserva = async (reserva) => {
       try {
+        console.log("KJASHJ", reserva)
         const response = await axios.post("https://backproyectofinalg2.onrender.com/api/crear", reserva)
         setReservas([...reservas, response.data])
       }

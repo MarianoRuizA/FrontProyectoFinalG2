@@ -46,7 +46,7 @@
  .divElements{
  
   display: flex;
-  position: fixed;
+  position: relative;
  }
 .divOtherDate{
   display: flex;

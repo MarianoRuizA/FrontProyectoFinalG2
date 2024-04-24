@@ -55,7 +55,7 @@ const ContextUsuarios = ({ children }) => {
     localStorage.removeItem("user");
     // Actualiza el estado de usuario logueado a null
     setUsuarioLogueado(null);
-    setEmailLogueado(null)
+    
     window.location.href = "/";
   }
 
