@@ -18,10 +18,10 @@ const TablaUsuarios = () => {
     const [suspension, setSuspension] = useState(false)
     const [usuario, setUsuario] = useState(
         {
-            id: "",
+            _id: "",
             nombre: "",
             email: "",
-            contraseña: "",
+            contrasenia: "",
             isAdmin: false,
             isSuspended: false
         }
@@ -84,7 +84,7 @@ const TablaUsuarios = () => {
                             (
 
                                 <tr id="trUsuarios" className={item.isSuspended ? "filaSuspendida" : ""} key={index}>
-                                    <td>{item.id}</td>
+                                    <td>{item._id}</td>
                                     <td>{item.nombre}</td>
                                     <td>{item.email}</td>
                                     <td>{item.isAdmin ? "Administrador" : "Usuario"}</td>
