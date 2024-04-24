@@ -91,7 +91,7 @@ const FormRegistro = () => {
             </div>
 
             <a href="#">Términos y Condiciones</a>
-            <input type="submit" className="btn" value="Registrarse" />
+            <input type="submit" className="botonRegistro" value="Registrarse" />
           </div>
         </form>
         <div className="text">
