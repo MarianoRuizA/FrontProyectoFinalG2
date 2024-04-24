@@ -8,7 +8,7 @@ import Swal from 'sweetalert2'
 
 import 'react-datepicker/dist/react-datepicker.css';
  
-const reserva = () => {
+const Reserva = () => {
 const [showSucursales, setShowSucursales]  = useState(true)
 const [showComensales, setShowComensales] = useState(false)
  const [showServicio, setShowServicio] = useState(false)
@@ -153,4 +153,4 @@ const nextServicioFunction = (servicioElejido) =>{
   )
 }
 
-export default reserva
+export default Reserva
