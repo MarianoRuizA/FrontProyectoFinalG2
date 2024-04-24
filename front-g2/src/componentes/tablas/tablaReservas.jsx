@@ -59,7 +59,7 @@ const TablaReservas = () => {
                             const fecha = new Date(item.fecha)
                             return (
                                 <tr key={index}>
-                                    <td>{item.id}</td>
+                                    <td>{item._id}</td>
                                     <td>{item.usuario}</td>
                                     <td>{item.sucursal}</td>
                                     <td>{item.servicio}</td>

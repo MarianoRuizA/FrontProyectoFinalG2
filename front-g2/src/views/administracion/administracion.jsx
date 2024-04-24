@@ -2,6 +2,7 @@ import { Button } from "react-bootstrap";
 import "./administracion.css"
 import { useState, useEffect } from "react"
 import TablaUsuarios from "../../componentes/tablas/tablaUsuarios";
+import TablaReservas from "../../componentes/tablas/tablaReservas";
 
 const Administracion = () => {
   const [opcion, setOpcion] = useState(1)

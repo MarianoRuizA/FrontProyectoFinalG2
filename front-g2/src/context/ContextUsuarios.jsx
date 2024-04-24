@@ -7,6 +7,7 @@ export const UsuariosContext = createContext()
 const ContextUsuarios = ({ children }) => {
   const [usuarios, setUsuarios] = useState([]);
   const [usuarioLogueado, setUsuarioLogueado] = useState();
+  const [emailLogueado, setEmailLogueado] = useState()
 
   // GET ---> trae usuarios.
   const getUsuario = async () => {
@@ -50,13 +51,17 @@ const ContextUsuarios = ({ children }) => {
   }
 
   const logout = () => {
+    // Borra el token de usuario del local storage
     localStorage.removeItem("user");
+    // Actualiza el estado de usuario logueado a null
     setUsuarioLogueado(null);
+    setEmailLogueado(null)
     window.location.href = "/";
   }
 
   const loginUser = async (usuario) => {
     try {
+      setEmailLogueado(usuario.email)
       const response = await axios.post(`https://backproyectofinalg2.onrender.com/api/login`, usuario);
       const { token } = response.data;
       const decodeToken = jwtDecode(token);
@@ -72,7 +77,7 @@ const ContextUsuarios = ({ children }) => {
 
   return (
     <>
-      <UsuariosContext.Provider value={{ usuarios, getUsuario, createUsuario, modificarUsuario, eliminarUsuario, logout, loginUser, usuarioLogueado }}>
+      <UsuariosContext.Provider value={{ usuarios, getUsuario, createUsuario, modificarUsuario, eliminarUsuario, logout, loginUser, usuarioLogueado, emailLogueado }}>
         {children}
       </UsuariosContext.Provider>
     </>
