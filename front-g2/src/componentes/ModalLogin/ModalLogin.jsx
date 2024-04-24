@@ -3,15 +3,16 @@ import Login from "../Login/Login";
 import '../Login/Login.css'
 import { useNavigate } from "react-router-dom";
 
-const ModalLogin = ({ show, handleClose }) => {
+const ModalLogin = ({ show, handleClose, cerrarMenu  }) => {
   const navegacion = useNavigate()
   
   const irARegistro = () => {
     navegacion("/registro");
-    handleClose(); // Cerrar el modal después de redirigir
+    handleClose();
+    cerrarMenu()
   };
   return (
-    <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false} className="modal">
+    <Modal show={show} onHide={handleClose} cerrarMenu ={cerrarMenu} backdrop="static" keyboard={false} className="modal">
       <Modal.Header closeButton className="modal-header">
         <Modal.Title>Iniciar sesión</Modal.Title>
       </Modal.Header>

@@ -70,7 +70,7 @@ function Navbar() {
 					</button>
 				</nav>
 			</header>
-			<ModalLogin show={show} handleClose={handleClose} />
+			<ModalLogin show={show} handleClose={handleClose} cerrarMenu={cerrarMenu}  />
 		</>
 	);
 }
