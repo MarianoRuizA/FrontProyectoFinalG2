@@ -14,8 +14,8 @@ const Administracion = () => {
     <>
       <main>
         <section>
-        <h1>Administración</h1>
-          <div className="mb-5 ms-3">
+        <h1 className="h1-admin">Administración</h1>
+          <div className="mb-5 ms-3 div-admin">
             <Button className="me-3 btnAdmin" onClick={()=>{setOpcion(1)}}>Usuarios</Button>
             <Button className="btnAdmin" onClick={()=>{setOpcion(0)}}>Reservas</Button>
           </div>

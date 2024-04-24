@@ -1,6 +1,6 @@
 import { createContext, useState, useEffect } from "react";
 import axios from "axios"
-import {jwtDecode} from "jwt-decode"
+import { jwtDecode } from "jwt-decode"
 
 export const UsuariosContext = createContext()
 
@@ -50,16 +50,17 @@ const ContextUsuarios = ({ children }) => {
   }
 
   const logout = () => {
-      // Borra el token de usuario del local storage
-  localStorage.removeItem("user");
-  // Actualiza el estado de usuario logueado a null
-  setUsuarioLogueado(null);
+    // Borra el token de usuario del local storage
+    localStorage.removeItem("user");
+    // Actualiza el estado de usuario logueado a null
+    setUsuarioLogueado(null);
+    window.location.href = "/";
   }
 
   const loginUser = async (usuario) => {
     try {
       const response = await axios.post(`https://backproyectofinalg2.onrender.com/api/login`, usuario);
-      const {token} = response.data;
+      const { token } = response.data;
       const decodeToken = jwtDecode(token);
       setUsuarioLogueado(decodeToken)
     } catch (error) {
