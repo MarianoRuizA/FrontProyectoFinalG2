@@ -49,7 +49,7 @@ function Navbar() {
 					<a onClick={() => {navegacion("/reservas"); cerrarMenu()}} className="link-underline">RESERVAS</a>
 
 					{user?.isAdmin ? (
-						<a className="link-underline" onClick={() => navegacion("/admin")}>
+						<a className="link-underline" onClick={() => {navegacion("/admin"); cerrarMenu()}}>
 							ADMIN
 						</a>
 					) : null}
