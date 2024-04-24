@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1{
+    margin: 1rem;
+}
+
+.btnAdmin{
+    background-color: #950101;
+    border-color: #950101;
+}
+
+
+#tdIconos div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.iconEliminar{
+    color: rgb(170, 0, 0);
+}
+
+.iconEditar{
+    color: rgb(0, 0, 150);
+}
+
+.iconSuspender{
+    color:rgb(206, 175, 3);
+}
+
+.iconEditar, .iconEliminar, .iconSuspender{
+    font-size: x-large;
+}
+
+.iconEditar:hover, .iconEliminar:hover, .iconSuspender:hover{
+    -webkit-transform:scale(1.4);
+    transform:scale(1.4);
+}
+
+.tablaInfo td{
+    background-color: #fad9d8;
+}
+
+.tablaInfo th{
+    background-color: #3D0000;
+    color:white;
+    border: white solid 0.1rem;
+    padding: 0.5rem;
+}
+
+.filaSuspendida td
+{
+    background-color: rgba(231, 195, 34, 0.63);
+}
