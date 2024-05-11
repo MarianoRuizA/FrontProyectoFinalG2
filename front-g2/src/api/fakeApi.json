@@ -1,0 +1,13 @@
+{
+  "usuarios": [
+    {
+      "id": "46af",
+      "nombre": "martina ",
+      "email": "martugutierrez166@gmail.com",
+      "contraseña": "wuegfhiuf",
+      "isAdmin": true,
+      "isSuspended": false
+    }
+  ],
+  "reservas": []
+}

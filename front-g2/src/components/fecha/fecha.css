@@ -8,18 +8,20 @@
      width: 100px;
      height: 120px;
     margin : 30px 5px 5px 5px;
-}.inputPicker input{
+}
+.inputPicker input{
   width: 80px;
   height: 30px;
- 
   text-align: center;
   border-radius: 30px;
   border-style: hidden;
   
   }
+
   .inputPicker input:hover{
     background-color: rgba(255, 255, 255, 0.712);
   }
+
 .inputPicker{
   display: flex;
   margin-top: 10px;
@@ -48,15 +50,7 @@
   display: flex;
   position: relative;
  }
-.divOtherDate{
-  display: flex;
-  justify-content: center;
-   margin-top: 270px;
-}
-.h2Date{
-  margin-bottom : 190px;
- 
-}
+
 @media screen  and (max-width: 1024px){
     .divElements{
       width: 90%;

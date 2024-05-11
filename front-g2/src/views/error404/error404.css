@@ -42,7 +42,7 @@ body {
     background-color: white;
 }
 
-.btn {
+.btnError {
     background-color: #FF0000 !important;
     border-color: transparent;
     color: white;

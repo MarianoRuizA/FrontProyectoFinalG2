@@ -36,6 +36,7 @@ const Reserva = () => {
 
   const actualizarFechaReserva = (nuevaFecha, nuevaHora) => {
     const unido = nuevaFecha + " " + nuevaHora
+    const actualizadoEmail = emailLogueado
     setReserva(prevState => ({
       ...prevState,
       usuario: actualizadoEmail,
@@ -46,18 +47,20 @@ const Reserva = () => {
       title: "Reserva realizada con exito!",
       icon: "success"
     })
+    console.log("TIPO DE DATO", typeof(reserva.fecha))
     console.log("SOY YO", reserva)
     crearReserva(reserva)
+    
   };
 
-useEffect(()=>
-{
-  const actualizadoEmail = emailLogueado
-  setReserva(prevState => ({
-    ...prevState,
-    usuario: actualizadoEmail
-  }));
-},[reserva.comensales])
+// useEffect(()=>
+// {
+//   const actualizadoEmail = emailLogueado
+//   setReserva(prevState => ({
+//     ...prevState,
+//     usuario: actualizadoEmail
+//   }));
+// },[reserva.comensales])
 
   const backComensal = () => { //Funciom volver para el boton
     if (showComensales) {
@@ -121,7 +124,7 @@ useEffect(()=>
 
 
         <>
-          <h1 style={{ textAlign: "center", marginBottom: "4rem", marginTop:"3rem"}}>Te damos la bienvenida !!</h1>
+          <h1 style={{ textAlign: "center", marginBottom: "4rem", marginTop:"3rem"}}>¡Visitanos!</h1>
           <div className='montserrat-font div_conteiner'>
             <div>
               <Button onClick={() => backComensal()} variant='dark' className=' backButton '>
@@ -139,9 +142,9 @@ useEffect(()=>
               {showSucursales ? (
                 <>
                   <h2>Sucursales</h2>
-                  <Button variant='light' onClick={(e) => setReserva({ sucursal: e.target.textContent })} className='sucursalButton mb-lg-3' >Chacabuco 474 </Button>
-                  <Button variant='light' onClick={(e) => setReserva({ sucursal: e.target.textContent })} className='sucursalButton mb-lg-3'  >San Martin 821</Button>
-                  <Button variant='light' onClick={(e) => setReserva({ sucursal: e.target.textContent })} className='sucursalButton  mb-lg-3' >Gral. Paz 576</Button>
+                  <Button variant='light' onClick={(e) => setReserva({ sucursal: e.target.textContent })} className='sucursalButton btnError mb-lg-3' >Chacabuco 474 </Button>
+                  <Button variant='light' onClick={(e) => setReserva({ sucursal: e.target.textContent })} className='sucursalButton mb-lg-3 btnError'  >San Martin 821</Button>
+                  <Button variant='light' onClick={(e) => setReserva({ sucursal: e.target.textContent })} className='sucursalButton  mb-lg-3 btnError' >Gral. Paz 576</Button>
                   {reserva.sucursal ? setShowComensales(true) & setShowSucursales(false) : null}
                 </>
               ) : null}
@@ -152,17 +155,16 @@ useEffect(()=>
                   <button className='comensales_button' onClick={() => setCantidad(cantidad - 1)}><h4>-</h4></button>
                   {cantidad < 1 ? setCantidad(1) : null}
                   {cantidad > 15 ? setCantidad(15) : null}
-                  {console.log(cantidad)}
                   <div className='comensales_cantidad'> <h4> {cantidad}</h4> </div>
-                  <button className='comensales_button' onClick={() => setCantidad(cantidad + 1)}><h4>+</h4></button>
+                  <button className='comensales_button ' onClick={() => setCantidad(cantidad + 1)}><h4>+</h4></button>
 
                 </div>
-                <Button variant='light' onClick={() => nextComensalesFunction()} ><FontAwesomeIcon icon={faArrowRight} /></Button>
+                <Button variant='light' onClick={() => nextComensalesFunction()} className='btnError'><FontAwesomeIcon icon={faArrowRight} /></Button>
               </>
                 : null}
               {showServicio ? <><h2 className='mb-lg-3'>Elija el servicio que le gustaria recibir</h2>
-                <Button onClick={(e) => nextServicioFunction(e.target.textContent)} className='sucursalButton mb-lg-3' variant='light'>Almuerzo</Button>
-                <Button onClick={(e) => nextServicioFunction(e.target.textContent)} className='sucursalButton mb-lg-3' variant='light'>Cena</Button></> : null}
+                <Button onClick={(e) => nextServicioFunction(e.target.textContent)} className='sucursalButton btnError mb-lg-3' variant='light'>Almuerzo</Button>
+                <Button onClick={(e) => nextServicioFunction(e.target.textContent)} className='sucursalButton btnError mb-lg-3' variant='light'>Cena</Button></> : null}
               {showFecha ? <>
 
                 <Fecha reserva={reserva} actualizarFechaReserva={(nuevaFecha, nuevaHora) => { actualizarFechaReserva(nuevaFecha, nuevaHora) }} />
