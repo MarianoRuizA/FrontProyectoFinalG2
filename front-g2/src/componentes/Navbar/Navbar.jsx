@@ -32,7 +32,7 @@ function Navbar() {
 		<>
 			<header>
 				<img
-					src="src/img/logo_tango.png"
+					src="https://i.postimg.cc/pLchhhfT/logo-tango.png"
 					alt="Logo de Tango Restaurante"
 					className="logo-tango"
 					onClick={() => navegacion("/")}
