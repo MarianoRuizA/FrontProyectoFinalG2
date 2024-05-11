@@ -16,7 +16,7 @@ const CardsGrupo = () => {
             <div className="team-card">
                 <div className="card">
                     <div className="img-section">
-                        <img src="src/assets/img/integrante1.png" alt="perfil"/>
+                        <img src="https://i.postimg.cc/fbbPCFSC/integrante1.png" alt="perfil"/>
                     </div>
                     <div className="content">
                         <h3>Gastón</h3>
@@ -33,7 +33,7 @@ const CardsGrupo = () => {
 
                 <div className="card">
                     <div className="img-section">
-                        <img src="src/assets/img/integrante2.png" alt="perfil"/>
+                        <img src="https://i.postimg.cc/Rhwpqx2S/integrante2.png" alt="perfil"/>
                     </div>
                     <div className="content">
                         <h3>Luciano</h3>
@@ -50,7 +50,7 @@ const CardsGrupo = () => {
 
                 <div className="card">
                     <div className="img-section">
-                        <img src="src/assets/img/integrante3.png" alt="perfil"/>
+                        <img src="https://i.postimg.cc/zfPccjnr/integrante3.png" alt="perfil"/>
                     </div>
                     <div className="content">
                         <h3>Mariano</h3>
@@ -67,7 +67,7 @@ const CardsGrupo = () => {
 
                 <div className="card">
                     <div className="img-section">
-                        <img src="src/assets/img/integrante4.png" alt="perfil"/>
+                        <img src="https://i.postimg.cc/bJ7FzwCV/integrante4.png" alt="perfil"/>
                     </div>
                     <div className="content">
                         <h3>Lourdes</h3>
@@ -84,7 +84,7 @@ const CardsGrupo = () => {
 
                 <div className="card">
                     <div className="img-section">
-                        <img src="src/assets/img/integrante5.png" alt="perfil"/>
+                        <img src="https://i.postimg.cc/k46p3bct/integrante5.png" alt="perfil"/>
                     </div>
                     <div className="content">
                         <h3>Martina</h3>

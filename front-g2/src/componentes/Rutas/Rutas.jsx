@@ -5,7 +5,7 @@ import Galeria from "../../views/galeria/galeria"
 import Nosotros from "../../views/nosotros/Nosotros"
 import Error404 from "../../views/error404/error404"
 import Registro from "../../views/registro/Registro"
-import Reserva from "../../components/reserva/Reserva"
+import Reserva from "../../componentes/reserva/Reserva"
 
 const Rutas = () =>
 {
