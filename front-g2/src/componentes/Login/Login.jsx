@@ -31,9 +31,6 @@ const Login = ({ handleClose }) => {
         });
         localStorage.setItem("user", JSON.stringify(usuarioLogueado));
         handleClose();
-        setTimeout(() => {
-          window.location.href = "/";
-        }, 2000)
       } else {
         Swal.fire({
           title: "Error",
