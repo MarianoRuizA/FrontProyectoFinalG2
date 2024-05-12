@@ -11,9 +11,14 @@ import Footer from '../../componentes/footer/Footer.jsx';
 import { UsuariosContext } from '../../context/ContextUsuarios.jsx';
 import Titulo from '../../componentes/imgCarousel/titulo/titulo.jsx';
 
-
 const Reserva = () => {
   const [logueado, setLogueado] = useState(null)
+
+  //lou
+  const [reservasUsers, setReservasUsers] = useState([]); //establezco el estado para las reservas del usuario logueado.
+  const limiteReservas = 3; //establezco el limite de reserva por cada persona.
+  //lou
+
   const verificarLocalStorage = () => {
     return localStorage.getItem("user") !== null;
   }
@@ -26,6 +31,21 @@ const Reserva = () => {
 
   const { reservas, crearReserva } = useContext(ReservasContext)
 
+  //lou --> se actualiza el esatado de reservasUsers
+  useEffect (() => {
+    if (logueado) {
+      console.log("Usuario logueado:", logueado);
+      const reservasDelUsuario = reservas.filter(reserva => reserva.users === logueado.email);
+      console.log("Reservas del usuario:", reservasDelUsuario); // Agregar este log para verificar las reservas del usuario
+      setReservasUsers(reservasDelUsuario);
+    }
+  },[logueado, reservas]);
+
+  //funcion para verificar el limite 
+  const limiteAlcanzado = () => {
+    return reservasUsers.length >= limiteReservas;
+  };
+  //lou 
 
 
   const [showSucursales, setShowSucursales] = useState(true)
@@ -70,8 +90,6 @@ const Reserva = () => {
 
 
   };
-
-
 
   const backComensal = () => { //Funcion volver para el boton
     if (showComensales) {
@@ -132,8 +150,10 @@ const Reserva = () => {
       <Titulo link={"https://images.unsplash.com/photo-1513883049090-d0b7439799bf?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"} texto={"Piano siendo tocado con filtros blanco y negro"} nombre={"Reservas"} />
       {logueado ? (
         <>
+         {limiteAlcanzado()? (
+           <p>No puedes realizar más reservas. Has alcanzado el limite permitido.</p>
+         ) : (
           <section id='sectionReservas'>
-
             <h1 style={{ textAlign: "center", marginBottom: "4rem", marginTop: "3rem" }} id='h1Reservas'>¡Visitanos!</h1>
             <div className='montserrat-font div_conteiner'>
               <div>
@@ -186,6 +206,7 @@ const Reserva = () => {
             </div>
 
           </section>
+         )}
         </>
       )
         : (
@@ -203,4 +224,4 @@ const Reserva = () => {
   );
 }
 
-export default Reserva
+export default Reserva  
