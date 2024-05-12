@@ -1,3 +1,11 @@
+
+
+
+//ESTE ARCHIVO NO ES, ESTE FUE EL QUE HIZO CHATGPT A LAS 5 DE LA MAÑANA
+
+
+
+
 import React, { useState, useEffect, useContext } from 'react'
 import './reserva.css'
 // import { Button } from 'react-bootstrap';
