@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { UsuariosContext } from '../../context/ContextUsuarios';
 import Swal from "sweetalert2";
@@ -31,6 +31,12 @@ const Login = ({ handleClose }) => {
         });
         localStorage.setItem("user", JSON.stringify(usuarioLogueado));
         handleClose();
+
+        if (usuarioLogueado.isAdmin) {
+          await new Promise(resolve => setTimeout(resolve, 2150));
+          window.location.href = "/admin"
+        }
+  
       } else {
         Swal.fire({
           title: "Error",

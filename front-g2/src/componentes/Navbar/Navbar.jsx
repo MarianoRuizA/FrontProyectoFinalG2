@@ -55,7 +55,7 @@ function Navbar() {
 
 					{user?.isAdmin ? (
 						<a className="link-underline" onClick={() => { navegacion("/admin"); cerrarMenu() }}>
-							ADMIN
+							ADMINISTRACIÓN
 						</a>
 					) : null}
 
