@@ -43,13 +43,18 @@ function Navbar() {
 					<FaBars />
 				</button>
 				<nav ref={navRef}>
-					<a onClick={() => {navegacion("/galeria"); cerrarMenu()}} className="link-underline">GALERÍA</a>
-					<a href="https://doroitalianbar.com/wp-content/uploads/2024/04/Menu-Principal-13-4-2024.pdf" onClick={cerrarMenu} target="_blank" className="link-underline">CARTA</a>
-					<a onClick={() => {navegacion("/nosotros"); cerrarMenu()}} className="link-underline">NOSOTROS</a>
-					<a onClick={() => {navegacion("/reservas"); cerrarMenu()}} className="link-underline">RESERVAS</a>
+
+					{!user?.isAdmin && (
+						<>
+							<a onClick={() => { navegacion("/galeria"); cerrarMenu() }} className="link-underline">GALERÍA</a>
+							<a href="https://doroitalianbar.com/wp-content/uploads/2024/04/Menu-Principal-13-4-2024.pdf" onClick={cerrarMenu} target="_blank" className="link-underline">CARTA</a>
+							<a onClick={() => { navegacion("/nosotros"); cerrarMenu() }} className="link-underline">NOSOTROS</a>
+							<a onClick={() => { navegacion("/reservas"); cerrarMenu() }} className="link-underline">RESERVAS</a>
+						</>
+					)}
 
 					{user?.isAdmin ? (
-						<a className="link-underline" onClick={() => {navegacion("/admin"); cerrarMenu()}}>
+						<a className="link-underline" onClick={() => { navegacion("/admin"); cerrarMenu() }}>
 							ADMIN
 						</a>
 					) : null}
@@ -70,7 +75,7 @@ function Navbar() {
 					</button>
 				</nav>
 			</header>
-			<ModalLogin show={show} handleClose={handleClose} cerrarMenu={cerrarMenu}  />
+			<ModalLogin show={show} handleClose={handleClose} cerrarMenu={cerrarMenu} />
 		</>
 	);
 }
