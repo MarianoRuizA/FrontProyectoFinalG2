@@ -15,7 +15,7 @@ const Reserva = () => {
   const [logueado, setLogueado] = useState(null)
 
   //lou
-  const [reservasUsers, setReservasUsers] = useState([]); //establezco el estado para las reservas del usuario logueado.
+  const [reservasUsuario, setReservasUsuario] = useState([]); //establezco el estado para las reservas del usuario logueado.
   const limiteReservas = 3; //establezco el limite de reserva por cada persona.
   //lou
 
@@ -31,19 +31,18 @@ const Reserva = () => {
 
   const { reservas, crearReserva } = useContext(ReservasContext)
 
-  //lou --> se actualiza el esatado de reservasUsers
+  //lou --> se actualiza el esatado de reservasUsuario
   useEffect (() => {
     if (logueado) {
-      console.log("Usuario logueado:", logueado);
-      const reservasDelUsuario = reservas.filter(reserva => reserva.users === logueado.email);
+      const reservasDelUsuario = reservas.filter(reserva => reserva.usuario === logueado.email);
       console.log("Reservas del usuario:", reservasDelUsuario); // Agregar este log para verificar las reservas del usuario
-      setReservasUsers(reservasDelUsuario);
+      setReservasUsuario(reservasDelUsuario);
     }
   },[logueado, reservas]);
 
   //funcion para verificar el limite 
   const limiteAlcanzado = () => {
-    return reservasUsers.length >= limiteReservas;
+    return reservasUsuario.length >= limiteReservas;
   };
   //lou 
 
@@ -150,7 +149,7 @@ const Reserva = () => {
       <Titulo link={"https://images.unsplash.com/photo-1513883049090-d0b7439799bf?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"} texto={"Piano siendo tocado con filtros blanco y negro"} nombre={"Reservas"} />
       {logueado ? (
         <>
-         {limiteAlcanzado()? (
+         {limiteAlcanzado() ? (
            <p>No puedes realizar más reservas. Has alcanzado el limite permitido.</p>
          ) : (
           <section id='sectionReservas'>
