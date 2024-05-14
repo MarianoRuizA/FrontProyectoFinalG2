@@ -1,4 +1,5 @@
 import { createContext, useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 import axios from "axios"
 import { jwtDecode } from "jwt-decode"
 
@@ -8,6 +9,7 @@ const ContextUsuarios = ({ children }) => {
   const [usuarios, setUsuarios] = useState([]);
   const [usuarioLogueado, setUsuarioLogueado] = useState();
   const [emailLogueado, setEmailLogueado] = useState()
+  const navigate = useNavigate();
 
   // GET ---> trae usuarios.
   const getUsuario = async () => {
@@ -56,7 +58,7 @@ const ContextUsuarios = ({ children }) => {
     // Actualiza el estado de usuario logueado a null
     setUsuarioLogueado(null);
     
-    window.location.href = "/";
+    navigate("/")
   }
 
   const loginUser = async (usuario) => {
