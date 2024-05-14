@@ -1,4 +1,5 @@
-import { useState, useContext, useEffect } from 'react';
+import { useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Form, Button } from 'react-bootstrap';
 import { UsuariosContext } from '../../context/ContextUsuarios';
 import Swal from "sweetalert2";
@@ -10,6 +11,7 @@ const Login = ({ handleClose }) => {
   const [contrasenia, setContraseña] = useState("")
 
   const { loginUser, usuarioLogueado } = useContext(UsuariosContext);
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -33,10 +35,10 @@ const Login = ({ handleClose }) => {
         handleClose();
 
         if (usuarioLogueado.isAdmin) {
-          await new Promise(resolve => setTimeout(resolve, 2150));
-          window.location.href = "/admin"
+          setTimeout(() => {
+            navigate('/admin');
+          }, 2150);
         }
-  
       } else {
         Swal.fire({
           title: "Error",
