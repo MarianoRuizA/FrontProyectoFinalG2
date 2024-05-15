@@ -8,7 +8,6 @@ import Swal from 'sweetalert2'
 import { ReservasContext } from '../../context/ContextReservas.jsx';
 import 'react-datepicker/dist/react-datepicker.css';
 import Footer from '../../componentes/footer/Footer.jsx';
-import { UsuariosContext } from '../../context/ContextUsuarios.jsx';
 import Titulo from '../../componentes/imgCarousel/titulo/titulo.jsx';
 
 const Reserva = () => {
