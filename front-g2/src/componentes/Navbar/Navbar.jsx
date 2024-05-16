@@ -60,11 +60,11 @@ function Navbar() {
 					) : null}
 
 					{user ? (
-						<a className="link-login" onClick={() => logout()} >
+						<a className="link-login" onClick={() => { logout(); cerrarMenu() }} >
 							CERRAR SESIÓN
 						</a>
 					) : (
-						<a className="link-login" onClick={handleShow}>
+						<a className="link-login" onClick={() => { handleShow(); cerrarMenu() }}>
 							INICIAR SESIÓN
 						</a>
 					)}
