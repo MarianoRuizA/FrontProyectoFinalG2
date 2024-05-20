@@ -63,13 +63,14 @@ const Reserva = () => {
 
 
   const actualizarFechaReserva = (nuevaFecha, nuevaHora) => {
-    const unido = nuevaFecha + " " + nuevaHora
+    const unido = nuevaFecha +" "+ nuevaHora
+    const fechaReserva = new Date(unido)
     const actualizadoEmail = logueado.email
     
     setReserva(prevState => ({
       ...prevState,
       usuario: actualizadoEmail,
-      fecha: unido
+      fecha: fechaReserva
     }));
 
     Swal.fire({

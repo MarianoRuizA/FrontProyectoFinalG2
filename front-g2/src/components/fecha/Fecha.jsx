@@ -115,7 +115,7 @@ const Fecha = ({ reserva, actualizarFechaReserva }) => {
       Swal.fire({
         icon: "error",
         title: "Oops...",
-        text: "Esta fecha y hora ya han sido seleccionadas. Por favor, elija otra.",
+        text: "Esta fecha y hora no está disponible. Por favor, elija otra.",
 
       });
       return;
