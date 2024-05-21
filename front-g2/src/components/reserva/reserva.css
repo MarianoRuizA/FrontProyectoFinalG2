@@ -31,14 +31,14 @@
     color: white;
     border-radius: 30px;
     justify-content: center;
-    margin-bottom: 3rem;
+ 
   
   
   }
   
   .conteiner_div {
     width: 100%;
-    height: 250px;
+    height: 500px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -92,7 +92,7 @@
   
   .backButton {
   
-    margin: -110px 10px 10px 10px;
+    margin: 0px 10px 180px -400px;
   }
   
   .divButtons {

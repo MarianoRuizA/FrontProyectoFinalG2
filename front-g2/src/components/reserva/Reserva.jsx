@@ -155,19 +155,23 @@ const Reserva = () => {
           <section id='sectionReservas'>
             <h1 style={{ textAlign: "center", marginBottom: "4rem", marginTop: "3rem" }} id='h1Reservas'>¡Visitanos!</h1>
             <div className='montserrat-font div_conteiner'>
-              <div>
-                <Button onClick={() => backComensal()} variant='dark' className=' backButton '>
-                  <FontAwesomeIcon icon={faArrowLeft} />
-                </Button>
+
+            <div className='conteiner_div '>
+
+              
                 <div className='divButtons'>
+                {reserva.sucursal ?<Button onClick={() => backComensal()} variant='dark' className=' backButton '>
+                  <FontAwesomeIcon icon={faArrowLeft} />
+                </Button> : null}
+                
                   {reserva.sucursal ? <Button variant='light'>Sucursal: {reserva.sucursal}</Button> : null}
                   {reserva.servicio ? <Button variant='light'>Servicio: {reserva.servicio}</Button> : null}
                   {reserva.comensales ? <Button variant='light'>Comensales: {reserva.comensales}</Button> : null}
                   {reserva.fecha ? <Button variant='light'>Fecha: {reserva.fecha}</Button> : null}
                 </div>
-              </div>
+         
 
-              <div className='conteiner_div '>
+            
                 {showSucursales ? (
                   <>
                     <h2>Sucursales</h2>
