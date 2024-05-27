@@ -18,7 +18,7 @@ const ContextUsuarios = ({ children }) => {
       const response = await axios.get("https://backproyectofinalg2.onrender.com/api/usuarios",
         {
           headers: {
-            Authorization: `Bearer ${token}`
+            Authorization: token
           }
         }
       ) // con el axios get se traen los datos creados en la fakeApi (se levanto un servidor para la api con el json-server).
@@ -46,7 +46,7 @@ const ContextUsuarios = ({ children }) => {
       await axios.patch(`https://backproyectofinalg2.onrender.com/api/usuarios/${usuario._id}`, usuario,
         {
           headers: {
-            Authorization: `Bearer ${token}`
+            Authorization: token
           }
         }
       )
@@ -62,7 +62,7 @@ const ContextUsuarios = ({ children }) => {
       await axios.delete(`https://backproyectofinalg2.onrender.com/api/usuarios/delete/${usuario._id}`,
         {
           headers: {
-            Authorization: `Bearer ${token}`
+            Authorization: token
           }
         }
       )

@@ -33,7 +33,7 @@ const ContextReservas = ({ children }) => {
       await axios.patch(`https://backproyectofinalg2.onrender.com/api/reservas/${reserva._id}`, reserva,
         {
           headers: {
-            Authorization: `Bearer ${token}`
+            Authorization: token
           }
         }
       )
@@ -49,7 +49,7 @@ const ContextReservas = ({ children }) => {
       await axios.delete(`https://backproyectofinalg2.onrender.com/api/reservas/${reserva._id}`,
         {
           headers: {
-            Authorization: `Bearer ${token}`
+            Authorization: token
           }
         }
       )
