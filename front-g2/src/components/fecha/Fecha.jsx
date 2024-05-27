@@ -143,10 +143,7 @@ const Fecha = ({ reserva, actualizarFechaReserva }) => {
       elementsToPush.push(
         <div key={day}>
 
-          <div className='divFecha' style={{
-
-
-          }}>
+          <div className='divFecha'>
             <Button style={{
               background: "none",
               borderColor: "none",
@@ -194,24 +191,26 @@ const Fecha = ({ reserva, actualizarFechaReserva }) => {
 
 
   return (<>
+  <div style={{display: "flex", flexWrap: "wrap", justifyContent: "center", textAlign: "center", justifyItems: "center"}}>
     <>
-      {indexInicio == !7 ? <h2 className='h2Date' >Seleccione fecha y hora</h2> : null}
+
+      {indexInicio == !7 ? <h3 className='m-2' >Seleccione fecha y hora</h3> : null}
       <div className='divElements'  >
 
-        {indexInicio === 7 ? <Button style={{ margin: "10px" }} onClick={() => { setIndexInicio(0), setIndexFin(7) }} variant='light' className='btnError' ><FontAwesomeIcon icon={faArrowLeft} />  </Button> : null}
+        {indexInicio === 7 ? <><Button style={{ margin: "10px" }} onClick={() => { setIndexInicio(0), setIndexFin(7) }} variant='light' className='btnError' ><FontAwesomeIcon icon={faArrowLeft} />  </Button></> : null}
 
         {elements}
 
         {indexInicio == !7 ? <Button style={{ margin: "10px" }} onClick={() => { setIndexInicio(7), setIndexFin(14) }} variant='light' className='btnError'> <FontAwesomeIcon icon={faArrowRight} /> </Button> : null}
 
       </div>
-      <Button onClick={() => { handleReservar() }} variant='light' className='my-2 btnError'>  <FontAwesomeIcon icon={faCheck} /> </Button>
+   
     </>
     {indexInicio === 7 ?
 
-      <>
-        <div className='divOtherDate' >
-          <h3 className='me-lg-2 '>Seleccione otra fecha y hora </h3>
+      <>  <h3 className='me-lg-2 '>Seleccione otra fecha y hora </h3>
+        <div className='divOtherDate ' >
+        
           <div className='divPicker '><DatePicker
             popperPlacement="top-start"
             selected={fechaSeleccionada.getDate() === new Date().getDate() || banDate ? null : selectedDate}
@@ -233,15 +232,13 @@ const Fecha = ({ reserva, actualizarFechaReserva }) => {
         </div>
         {/* <Button onClick={() => { handleReservar() }} variant='light' className='my-2 btnError'>  <FontAwesomeIcon icon={faCheck} /> </Button> */}
         {console.log(fechaSeleccionada.toLocaleDateString())}
-
-      </>
+      
+       </>
       : null
 
     } 
   
-
-
-
+  </div>  <Button onClick={() => { handleReservar() }} variant='light' className='my-2 btnError'>  <FontAwesomeIcon icon={faCheck} /> </Button>
 </>
   )
 }
