@@ -75,8 +75,8 @@ const ContextUsuarios = ({ children }) => {
 
   const logout = () => {
     // Borra el token de usuario del local storage
-    localStorage.removeItem("user");
     localStorage.removeItem("token");
+    localStorage.removeItem("user");
     // Actualiza el estado de usuario logueado a null
     setUsuarioLogueado(null);
 
