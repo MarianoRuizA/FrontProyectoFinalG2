@@ -19,7 +19,7 @@ const Fecha = ({ reserva, actualizarFechaReserva }) => {
 
   const currentDate = new Date();
   const FechaMax = new Date();
-  console.log(reserva)
+  
   const [indexInicio, setIndexInicio] = useState(0);
   const [indexFin, setIndexFin] = useState(7);
 
@@ -122,7 +122,8 @@ const Fecha = ({ reserva, actualizarFechaReserva }) => {
     }
     else {
 
-    actualizarFechaReserva(fechaSeleccionada.toLocaleDateString(), fechaSeleccionada.toLocaleTimeString())
+    actualizarFechaReserva(fechaSeleccionada.toLocaleDateString(), fechaSeleccionada.toLocaleTimeString(), fechaSeleccionada);
+    
 
     }
 
@@ -188,7 +189,7 @@ const Fecha = ({ reserva, actualizarFechaReserva }) => {
   }, [indexInicio, selectedDate, selectedTime])
 
 
-
+  console.log(reserva)
 
   return (<>
   <div style={{display: "flex", flexWrap: "wrap", justifyContent: "center", textAlign: "center", justifyItems: "center"}}>
