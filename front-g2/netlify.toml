@@ -1,0 +1,7 @@
+[build]
+  publish = "build"  # Cambia "build" por la carpeta de salida de tu proyecto, si es diferente.
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
