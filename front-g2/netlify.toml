@@ -1,6 +1,6 @@
 [build]
-  publish = "build"  # Cambia "build" por la carpeta de salida de tu proyecto, si es diferente.
-
+  publish = "build"   
+ command = "npm run build"
 [[redirects]]
   from = "/*"
   to = "/index.html"
