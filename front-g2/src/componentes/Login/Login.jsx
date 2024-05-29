@@ -38,8 +38,11 @@ const Login = ({ handleClose }) => {
           setTimeout(() => {
             navigate('/admin');
           }, 2150);
+        
+        } else{
+          location.reload(); 
         }
-      } else {
+        } else {
         Swal.fire({
           title: "Error",
           text: "Usuario o contraseña incorrectos",
