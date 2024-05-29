@@ -62,7 +62,7 @@ const TablaUsuarios = () => {
                 <Modal.Header closeButton>
                     <Modal.Title>Modificar Usuario</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>
+                <Modal.Body style={{  justifyContent: "center"}}>
                     <FormUsuarios usuarioModificar={usuario} handleClose={handleClose} cantAdmins={admins} />
                 </Modal.Body>
 

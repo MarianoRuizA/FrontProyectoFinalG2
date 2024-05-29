@@ -31,11 +31,11 @@ const TablaReservas = () => {
         <>
             {swal && <SwalDependiente2 reservaEliminar={reserva} setSwal={setSwal} />}
 
-            <Modal show={show} onHide={handleClose}>
+            <Modal show={show} onHide={handleClose} >
                 <Modal.Header closeButton>
                     <Modal.Title>Modificar Usuario</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>
+                <Modal.Body style={{  justifyContent: "center"}}>
                     <FormReserva reservaModificar={reserva} handleClose={handleClose} />
                 </Modal.Body>
             </Modal>
