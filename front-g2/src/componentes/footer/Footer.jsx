@@ -1,12 +1,14 @@
 import React from 'react'
-import ThemeProvider from 'react-bootstrap/ThemeProvider'
+import { useNavigate } from "react-router-dom";
 import "./footer.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocationDot, faClock, faMessage, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faWhatsapp, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 const Footer = () => {
-
+  
+   const navegacion = useNavigate()
+  
    return (
 
 
@@ -30,9 +32,9 @@ const Footer = () => {
             </div>
             <div className='container_div  '>
                <div  ><span style={{ color: 'darkred' }}><FontAwesomeIcon style={{ height: "30px" }} icon={faMessage} /></span><h2 className='border_button'>Contactate</h2></div>
-               <div><a href="" className='container_div_aLink'> <h3><FontAwesomeIcon icon={faWhatsapp} /> Whatsapp</h3></a> </div>
-               <div><a href="" className='container_div_aLink'><h3><FontAwesomeIcon icon={faInstagram} /> Instagram</h3></a> </div>
-               <div><a href="" className='container_div_aLink'><h3><FontAwesomeIcon icon={faEnvelope} /> Gmail</h3></a></div>
+               <div><a onClick={() => navegacion("error")}  href="" className='container_div_aLink'> <h3><FontAwesomeIcon icon={faWhatsapp} /> Whatsapp</h3></a > </div>
+               <div><a onClick={() => navegacion("error")}  href="" className='container_div_aLink'><h3><FontAwesomeIcon icon={faInstagram} /> Instagram</h3></a> </div>
+               <div><a onClick={() => navegacion("error")}  href="" className='container_div_aLink'><h3><FontAwesomeIcon icon={faEnvelope} /> Gmail</h3></a></div>
             </div>
          </div>
       </footer>
