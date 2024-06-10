@@ -10,7 +10,7 @@ const Error404 = () => {
         <div className="contenedor-404">
                 <h2>¡UPS!</h2>
             <figure className="image-container">
-                <img src="src/img/logoError404.png" alt="Logo de error 404" className="img-fluid" />
+                <img src="https://i.postimg.cc/RZJZd5v3/logo-Error404.png" alt="Logo de error 404" className="img-fluid" />
             </figure>
             <div className="text-center">
                 <h1>PÁGINA NO ENCONTRADA</h1>
