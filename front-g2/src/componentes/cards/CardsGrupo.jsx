@@ -1,9 +1,11 @@
 import './cards.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitter, faFacebook, faLinkedin, faInstagram} from '@fortawesome/free-brands-svg-icons';
-
+import { useNavigate } from "react-router-dom";
 const CardsGrupo = () => {
-  return (
+ 
+  const navegacion = useNavigate()
+ return (
 <>
     <div className="team-section">
         <div className="containerNosotros">
@@ -24,10 +26,10 @@ const CardsGrupo = () => {
                         <p>"Delicadeza en cada plato, pasión en cada bocado."</p>
                     </div>
                     <div className="social">
-                    <a href="#"><FontAwesomeIcon icon={faInstagram}/></a>
-                    <a href="#"><FontAwesomeIcon icon={faFacebook}/></a> 
-                    <a href="#"><FontAwesomeIcon icon={faLinkedin}/></a> 
-                    <a href="#"><FontAwesomeIcon icon={faTwitter}/></a> 
+                    <a onClick={() => navegacion("error")}><FontAwesomeIcon icon={faInstagram}/></a>
+                    <a onClick={() => navegacion("error")}><FontAwesomeIcon icon={faFacebook}/></a> 
+                    <a onClick={() => navegacion("error")}><FontAwesomeIcon icon={faLinkedin}/></a> 
+                    <a onClick={() => navegacion("error")}><FontAwesomeIcon icon={faTwitter}/></a> 
                     </div>
                 </div>
 
@@ -41,10 +43,10 @@ const CardsGrupo = () => {
                         <p>"Nuestro talento, nuestro activo; cultivando un equipo, forjando éxito."</p>
                     </div>
                     <div className="social">
-                    <a href="#"><FontAwesomeIcon icon={faInstagram}/></a>
-                    <a href="#"><FontAwesomeIcon icon={faFacebook}/></a> 
-                    <a href="#"><FontAwesomeIcon icon={faLinkedin}/></a> 
-                    <a href="#"><FontAwesomeIcon icon={faTwitter}/></a> 
+                    <a onClick={() => navegacion("error")}><FontAwesomeIcon icon={faInstagram}/></a>
+                    <a onClick={() => navegacion("error")}><FontAwesomeIcon icon={faFacebook}/></a> 
+                    <a onClick={() => navegacion("error")}><FontAwesomeIcon icon={faLinkedin}/></a> 
+                    <a onClick={() => navegacion("error")}><FontAwesomeIcon icon={faTwitter}/></a> 
                     </div>
                 </div>
 
@@ -58,10 +60,10 @@ const CardsGrupo = () => {
                         <p>"Ideas que inspiran, estrategias que triunfan."</p>
                     </div>
                     <div className="social">
-                    <a href="#"><FontAwesomeIcon icon={faInstagram}/></a>
-                    <a href="#"><FontAwesomeIcon icon={faFacebook}/></a> 
-                    <a href="#"><FontAwesomeIcon icon={faLinkedin}/></a> 
-                    <a href="#"><FontAwesomeIcon icon={faTwitter}/></a> 
+                    <a onClick={() => navegacion("error")}><FontAwesomeIcon icon={faInstagram}/></a>
+                    <a onClick={() => navegacion("error")}><FontAwesomeIcon icon={faFacebook}/></a> 
+                    <a onClick={() => navegacion("error")}><FontAwesomeIcon icon={faLinkedin}/></a> 
+                    <a onClick={() => navegacion("error")}><FontAwesomeIcon icon={faTwitter}/></a> 
                     </div>
                 </div>
 
@@ -75,10 +77,10 @@ const CardsGrupo = () => {
                         <p>"Estilo que inspira, espacios que encantan."</p>
                     </div>
                     <div className="social">
-                    <a href="#"><FontAwesomeIcon icon={faInstagram}/></a>
-                    <a href="#"><FontAwesomeIcon icon={faFacebook}/></a> 
-                    <a href="#"><FontAwesomeIcon icon={faLinkedin}/></a> 
-                    <a href="#"><FontAwesomeIcon icon={faTwitter}/></a> 
+                    <a onClick={() => navegacion("error")}><FontAwesomeIcon icon={faInstagram}/></a>
+                    <a onClick={() => navegacion("error")}><FontAwesomeIcon icon={faFacebook}/></a> 
+                    <a onClick={() => navegacion("error")}><FontAwesomeIcon icon={faLinkedin}/></a> 
+                    <a onClick={() => navegacion("error")}><FontAwesomeIcon icon={faTwitter}/></a> 
                     </div>
                 </div>
 
@@ -92,10 +94,10 @@ const CardsGrupo = () => {
                         <p>"Dirigiendo con pasión, superando expectativas."</p>
                     </div>
                     <div className="social">
-                    <a href="#"><FontAwesomeIcon icon={faInstagram}/></a>
-                    <a href="#"><FontAwesomeIcon icon={faFacebook}/></a> 
-                    <a href="#"><FontAwesomeIcon icon={faLinkedin}/></a> 
-                    <a href="#"><FontAwesomeIcon icon={faTwitter}/></a> 
+                    <a onClick={() => navegacion("error")}><FontAwesomeIcon icon={faInstagram}/></a>
+                    <a onClick={() => navegacion("error")}><FontAwesomeIcon icon={faFacebook}/></a> 
+                    <a onClick={() => navegacion("error")}><FontAwesomeIcon icon={faLinkedin}/></a> 
+                    <a onClick={() => navegacion("error")}><FontAwesomeIcon icon={faTwitter}/></a> 
                     </div>
                 </div>
             </div>
