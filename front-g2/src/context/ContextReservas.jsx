@@ -15,7 +15,7 @@ const ContextReservas = ({ children }) => {
     }
   }
 
-  // POST ---> agrega reserva.
+ 
   const crearReserva = async (reserva) => {
     try {
       console.log("KJASHJ", reserva)

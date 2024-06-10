@@ -14,7 +14,7 @@ const PaginaPrincipal = () => {
         <>
             <main>
                 <Banner></Banner>
-                {/* <div className="separator"></div> Elemento separador */}
+                 
                 <TarjetaDer></TarjetaDer>
                 <TarjetaIzq></TarjetaIzq>
                 <section className="contenedor-logo d-flex flex-column align-items-center justify-content-center pt-1 pb-1">

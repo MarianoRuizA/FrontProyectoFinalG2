@@ -14,7 +14,7 @@ const Boton = ({ buttonText }) => {
             <FontAwesomeIcon icon={faArrowRight} className="icon-large" />
             <p className="mb-0">{buttonText}</p>
             </a>)}
-            {/* <a href="" className="mb-0">{buttonText}</a> */}
+         
         </div>
     );
 };

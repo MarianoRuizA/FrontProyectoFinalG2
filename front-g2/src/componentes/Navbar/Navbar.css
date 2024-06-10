@@ -58,7 +58,7 @@ nav {
   align-items: center;
 }
 
-/* LOGOS E ICONOS */
+ 
 
 .logo-tango {
 	margin-left: 1rem;
@@ -82,7 +82,7 @@ nav {
   transition: 0.2s;
 }
 
-/* EFECTO ENLACES */
+ 
 
 .link-underline::after {
   content: "";
@@ -112,7 +112,7 @@ nav {
 	color: var(--mainColor);
 }
 
-/* RESPONSIVE */
+ 
 
 @media screen and (max-width: 930px) {
 	header .nav-btn {

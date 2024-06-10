@@ -186,66 +186,7 @@ const FormReserva = ({ reservaModificar, handleClose }) => {
           </Button>
         </div>
       </Form>
-            {/* <Form onSubmit={handleSubmit}>
-                <Form.Group className="mb-3" >
-                    <FormLabel>Usuario</FormLabel>
-                    <Form.Control
-                        type="text" placeholder="por ejemplo, Juan Lopez"
-                        name="usuario"
-                        value={reserva.usuario}
-                        onChange={handleChange} required minLength={3} maxLength={85}>
-                    </Form.Control>
-                </Form.Group>
-
-                <Form.Group>
-                    <Form.Label>Sucursal</Form.Label>
-                    <Form.Select aria-label="Default select example" name="sucursal"
-                        value={reserva.sucursal}
-                        onChange={handleChange}>
-                        <option value="Chacabuco 474">Chacabuco 474</option>
-                        <option value="San Martín 821">San Martín 821</option>
-                        <option value="Gral. Paz 576">Gral. Paz 576</option>
-                    </Form.Select>
-                </Form.Group>
-
-                <Form.Group>
-                    <Form.Label>Servicio</Form.Label>
-                    <Form.Select aria-label="Default select example" name="sucursal"
-                        value={reserva.servicio}
-                        onChange={handleChange}>
-                        <option value="Almuerzo">Almuerzo</option>
-                        <option value="Cena">Cena</option>
-                    </Form.Select>
-                </Form.Group>
-
-
-                <Form.Group>
-                    <Form.Label>Comensales</Form.Label>
-                    <Form.Control type="number" min={2} max={15}
-                        name="comensales"
-                        value={reserva.comensales}
-                        onChange={handleChange} required>
-                    </Form.Control>
-                </Form.Group>
-                <Form.Group id="grupoFecha">
-                    <Form.Label>Fecha</Form.Label>
-                    <DateTimePicker
-                        format="YYYY-MM-DD HH:MM:ss"
-                        name="fecha"
-                        value={dayjs(reserva.fecha)}
-                        onChange={handleFecha}
-                        minDate={dayjs(fechaHoy)}
-                        maxDate={dayjs(fechaMaxima)}
-                        minTime={dayjs(minHora)}
-                        maxTime={dayjs(maxHora)} 
-                        minutesStep={60}/>
-                </Form.Group>
-
-
-                <div className="divBoton">
-                    <Button type="submit" className="btn-danger">Guardar</Button>
-                </div>
-            </Form> */}
+           
         </>
     )
 }

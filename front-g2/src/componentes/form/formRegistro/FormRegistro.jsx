@@ -30,7 +30,7 @@ const FormRegistro = () => {
       confirmButtonText: "Aceptar"
     });
     setRegistroUsers({
-      // id: uuidv4(),
+ 
       nombre: "",
       apellido: "",
       email: "",

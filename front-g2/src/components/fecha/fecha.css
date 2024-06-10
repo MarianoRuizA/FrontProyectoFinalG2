@@ -34,7 +34,7 @@
   justify-content: center;
  
 }
-/* Estilo personalizado para el input de react-datepicker */
+ 
   .divPicker input{
     width: 200px;
     border-radius: 30px;
@@ -65,21 +65,21 @@
   flex-wrap: wrap;
     overflow-x: auto;
   }
-   /* Ancho del scrollbar */
+ 
 ::-webkit-scrollbar {
 
 height: 3px;
 }
 
-/* Estilo del thumb (el "botón" del scrollbar que puedes arrastrar) */
+ 
 ::-webkit-scrollbar-thumb {
-background-color: #dfdfdfa8; /* Color de fondo del thumb */
-border-radius: 5px; /* Radio de borde del thumb */
+background-color: #dfdfdfa8;  
+border-radius: 5px; 
 }
 
-/* Estilo de la pista (el área detrás del thumb) */
+ 
 ::-webkit-scrollbar-track {
-background-color: #00000000; /* Color de fondo de la pista */
+background-color: #00000000; 
 }
 }
 @media screen  and (max-width: 765px){

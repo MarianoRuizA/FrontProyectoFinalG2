@@ -11,7 +11,7 @@ const ContextUsuarios = ({ children }) => {
   const [emailLogueado, setEmailLogueado] = useState()
   const navigate = useNavigate();
 
-  // GET ---> trae usuarios.
+ 
   const getUsuario = async () => {
     try {
       const token = localStorage.getItem("token");
@@ -21,19 +21,19 @@ const ContextUsuarios = ({ children }) => {
             Authorization: token
           }
         }
-      ) // con el axios get se traen los datos creados en la fakeApi (se levanto un servidor para la api con el json-server).
-      setUsuarios(response.data) // se guardan los datos del http.
+      )  
+      setUsuarios(response.data)  
     }
     catch (error) {
       console.log("No funciona getUsuario-->", error)
     }
   }
 
-  // POST ---> agrega usuarios.
+  
   const createUsuario = async (registroUsers) => {
     try {
       const response = await axios.post("https://backproyectofinalg2.onrender.com/api/registrar", registroUsers)
-      setUsuarios([...usuarios, response.data]) //se recuperan los datos existentes y se agregan los nuevos usuarios.
+      setUsuarios([...usuarios, response.data])  
     }
     catch {
       console.log("No funciona createUsuario-->", error)
@@ -74,10 +74,10 @@ const ContextUsuarios = ({ children }) => {
   }
 
   const logout = () => {
-    // Borra el token de usuario del local storage
+   
     localStorage.removeItem("user");
     localStorage.removeItem("token");
-    // Actualiza el estado de usuario logueado a null
+     
     setUsuarioLogueado(null);
 
     navigate("/")

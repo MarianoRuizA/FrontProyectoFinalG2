@@ -1,21 +1,21 @@
-/* En tu archivo TarjetaIzq.css */
+ 
 .section-container-izq {
     margin: 3.5rem 1.5rem;
     background-color: white;
     color: black;
-    border: 1px solid rgba(128, 128, 128, 0.3); /* Borde gris oscuro suave */
-    border-radius: 8px; /* Bordes redondeados */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave para el efecto de foco */
+    border: 1px solid rgba(128, 128, 128, 0.3);  
+    border-radius: 8px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
 
 .section-container-izq:hover {
-    transform: scale(1.01); /* Escala ligeramente la tarjeta */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada en el foco */
+    transform: scale(1.01);  
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  
 }
 
 .section-container-izq .image-container {
-    border-radius: 8px; /* Bordes redondeados para la imagen */
+    border-radius: 8px;  
 }
 
 .section-container-izq h2 {

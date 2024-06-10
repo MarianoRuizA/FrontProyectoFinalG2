@@ -1,11 +1,11 @@
 .icon-large {
     font-size: 26px;
-    /* Tamaño grande */
+     
 }
 
 .button-container {
-    display: flex; /* Activa el modelo de caja flexible */
-    align-items: center; /* Alinea verticalmente los elementos al centro */
+    display: flex;  
+    align-items: center; 
 }
 .button-container a{
     display: flex;
@@ -15,12 +15,12 @@
 }
 
 .button-container p {
-    margin-left: 12px; /* Añade espacio entre el párrafo y el ícono */
+    margin-left: 12px; 
     font-weight:bolder;
     transition: color 0.1s ease;
 }
 .button-container a:hover {
-    color: #FF0000; /* Cambia el color del texto cuando el cursor está sobre el enlace */
+    color: #FF0000; 
 }
 
 a:hover{

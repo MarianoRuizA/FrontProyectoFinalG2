@@ -28,23 +28,23 @@ const Fecha = ({ reserva, actualizarFechaReserva }) => {
   const daysToAdd = daySelected === 0 ? 1 : 8 - daySelected;
   const nextMonday = new Date(currentDate);
   nextMonday.setDate(currentDate.getDate() + daysToAdd);
-  // Limitar horarios de reserva
+ 
   let minTime = new Date();
   let maxTime = new Date();
   if (daySelected >= 1 && daySelected <= 5) {
     minTime.setHours(9, 0, 0);
-    maxTime.setHours(23, 59, 59); // Hora máxima a las 11:59:59 PM
+    maxTime.setHours(23, 59, 59);  
   } else if (daySelected === 6) {
     minTime.setHours(12, 0, 0);
-    maxTime.setHours(23, 59, 59); // Hora máxima a las 11:59:59 PM
+    maxTime.setHours(23, 59, 59);  
   } else if (daySelected === 0) {
     minTime.setHours(12, 0, 0);
-    maxTime.setHours(17, 59, 59); // Hora máxima a las 4:59:59 PM
+    maxTime.setHours(17, 59, 59);  
   }
 
 
 
-  //Seteo las variables a partir de mañana como fecha minima seleccionable
+ 
   const today = new Date()
   today.setDate(today.getDate() + 1)
 
@@ -74,7 +74,7 @@ const Fecha = ({ reserva, actualizarFechaReserva }) => {
     setBanDate(true)
     setSelectedDate(date);
     setFechaSeleccionada(new Date(date.getFullYear(), date.getMonth(), date.getDate(), selectedTime.getHours(), selectedTime.getMinutes()));
-    setSelectedTime(null) //temer cuidado porque cuando es nulo me tira varios errores en consola
+    setSelectedTime(null)  
   };
 
   const handleTimeChange = (time) => {
@@ -86,41 +86,11 @@ const Fecha = ({ reserva, actualizarFechaReserva }) => {
 
   const handleReservar = () => {
 
-    // if (fechaSeleccionada.getDate() === new Date().getDate() || fechaSeleccionada.getHours() === new Date().getHours() && fechaSeleccionada.getMinutes() === new Date().getMinutes()) {
-    //   Swal.fire({
-    //     icon: "error",
-    //     title: "Oops...",
-    //     text: "Seeccione una fecha y hora, por favor!",
-
-    //   });
-    //   return;
-    // }
-    // fechaSeleccionada.setHours(selectedTime.getHours(), selectedTime.getMinutes());
-
-    // const suma = 0
-    // const reservaExistente = reservas.filter(encontrado => encontrado.fecha == fechaSeleccionada.toLocaleDateString())
-    // if(reservaExistente.length != 0)
-    // {
-    //   for (let i = 0; i < reservaExistente.length; i++) {
-    //     suma += reservaExistente[i].comensales
-    //   }
-    // }
-
-    // if ( reserva.comensales > (30-suma)) {
-
-    //   Swal.fire({
-    //     icon: "error",
-    //     title: "Oops...",
-    //     text: "Esta fecha y hora ya han sido seleccionadas. Por favor, elija otra.",
-
-    //   });
-    //   return;
-    // }
-    // else {
+     
 
       actualizarFechaReserva(fechaSeleccionada.toLocaleDateString(), fechaSeleccionada.toLocaleTimeString())
 
-    // }
+ 
 
   };
 

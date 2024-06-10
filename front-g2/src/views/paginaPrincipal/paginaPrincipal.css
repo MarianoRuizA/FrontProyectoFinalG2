@@ -17,7 +17,7 @@ main .contenedor-logo {
 main .contenedor-logo {
     width: 100%;
     padding: 0 15px;
-    /* Ajusta el relleno según sea necesario */
+    
 }
 
 main .contenedor-logo figure {
@@ -35,13 +35,13 @@ main .contenedor-logo p{
 }
 
 .separator {
-    height: 10px; /* Altura del separador */
-    background-color: whitesmoke; /* Color del separador */
-    margin: 20px 0; /* Espaciado entre el separador y los elementos adyacentes */
+    height: 10px;  
+    background-color: whitesmoke;  
+    margin: 20px 0;  
 }
 
 .separator {
-    border-top: 2px dashed black; /* Línea de puntos */
-    margin: 20px auto; /* Espaciado entre el separador y los elementos adyacentes */
-    width: 80%; /* Ancho del separador */
+    border-top: 2px dashed black;  
+    margin: 20px auto;  
+    width: 80%; 
 }

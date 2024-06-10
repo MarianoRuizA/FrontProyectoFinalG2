@@ -29,24 +29,24 @@ const Fecha = ({ reserva, actualizarFechaReserva }) => {
   const daysToAdd = daySelected === 0 ? 1 : 8 - daySelected;
   const nextMonday = new Date(currentDate);
   nextMonday.setDate(currentDate.getDate() + daysToAdd);
-  // Limitar horarios de reserva
+ 
   let minTime = new Date();
   let maxTime = new Date();
   if (daySelected >= 1 && daySelected <= 5) {
     minTime.setHours(9, 0, 0);
-    maxTime.setHours(23, 59, 59); // Hora máxima a las 11:59:59 PM
+    maxTime.setHours(23, 59, 59); 
   } else if (daySelected === 6) {
     minTime.setHours(12, 0, 0);
-    maxTime.setHours(23, 59, 59); // Hora máxima a las 11:59:59 PM
+    maxTime.setHours(23, 59, 59); 
   } else if (daySelected === 0) {
     minTime.setHours(12, 0, 0);
-    maxTime.setHours(17, 59, 59); // Hora máxima a las 4:59:59 PM
+    maxTime.setHours(17, 59, 59); 
   }
 
 
   
 
-  //Seteo las variables a partir de mañana como fecha minima seleccionable
+  
   const today = new Date()
   today.setDate(today.getDate() + 1)
 
@@ -78,7 +78,7 @@ const Fecha = ({ reserva, actualizarFechaReserva }) => {
     setBanDate(true)
     setSelectedDate(date);
     setFechaSeleccionada(new Date(date.getFullYear(), date.getMonth(), date.getDate(), selectedTime.getHours(), selectedTime.getMinutes()));
-    setSelectedTime(null) //tener cuidado porque cuando es nulo me tira varios errores en consola
+    setSelectedTime(null)  
   };
 
   const handleTimeChange = (time) => {
@@ -231,7 +231,7 @@ const Fecha = ({ reserva, actualizarFechaReserva }) => {
             showMonthDropdown>
           </DatePicker> </div>
         </div>
-        {/* <Button onClick={() => { handleReservar() }} variant='light' className='my-2 btnError'>  <FontAwesomeIcon icon={faCheck} /> </Button> */}
+       
         {console.log(fechaSeleccionada.toLocaleDateString())}
       
        </>
