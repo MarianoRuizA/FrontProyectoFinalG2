@@ -85,16 +85,17 @@ const ContextUsuarios = ({ children }) => {
 
   const loginUser = async (usuario) => {
     try {
-      setEmailLogueado(usuario.email)
       const response = await axios.post(`https://backproyectofinalg2.onrender.com/api/login`, usuario);
       const { token } = response.data;
       localStorage.setItem("token", token);
-      const decodeToken = jwtDecode(token);
-      setUsuarioLogueado(decodeToken)
+      const decodedToken = jwtDecode(token);
+      setUsuarioLogueado(decodedToken);
+      return decodedToken;
     } catch (error) {
       console.log(error);
+      return null;
     }
-  }
+  };
 
   useEffect(() => {
     getUsuario()

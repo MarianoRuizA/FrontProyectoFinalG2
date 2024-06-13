@@ -3,20 +3,19 @@ import { useNavigate } from 'react-router-dom';
 import { Form, Button } from 'react-bootstrap';
 import { UsuariosContext } from '../../context/ContextUsuarios';
 import Swal from "sweetalert2";
-import './Login.css'
+import './Login.css';
 
 const Login = ({ handleClose }) => {
+  const [email, setEmail] = useState("");
+  const [contrasenia, setContraseña] = useState("");
 
-  const [email, setEmail] = useState("")
-  const [contrasenia, setContraseña] = useState("")
-
-  const { loginUser, usuarioLogueado } = useContext(UsuariosContext);
+  const { loginUser } = useContext(UsuariosContext);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await loginUser({ email, contrasenia });
+      const usuarioLogueado = await loginUser({ email, contrasenia });
       if (usuarioLogueado) {
         Swal.fire({
           title: "Bienvenido",
@@ -38,11 +37,12 @@ const Login = ({ handleClose }) => {
           setTimeout(() => {
             navigate('/admin');
           }, 2150);
-        
-        } else{
-          location.reload(); 
-        }
         } else {
+          setTimeout(() => {
+            location.reload();
+          }, 2150);
+        }
+      } else {
         Swal.fire({
           title: "Error",
           text: "Usuario o contraseña incorrectos",
@@ -60,7 +60,7 @@ const Login = ({ handleClose }) => {
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
   return (
     <Form onSubmit={handleSubmit} className='form'>
@@ -88,7 +88,7 @@ const Login = ({ handleClose }) => {
         Ingresar
       </Button>
     </Form>
-  )
+  );
 }
 
-export default Login
+export default Login;
