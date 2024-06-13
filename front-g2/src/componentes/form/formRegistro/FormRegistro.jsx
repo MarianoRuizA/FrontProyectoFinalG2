@@ -19,16 +19,27 @@ const FormRegistro = () => {
     isSuspended: false
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e) => {  
     e.preventDefault();
 
-    createUsuario(registroUsers);
-    Swal.fire({
+    if (!validacion(registroUsers.nombre, registroUsers.apellido)){
+      Swal.fire({
+        title: "Error en Registro",
+        text: "Nombre y/o apellido inválidos. No deben contener números ni signos.",
+        icon: "error",
+        confirmButtonText: "Aceptar"
+      });
+      return;
+    };
+
+    createUsuario(registroUsers)
+    Swal.fire({  
       title: "Registración Exitosa",
-      text: "Usuario registrado con éxito",
+      text: "Usuario registrado con exito",
       icon: "success",
       confirmButtonText: "Aceptar"
-    });
+    }); 
+    
     setRegistroUsers({
  
       nombre: "",
@@ -40,11 +51,16 @@ const FormRegistro = () => {
     });
   };
 
-  const handleChange = (e) => {
+  const handleChange = (e) => {  
     setRegistroUsers({
       ...registroUsers,
       [e.target.name]: e.target.value
-    });
+    })
+  }
+
+  const validacion = (nombre, apellido) => {
+    const pauta = /^[a-zA-Z\s]+$/;
+    return pauta.test(nombre) && pauta.test(apellido); 
   };
 
   return (
