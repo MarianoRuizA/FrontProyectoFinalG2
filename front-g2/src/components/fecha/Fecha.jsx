@@ -216,7 +216,7 @@ const Fecha = ({ reserva, actualizarFechaReserva }) => {
             popperPlacement="top-start"
             selected={fechaSeleccionada.getDate() === new Date().getDate() || banDate ? null : selectedDate}
             onChange={date => { setSelectedDate(date), setFechaSeleccionada(date), setBanDate(false), setSelectedTime(date) }}
-            minDate={new Date(new Date().getTime() + 24 * 60 * 60 * 1000)} // Fecha actual más un día
+            minDate={new Date(new Date().getTime() + 24 * 60 * 60 * 1000)}  
             maxDate={FechaMax.setMonth(new Date().getMonth() + 2)}
             timeIntervals={60}
             minTime={minTime}
