@@ -5,9 +5,10 @@ import { v4 as uuidv4 } from "uuid";
 import { UsuariosContext } from "../../../context/ContextUsuarios";
 import Swal from 'sweetalert2';
 import "./formRegistro.css";
+import { useNavigate } from "react-router-dom";
 
 const FormRegistro = () => {
-
+  const navegacion = useNavigate()
   const { createUsuario } = useContext(UsuariosContext);
 
   const [registroUsers, setRegistroUsers] = useState({
@@ -105,7 +106,7 @@ const FormRegistro = () => {
                 placeholder="Contraseña" maxLength="30" required />
             </div>
 
-            <a href="#">Términos y Condiciones</a>
+            <a onClick={() => navegacion("error")}>Términos y Condiciones</a>
             <input type="submit" className="botonRegistro" value="Registrarse" />
           </div>
         </form>
