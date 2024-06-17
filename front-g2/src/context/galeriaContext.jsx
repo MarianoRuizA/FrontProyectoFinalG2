@@ -66,7 +66,7 @@ const GaleriaContext = ({children}) =>
             nombre: "Picada de fiambre"
         },
         {
-            link: "https://i.postimg.cc/sxWW0B11/MAE5016-1030x688.jpg",
+            link: "https://i.postimg.cc/SN0CYGt9/MAE5016-1030x688.jpg",
             nombre: "Onceavo plato"
         }
     ]
