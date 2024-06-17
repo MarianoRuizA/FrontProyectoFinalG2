@@ -26,7 +26,7 @@ const GaleriaContext = ({children}) =>
             nombre: "Cuarto plato"
         },
         {
-            link: "src/views/galeria/img/mas-mesas-de-bar.jpg",
+            link: "https://i.postimg.cc/VL3MMWGM/mas-mesas-de-bar.jpg",
             nombre: "Quinto plato"
         },
         {
@@ -38,19 +38,19 @@ const GaleriaContext = ({children}) =>
             nombre: "Sexto plato"
         },
         {
-            link: "src/views/galeria/img/bar-por-fuera.jpg",
+            link: "https://i.postimg.cc/zBXR5tvm/bar-por-fuera.jpg",
             nombre: "Arquitectura del restaurant"
         },
         {
-            link: "src/views/galeria/img/noveno-plato.jpg",
+            link: "https://i.postimg.cc/NMMLZKCB/noveno-plato.jpg",
             nombre: "Séptimo plato"
         },
         {
-            link: "src/views/galeria/img/mesas-bar.jpg",
+            link: "https://i.postimg.cc/Hs78p7YL/mesas-bar.jpg",
             nombre: "Mesas del bar"
         },
         {
-            link: "src/views/galeria/img/ultimo-plato.jpg",
+            link: "https://i.postimg.cc/3xXyG5D5/ultimo-plato.jpg",
             nombre: "Octavo plato"
         },
         {
@@ -62,7 +62,7 @@ const GaleriaContext = ({children}) =>
             nombre: "Décimo plato"
         },
         {
-            link: "src/views/galeria/img/picada.jpg",
+            link: "https://i.postimg.cc/nrWm34ny/Picada.jpg",
             nombre: "Picada de fiambre"
         },
         {
