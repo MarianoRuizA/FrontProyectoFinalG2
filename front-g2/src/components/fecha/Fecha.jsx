@@ -138,7 +138,7 @@ const Fecha = ({ reserva, actualizarFechaReserva }) => {
       const dateObject = new Date(dates[i]);
       const day = dateObject.getDate();
       const dayName = dateObject.toLocaleString('es-ES', { weekday: 'short' });
-      const monthName = dateObject.toLocaleDateString('es-ES', { month: 'long' });
+      const monthName = dateObject.toLocaleDateString('es-ES', { month: 'short' }).slice(0, 3) + '.';
 
 
       elementsToPush.push(
@@ -153,7 +153,7 @@ const Fecha = ({ reserva, actualizarFechaReserva }) => {
 
               <h3>{dayName}.</h3>
 
-              <h4>{day} {monthName}</h4>
+              <h4>{day}</h4>  <h4> {monthName}</h4>
             </Button>
 
           </div>
